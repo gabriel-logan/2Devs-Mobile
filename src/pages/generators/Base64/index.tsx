@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Base64Generator() {
+export default function Base64Page() {
 	return (
 		<View style={styles.container}>
 			<Text>Base64</Text>
