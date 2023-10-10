@@ -10,7 +10,7 @@ export const colors = {
 		warning: '#FFC107', // Cor de aviso (por exemplo, notificações de aviso)
 		info: '#17A2B8', // Cor de informações (por exemplo, informações adicionais)
 		inputBackground: '#E8E8E8', // Cor de fundo para campos de entrada
-		buttonBackground: '#007BFF', // Cor de fundo para botões
+		buttonBackground: '#3498db', // Cor de fundo para botões
 		title: '#333333', // Cor de título
 		secondaryText: '#777777', // Cor de texto secundário
 		tertiaryBackground: '#FAFAFA', // Cor de fundo terciária

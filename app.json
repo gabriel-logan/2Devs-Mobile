@@ -3,13 +3,15 @@
     "name": "2Devs",
     "slug": "2Devs",
     "version": "1.0.0",
+		"description": "Your All-in-One IT Solution, Data Generation, Validation, and Comprehensive Tools for Professionals in the Field of Technology. Your IT toolkit - generate, validate, and more!",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+		"owner": "gabriellogan",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#bdc9bd"
+      "resizeMode": "cover",
+      "backgroundColor": "#abbaab"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -21,7 +23,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+			"package": "com.gabriellogan.2Devs",
+      "versionCode": 0
     },
     "web": {
       "favicon": "./assets/favicon.png"
