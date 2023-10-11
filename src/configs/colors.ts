@@ -14,6 +14,7 @@ export const colors = {
 		title: '#333333', // Cor de título
 		secondaryText: '#777777', // Cor de texto secundário
 		tertiaryBackground: '#FAFAFA', // Cor de fundo terciária
+		placeHolderColor: '#6e6e6e',
 	},
 	dark: {
 		background: '#333333',
@@ -30,6 +31,7 @@ export const colors = {
 		title: '#FFFFFF',
 		secondaryText: '#CCCCCC',
 		tertiaryBackground: '#444444',
+		placeHolderColor: '#c1c1c1',
 	},
 };
 

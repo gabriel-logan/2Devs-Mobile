@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
-import { cpfIsValid } from 'multiform-validator';
+import { cnpjIsValid } from 'multiform-validator';
 
 import * as Clipboard from 'expo-clipboard';
 
@@ -12,23 +12,22 @@ import getThemeColor from '../../../configs/colors';
 import { useTheme } from '../../../components/ThemeContext';
 import { useTranslation } from 'react-i18next';
 
-export default function CpfValidatorPage() {
+export default function CnpjValidatorPage() {
 	const { t } = useTranslation();
-
 	const { theme } = useTheme();
 
-	const [cpfInput, setCpfInput] = useState('');
-	const [cpfIsValidResult, setCpfIsValidResult] = useState<boolean>();
+	const [cnpjInput, setCnpjInput] = useState('');
+	const [cnpjIsValidResult, setCnpjIsValidResult] = useState<boolean>();
 
-	const stylesWithTheme = styles(theme, cpfIsValidResult);
+	const stylesWithTheme = styles(theme, cnpjIsValidResult);
 
-	const cpfValidated = cpfIsValid(cpfInput);
+	const cnpjValidated = cnpjIsValid(cnpjInput);
 
-	const validateCpf = () => {
-		if (cpfValidated.isValid) {
-			setCpfIsValidResult(true);
+	const validateCnpj = () => {
+		if (cnpjValidated.isValid) {
+			setCnpjIsValidResult(true);
 		} else {
-			setCpfIsValidResult(false);
+			setCnpjIsValidResult(false);
 		}
 	};
 
@@ -40,35 +39,35 @@ export default function CpfValidatorPage() {
 
 	const pasteToClipboard = async () => {
 		const text = await Clipboard.getStringAsync();
-		setCpfInput(text);
+		setCnpjInput(text);
 	};
 
 	const cleanToClipboard = () => {
-		setCpfInput('');
+		setCnpjInput('');
 	};
 
 	return (
 		<View style={stylesWithTheme.container}>
-			<Text style={stylesWithTheme.title}>{t('Validador de CPF')}</Text>
+			<Text style={stylesWithTheme.title}>{t('Validador de CNPJ')}</Text>
 			<View style={stylesWithTheme.card}>
-				<Text style={stylesWithTheme.label}>{t('Digite ou cole um CPF:')}</Text>
+				<Text style={stylesWithTheme.label}>{t('Digite ou cole um CNPJ:')}</Text>
 				<TextInput
 					style={stylesWithTheme.input}
-					onChangeText={(text) => setCpfInput(text)}
-					value={cpfInput}
-					placeholder="123.456.789-09"
+					onChangeText={(text) => setCnpjInput(text)}
+					value={cnpjInput}
+					placeholder="48.955.245/0001-01"
 					placeholderTextColor={getThemeColor(theme, 'placeHolderColor')}
 					keyboardType="numeric"
-					maxLength={15}
+					maxLength={19}
 				/>
-				<Button title={t('Validar CPF')} onPress={validateCpf} />
+				<Button title={t('Validar CNPJ')} onPress={validateCnpj} />
 				<View style={stylesWithTheme.divButtonCopy}>
 					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={pasteToClipboard}>
 						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
 						style={stylesWithTheme.buttonCopy}
-						onPress={() => copyToClipboard(cpfInput)}
+						onPress={() => copyToClipboard(cnpjInput)}
 					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
@@ -76,14 +75,14 @@ export default function CpfValidatorPage() {
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 				</View>
-				{cpfIsValidResult !== undefined && (
-					<View style={stylesWithTheme.cpfStatus}>
+				{cnpjIsValidResult !== undefined && (
+					<View style={stylesWithTheme.cnpjStatus}>
 						<Text
 							style={
-								cpfIsValidResult ? stylesWithTheme.validCpfText : stylesWithTheme.invalidCpfText
+								cnpjIsValidResult ? stylesWithTheme.validCnpjText : stylesWithTheme.invalidCnpjText
 							}
 						>
-							{cpfIsValidResult ? t('CPF Válido') : t('CPF Inválido')}
+							{cnpjIsValidResult ? t('CNPJ Válido') : t('CNPJ Inválido')}
 						</Text>
 					</View>
 				)}
@@ -93,7 +92,7 @@ export default function CpfValidatorPage() {
 	);
 }
 
-const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
+const styles = (theme: 'dark' | 'light', cnpjIsValidResult?: boolean) =>
 	StyleSheet.create({
 		container: {
 			flex: 1,
@@ -144,18 +143,18 @@ const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
 			marginVertical: 15,
 		},
 		buttonCopy: {},
-		cpfStatus: {
-			backgroundColor: cpfIsValidResult ? '#4CAF50' : '#F44336',
+		cnpjStatus: {
+			backgroundColor: cnpjIsValidResult ? '#4CAF50' : '#F44336',
 			padding: 10,
 			borderRadius: 5,
 			alignItems: 'center',
 			justifyContent: 'center',
 		},
-		validCpfText: {
+		validCnpjText: {
 			fontSize: RFValue(18),
 			color: '#FFFFFF',
 		},
-		invalidCpfText: {
+		invalidCnpjText: {
 			fontSize: RFValue(18),
 			color: '#FFFFFF',
 		},

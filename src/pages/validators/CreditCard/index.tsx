@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
-import { cpfIsValid } from 'multiform-validator';
+
+import { isCreditCardValid, isEmpty, isNumber } from 'multiform-validator';
 
 import * as Clipboard from 'expo-clipboard';
 
@@ -12,23 +13,31 @@ import getThemeColor from '../../../configs/colors';
 import { useTheme } from '../../../components/ThemeContext';
 import { useTranslation } from 'react-i18next';
 
-export default function CpfValidatorPage() {
+export default function CreditCardValidatorPage() {
 	const { t } = useTranslation();
 
 	const { theme } = useTheme();
 
-	const [cpfInput, setCpfInput] = useState('');
-	const [cpfIsValidResult, setCpfIsValidResult] = useState<boolean>();
+	const [creditCardInput, setCreditCardInput] = useState('');
+	const [creditCardIsValidResult, setCreditCardIsValidResult] = useState<boolean>();
 
-	const stylesWithTheme = styles(theme, cpfIsValidResult);
+	const stylesWithTheme = styles(theme, creditCardIsValidResult);
 
-	const cpfValidated = cpfIsValid(cpfInput);
+	const validateCreditCard = () => {
+		// Remove todos os não dígitos do input
+		const cleanedCreditCardInput = creditCardInput.replace(/\D/g, '');
 
-	const validateCpf = () => {
-		if (cpfValidated.isValid) {
-			setCpfIsValidResult(true);
+		if (!isEmpty(cleanedCreditCardInput) && isNumber(cleanedCreditCardInput)) {
+			// Valida o número do cartão de crédito
+			const creditCardValidated = isCreditCardValid(cleanedCreditCardInput);
+
+			if (creditCardValidated) {
+				setCreditCardIsValidResult(true);
+			} else {
+				setCreditCardIsValidResult(false);
+			}
 		} else {
-			setCpfIsValidResult(false);
+			setCreditCardIsValidResult(false);
 		}
 	};
 
@@ -40,35 +49,35 @@ export default function CpfValidatorPage() {
 
 	const pasteToClipboard = async () => {
 		const text = await Clipboard.getStringAsync();
-		setCpfInput(text);
+		setCreditCardInput(text);
 	};
 
 	const cleanToClipboard = () => {
-		setCpfInput('');
+		setCreditCardInput('');
 	};
 
 	return (
 		<View style={stylesWithTheme.container}>
-			<Text style={stylesWithTheme.title}>{t('Validador de CPF')}</Text>
+			<Text style={stylesWithTheme.title}>{t('Validador de Cartão de crédito')}</Text>
 			<View style={stylesWithTheme.card}>
-				<Text style={stylesWithTheme.label}>{t('Digite ou cole um CPF:')}</Text>
+				<Text style={stylesWithTheme.label}>{t('Digite ou cole um Cartão de crédito:')}</Text>
 				<TextInput
 					style={stylesWithTheme.input}
-					onChangeText={(text) => setCpfInput(text)}
-					value={cpfInput}
-					placeholder="123.456.789-09"
+					onChangeText={(text) => setCreditCardInput(text)}
+					value={creditCardInput}
+					placeholder="5545 9874 2450 4172"
 					placeholderTextColor={getThemeColor(theme, 'placeHolderColor')}
 					keyboardType="numeric"
-					maxLength={15}
+					maxLength={21}
 				/>
-				<Button title={t('Validar CPF')} onPress={validateCpf} />
+				<Button title={t('Validar Cartão de crédito')} onPress={validateCreditCard} />
 				<View style={stylesWithTheme.divButtonCopy}>
 					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={pasteToClipboard}>
 						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
 						style={stylesWithTheme.buttonCopy}
-						onPress={() => copyToClipboard(cpfInput)}
+						onPress={() => copyToClipboard(creditCardInput)}
 					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
@@ -76,14 +85,18 @@ export default function CpfValidatorPage() {
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 				</View>
-				{cpfIsValidResult !== undefined && (
-					<View style={stylesWithTheme.cpfStatus}>
+				{creditCardIsValidResult !== undefined && (
+					<View style={stylesWithTheme.creditCardStatus}>
 						<Text
 							style={
-								cpfIsValidResult ? stylesWithTheme.validCpfText : stylesWithTheme.invalidCpfText
+								creditCardIsValidResult
+									? stylesWithTheme.validCreditCardText
+									: stylesWithTheme.invalidCreditCardText
 							}
 						>
-							{cpfIsValidResult ? t('CPF Válido') : t('CPF Inválido')}
+							{creditCardIsValidResult
+								? t('Cartão de crédito Válido')
+								: t('Cartão de crédito Inválido')}
 						</Text>
 					</View>
 				)}
@@ -93,7 +106,7 @@ export default function CpfValidatorPage() {
 	);
 }
 
-const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
+const styles = (theme: 'dark' | 'light', creditCardIsValidResult?: boolean) =>
 	StyleSheet.create({
 		container: {
 			flex: 1,
@@ -102,7 +115,7 @@ const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
 			justifyContent: 'center',
 		},
 		title: {
-			fontSize: RFValue(28), // Responsive font size
+			fontSize: RFValue(22), // Responsive font size
 			fontWeight: 'bold',
 			marginBottom: RFValue(20), // Responsive margin
 			color: getThemeColor(theme, 'title'),
@@ -122,7 +135,7 @@ const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
 			elevation: 3, // Responsive elevation
 		},
 		label: {
-			fontSize: RFValue(20), // Responsive font size
+			fontSize: RFValue(14), // Responsive font size
 			marginBottom: RFValue(10), // Responsive margin
 			color: getThemeColor(theme, 'text'),
 		},
@@ -135,7 +148,7 @@ const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
 			color: getThemeColor(theme, 'text'),
 			textAlign: 'center',
 			textAlignVertical: 'center',
-			fontSize: RFValue(16),
+			fontSize: RFValue(14),
 			backgroundColor: getThemeColor(theme, 'inputBackground'),
 		},
 		divButtonCopy: {
@@ -144,18 +157,18 @@ const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
 			marginVertical: 15,
 		},
 		buttonCopy: {},
-		cpfStatus: {
-			backgroundColor: cpfIsValidResult ? '#4CAF50' : '#F44336',
+		creditCardStatus: {
+			backgroundColor: creditCardIsValidResult ? '#4CAF50' : '#F44336',
 			padding: 10,
 			borderRadius: 5,
 			alignItems: 'center',
 			justifyContent: 'center',
 		},
-		validCpfText: {
+		validCreditCardText: {
 			fontSize: RFValue(18),
 			color: '#FFFFFF',
 		},
-		invalidCpfText: {
+		invalidCreditCardText: {
 			fontSize: RFValue(18),
 			color: '#FFFFFF',
 		},

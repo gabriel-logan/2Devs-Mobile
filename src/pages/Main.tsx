@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 import { View, Text, TouchableOpacity, StyleSheet, Switch, useColorScheme } from 'react-native';
 
 import { Image } from 'expo-image';
+import * as Linking from 'expo-linking';
 
 import { useTheme } from '../components/ThemeContext';
 
 import getThemeColor from '../configs/colors';
 import { RFValue, width } from '../components/Responsive';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTranslation } from 'react-i18next';
 
 export default function Main() {
+	const { t, i18n } = useTranslation();
 	const { theme, toggleTheme } = useTheme();
 	const systemTheme = useColorScheme() as typeof theme;
 
@@ -43,7 +48,7 @@ export default function Main() {
 		},
 		buttonText: {
 			color: '#fff',
-			fontSize: 16,
+			fontSize: RFValue(16),
 			fontWeight: 'bold',
 			textAlign: 'center',
 		},
@@ -53,7 +58,7 @@ export default function Main() {
 			width: width(100),
 		},
 		themeTitle: {
-			fontSize: 20,
+			fontSize: RFValue(20),
 			fontWeight: 'bold',
 			marginBottom: 15,
 			color: getThemeColor(theme, 'text'), // Usando a paleta de cores para o texto
@@ -67,7 +72,7 @@ export default function Main() {
 			paddingHorizontal: 20,
 		},
 		themeText: {
-			fontSize: 18,
+			fontSize: RFValue(18),
 			color: getThemeColor(theme, 'text'), // Usando a paleta de cores para o texto
 		},
 		switch: {
@@ -88,11 +93,24 @@ export default function Main() {
 		}
 
 		setSelectedTheme(selectedTheme);
+		await AsyncStorage.setItem('themeSelected', selectedTheme);
+	};
+
+	const changeLanguage = () => {
+		i18n.changeLanguage(i18n.language === 'en' ? 'ptBR' : 'en');
 	};
 
 	const blurhash =
 		'|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 
+	useEffect(() => {
+		(async () => {
+			const getThemeCoice = (await AsyncStorage.getItem('themeSelected')) as typeof theme | null;
+			if (getThemeCoice) {
+				setSelectedTheme(getThemeCoice);
+			}
+		})();
+	}, []);
 	return (
 		<View style={styles.container}>
 			<Image
@@ -103,23 +121,28 @@ export default function Main() {
 				}
 				placeholder={blurhash}
 				contentFit="cover"
-				transition={1000}
+				transition={350}
 				style={styles.logo}
 			/>
-			<Text style={styles.headerText}>Bem-vindo ao 2Devs</Text>
+			<Text style={styles.headerText}>{t('Bem-vindo ao 2Devs')}</Text>
 
-			<TouchableOpacity style={styles.button} onPress={() => alert('Classificar na Loja')}>
-				<Text style={styles.buttonText}>Avalie o aplicativo</Text>
+			<TouchableOpacity
+				style={styles.button}
+				onPress={() =>
+					Linking.openURL('https://play.google.com/store/apps/details?id=com.gabriellogan.toDevs')
+				}
+			>
+				<Text style={styles.buttonText}>{t('Avalie o aplicativo')}</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={styles.button} onPress={() => alert('Alterar Idioma abre um modal')}>
-				<Text style={styles.buttonText}>Alterar idioma</Text>
+			<TouchableOpacity style={styles.button} onPress={changeLanguage}>
+				<Text style={styles.buttonText}>{t('Alterar idioma')}</Text>
 			</TouchableOpacity>
 
 			<View style={styles.themeContainer}>
-				<Text style={styles.themeTitle}>Escolha o Tema:</Text>
+				<Text style={styles.themeTitle}>{t('Escolha o Tema:')}</Text>
 				<View style={styles.themeOption}>
-					<Text style={styles.themeText}>Tema claro</Text>
+					<Text style={styles.themeText}>{t('Tema claro')}</Text>
 					<Switch
 						thumbColor={theme === 'dark' ? '#4b95f5' : '#f4f3f4'}
 						trackColor={{ false: '#767577', true: '#81b0ff' }}
@@ -129,7 +152,7 @@ export default function Main() {
 					/>
 				</View>
 				<View style={styles.themeOption}>
-					<Text style={styles.themeText}>Tema escuro</Text>
+					<Text style={styles.themeText}>{t('Tema escuro')}</Text>
 					<Switch
 						thumbColor={theme === 'dark' ? '#4b95f5' : '#f4f3f4'}
 						trackColor={{ false: '#767577', true: '#81b0ff' }}
@@ -139,7 +162,7 @@ export default function Main() {
 					/>
 				</View>
 				<View style={styles.themeOption}>
-					<Text style={styles.themeText}>Tema do sistema</Text>
+					<Text style={styles.themeText}>{t('Tema do sistema')}</Text>
 					<Switch
 						thumbColor={theme === 'dark' ? '#4b95f5' : '#f4f3f4'}
 						trackColor={{ false: '#767577', true: '#81b0ff' }}

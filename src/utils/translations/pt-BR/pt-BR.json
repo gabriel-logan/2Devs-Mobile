@@ -1,5 +1,72 @@
 {
-	"translations": {
-		"Hello": "Olá"
+	"translation": {
+		"Ola": "Olá",
+		"Principal": "Principal",
+    "Base64": "Base64",
+    "Validador de Cpf": "Validador de Cpf",
+    "Gerador de Cpf": "Gerador de Cpf",
+
+    "Codigo Binario": "Codigo Binario",
+    "Validador de Cnpj": "Validador de Cnpj",
+    "Gerador de Cnpj": "Gerador de Cnpj",
+		"Bem-vindo ao 2Devs": "Bem-vindo ao 2Devs",
+
+    "Avalie o aplicativo": "Avalie o aplicativo",
+    "Alterar idioma": "Alterar idioma",
+    "Escolha o Tema:": "Escolha o Tema:",
+    "Tema claro": "Tema claro",
+    "Tema escuro": "Tema escuro",
+    "Tema do sistema": "Tema do sistema",
+
+		"Validador de CPF": "Validador de CPF",
+    "Digite ou cole um CPF:": "Digite ou cole um CPF:",
+    "Validar CPF": "Validar CPF",
+    "CPF Válido": "CPF Válido",
+    "CPF Inválido": "CPF Inválido",
+
+		"Validador de CNPJ": "Validador de CNPJ",
+    "Digite ou cole um CNPJ:": "Digite ou cole um CNPJ:",
+    "Validar CNPJ": "Validar CNPJ",
+    "CNPJ Válido": "CNPJ Válido",
+    "CNPJ Inválido": "CNPJ Inválido",
+
+		"Gerador de CPF": "Gerador de CPF",
+    "Gerar com pontuação ?": "Gerar com pontuação ?",
+    "CPF Gerado:": "CPF Gerado:",
+    "Gerar CPF": "Gerar CPF",
+		"Gerador de CNPJ": "Gerador de CNPJ",
+    "CNPJ Gerado:": "CNPJ Gerado:",
+
+    "Clique no botão abaixo": "Clique no botão abaixo",
+    "Gerar CNPJ": "Gerar CNPJ",
+		"Apagar apos gerar ?": "Apagar apos gerar ?",
+    "Cole ou digite o texto aqui": "Cole ou digite o texto aqui",
+    "Codificar para Base64": "Codificar para Base64",
+    "Cole ou digite o código Base64 aqui": "Cole ou digite o código Base64 aqui",
+    "Decodificar para Texto": "Decodificar para Texto",
+
+		"Texto:": "Texto:",
+    "Digite o texto aqui": "Digite o texto aqui",
+    "Codificar para Binário": "Codificar para Binário",
+    "Código Binário:": "Código Binário:",
+    "O código binário será exibido aqui": "O código binário será exibido aqui",
+
+		"Gerador de Cartão de credito": "Gerador de Cartão de crédito",
+		"Validador de Cartão de credito": "Validador de Cartão de crédito",
+
+		"Gerador de Cartão de crédito": "Gerador de Cartão de Crédito",
+		"Gerar com espaços ?": "Gerar com espaços ?",
+		"Cartão de crédito Gerado:": "Cartão de Crédito Gerado:",
+		"Gerar Cartão de crédito": "Gerar Cartão de Crédito",
+
+		"Validador de Cartão de crédito": "Validador de Cartão de Crédito",
+		"Digite ou cole um Cartão de crédito:": "Digite ou cole um Cartão de Crédito:",
+		"Validar Cartão de crédito": "Validar Cartão de Crédito",
+		"Cartão de crédito Válido": "Cartão de Crédito Válido",
+		"Cartão de crédito Inválido": "Cartão de Crédito Inválido",
+
+		"Erro": "Erro",
+		"O texo não é um codigo base64 valido": "O texo que você tentou decodificar não é um codigo base64 valido",
+		"O valor de entrada não deve ser uma string vazia": "O valor de entrada não deve ser uma string vazia"
 	}
 }
