@@ -67,6 +67,20 @@
 
 		"Erro": "Erro",
 		"O texo não é um codigo base64 valido": "O texo que você tentou decodificar não é um codigo base64 valido",
-		"O valor de entrada não deve ser uma string vazia": "O valor de entrada não deve ser uma string vazia"
+		"O valor de entrada não deve ser uma string vazia": "O valor de entrada não deve ser uma string vazia",
+		"Informações": "Informações",
+		"Informações Gerais": "Informações Gerais",
+		"Bem-vindo à nossa aplicação de exemplo": "Bem-vindo à nossa aplicação. Aqui você encontrará informações importantes sobre o nosso aplicativo.",
+    "Se você precisar de uma validação específica": "Se você precisar de uma validação específica, envie um email para o contato abaixo informando sua ocorrência.",
+    "Se ocorreu algum erro, entre em contato abaixo": "Se ocorreu algum erro, entre em contato abaixo.",
+    "Se quiser contribuir, pode fazer um commit": "Se quiser contribuir, pode fazer um commit no repositório público deste aplicativo. Este aplicativo é código fonte aberto.",
+		"Este codigo opensorce": "Este aplicativo é código-fonte aberto.",
+		"E-mail: contato@exemplo.com": "E-mail: gabriellogan1717@gmail.com",
+		"Políticas de Privacidade": "Políticas de Privacidade",
+		"Termos de Uso": "Termos de Uso",
+		"Contribuidores": "Contribuidores",
+		"Gabriel Logan": "Gabriel Logan",
+		"Ir para o repositório GitHub": "Ir para o repositório GitHub",
+		"Contatos": "Contatos"
 	}
 }

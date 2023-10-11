@@ -59,6 +59,21 @@
 		"Cartão de crédito Inválido": "Invalid Credit Card",
 		"Erro": "Error",
 		"O texo não é um codigo base64 valido": "The text you tried to decode is not valid base64 code",
-		"O valor de entrada não deve ser uma string vazia": "Input value must not be an empty string"
+		"O valor de entrada não deve ser uma string vazia": "Input value must not be an empty string",
+
+		"Informações Gerais": "General Information",
+		"Informações": "Information",
+		"Bem-vindo à nossa aplicação de exemplo": "Welcome to our example application. Here you will find important information about our app.",
+		"Se você precisar de uma validação específica": "If you need specific validation, please send an email to the contact below with details of your request.",
+		"Se ocorreu algum erro, entre em contato abaixo": "If you encountered any errors, please contact us below.",
+		"Se quiser contribuir, pode fazer um commit": "If you want to contribute, you can make a commit to the public repository of this application. This app is open source.",
+		"Este código opensorce": "This application is open-source.",
+		"E-mail: contato@exemplo.com": "Email: gabriellogan1717@gmail.com",
+		"Políticas de Privacidade": "Privacy Policy",
+		"Termos de Uso": "Terms of Use",
+		"Contribuidores": "Contributors",
+		"Gabriel Logan": "Gabriel Logan",
+		"Ir para o repositório GitHub": "Go to GitHub Repository",
+		"Contatos": "Contacts"
 	}
 }

@@ -9,6 +9,7 @@ import CnpjValidatorPage from '../pages/validators/Cnpj';
 import CnpjGeneratorPage from '../pages/generators/Cnpj';
 import CreditCardValidatorPage from '../pages/validators/CreditCard';
 import CreditCardGeneratorPage from '../pages/generators/CreditCard';
+import GeneralInfoPage from '../pages/Informations';
 
 import CustomDrawerContent from '../components/DrawerContent';
 
@@ -37,6 +38,11 @@ export default function Routes() {
 			}}
 		>
 			<Drawer.Screen name="Main" options={{ title: t('Principal') }} component={Main} />
+			<Drawer.Screen
+				name="InfoPage"
+				options={{ title: t('Informações') }}
+				component={GeneralInfoPage}
+			/>
 			<Drawer.Screen name="Base64" options={{ title: t('Base64') }} component={Base64Page} />
 			<Drawer.Screen
 				name="CpfValidador"
