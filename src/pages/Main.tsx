@@ -96,7 +96,8 @@ export default function Main() {
 		await AsyncStorage.setItem('themeSelected', selectedTheme);
 	};
 
-	const changeLanguage = () => {
+	const changeLanguage = async () => {
+		await AsyncStorage.setItem('selectedLanguage', i18n.language === 'en' ? 'ptBR' : 'en');
 		i18n.changeLanguage(i18n.language === 'en' ? 'ptBR' : 'en');
 	};
 
