@@ -90,11 +90,17 @@ export default function GeneralInfoPage() {
 				<Text style={styles.sectionText}>{t('E-mail: contato@exemplo.com')}</Text>
 			</View>
 
-			<TouchableOpacity style={styles.linkButton}>
+			<TouchableOpacity
+				style={styles.linkButton}
+				onPress={() => Linking.openURL('https://gabriel-logan.github.io/2Devs-Mobile')}
+			>
 				<Text style={styles.buttonText}>{t('Políticas de Privacidade')}</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={styles.linkButton}>
+			<TouchableOpacity
+				style={styles.linkButton}
+				onPress={() => Linking.openURL('https://gabriel-logan.github.io/2Devs-Mobile/terms.html')}
+			>
 				<Text style={styles.buttonText}>{t('Termos de Uso')}</Text>
 			</TouchableOpacity>
 

@@ -1,4 +1,5 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Main from '../pages/Main';
 import Base64Page from '../pages/encodersAndDecoders/Base64';
@@ -11,6 +12,8 @@ import CreditCardValidatorPage from '../pages/validators/CreditCard';
 import CreditCardGeneratorPage from '../pages/generators/CreditCard';
 import GeneralInfoPage from '../pages/Informations';
 
+import PrivacyPolicesAndTerms from '../components/PrivacyPolicesAndTerms';
+
 import CustomDrawerContent from '../components/DrawerContent';
 
 import { useTheme } from '../components/ThemeContext';
@@ -21,7 +24,7 @@ import { useTranslation } from 'react-i18next';
 
 const Drawer = createDrawerNavigator();
 
-export default function Routes() {
+function DrawerNavigator() {
 	const { theme } = useTheme();
 	const { t } = useTranslation();
 
@@ -80,5 +83,16 @@ export default function Routes() {
 				component={CreditCardValidatorPage}
 			/>
 		</Drawer.Navigator>
+	);
+}
+
+const Stack = createNativeStackNavigator();
+
+export default function Routes() {
+	return (
+		<Stack.Navigator initialRouteName="Initial" screenOptions={{ headerShown: false }}>
+			<Stack.Screen name="Initial" component={PrivacyPolicesAndTerms} />
+			<Stack.Screen name="Drawer" component={DrawerNavigator} />
+		</Stack.Navigator>
 	);
 }
