@@ -81,6 +81,15 @@ export default function GeneralInfoPage() {
 					>
 						<Text style={styles.githubButtonText}>{t('Ir para o repositório GitHub')}</Text>
 					</TouchableOpacity>
+					<Text style={[styles.sectionText, { marginTop: 15 }]}>
+						{t('Você também pode me ajudar no buymeacoffe')}
+					</Text>
+					<TouchableOpacity
+						style={styles.githubButton}
+						onPress={() => Linking.openURL('https://www.buymeacoffee.com/gabriellogan')}
+					>
+						<Text style={styles.githubButtonText}>{t('Buy me a coffee')}</Text>
+					</TouchableOpacity>
 				</View>
 			</View>
 			<View style={styles.section}>

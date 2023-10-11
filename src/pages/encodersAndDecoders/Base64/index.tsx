@@ -37,11 +37,17 @@ export default function Base64Page() {
 	const [inputText, setInputText] = useState('');
 	const [base64Text, setBase64Text] = useState('');
 	const [cleanAlways, setCleanAlways] = useState(false);
+	const [considerSpace, setConsiderSpace] = useState(false);
 
 	const stylesWithTheme = styles(theme);
 
 	const encodeToBase64 = () => {
-		const encoded = base64.encode(inputText);
+		let encoded: string;
+		if (considerSpace) {
+			encoded = base64.encode(`${inputText}\n`);
+		} else {
+			encoded = base64.encode(inputText);
+		}
 		setBase64Text(encoded);
 		if (cleanAlways) {
 			setInputText('');
@@ -102,6 +108,10 @@ export default function Base64Page() {
 			if (base64AlwaysClean) {
 				setCleanAlways(JSON.parse(base64AlwaysClean));
 			}
+			const considerSpace = await AsyncStorage.getItem('considerSpaceAfterGenerate');
+			if (considerSpace) {
+				setConsiderSpace(JSON.parse(considerSpace));
+			}
 		})();
 	}, []);
 
@@ -120,6 +130,21 @@ export default function Base64Page() {
 						);
 					}}
 					color={cleanAlways ? '#5446bf' : undefined}
+				/>
+			</View>
+			<View style={[stylesWithTheme.section, { marginBottom: 15 }]}>
+				<Text style={stylesWithTheme.paragraph}>{t('Considerar espaço ?')}</Text>
+				<Checkbox
+					style={stylesWithTheme.checkbox}
+					value={considerSpace}
+					onValueChange={async (considerSpace) => {
+						setConsiderSpace(considerSpace.valueOf());
+						await AsyncStorage.setItem(
+							'considerSpaceAfterGenerate',
+							JSON.stringify(considerSpace.valueOf()),
+						);
+					}}
+					color={considerSpace ? '#5446bf' : undefined}
 				/>
 			</View>
 			<ScrollView showsVerticalScrollIndicator={false}>
