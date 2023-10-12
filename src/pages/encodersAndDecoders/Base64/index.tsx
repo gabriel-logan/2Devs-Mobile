@@ -15,11 +15,13 @@ import base64 from 'react-native-base64';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import * as Clipboard from 'expo-clipboard';
-import { useTheme } from '../../../components/ThemeContext';
-import getThemeColor from '../../../configs/colors';
-import { RFValue } from '../../../components/Responsive';
-
 import Checkbox from 'expo-checkbox';
+
+import { useTheme } from '../../../components/ThemeContext';
+
+import getThemeColor from '../../../configs/colors';
+
+import { RFValue } from '../../../components/Responsive';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 

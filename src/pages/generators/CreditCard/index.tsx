@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
 
 import * as Clipboard from 'expo-clipboard';
@@ -108,7 +107,6 @@ export default function CreditCardGeneratorPage() {
 					</TouchableOpacity>
 				</View>
 			</View>
-			<StatusBar style="auto" />
 		</View>
 	);
 }

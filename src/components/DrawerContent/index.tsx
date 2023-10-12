@@ -15,7 +15,7 @@ import { NavigationType } from '../../types/navigationProps';
 const drawerMenu: (
 	| {
 			title: string;
-			route: 'Main' | 'InfoPage';
+			route: 'Main' | 'InfoPage' | 'MyNetwork';
 			menuList?: undefined;
 	  }
 	| {
@@ -30,7 +30,8 @@ const drawerMenu: (
 					| 'CnpjValidador'
 					| 'CreditCardValidador'
 					| 'Base64'
-					| 'CodigoBinario';
+					| 'CodigoBinario'
+					| 'PasswordGerador';
 			}[];
 			route?: undefined;
 	  }
@@ -49,6 +50,7 @@ const drawerMenu: (
 			{ title: 'Gerador de Cpf', route: 'CpfGerador' },
 			{ title: 'Gerador de Cnpj', route: 'CnpjGerador' },
 			{ title: 'Gerador de Cartão de credito', route: 'CreditCardGerador' },
+			{ title: 'Gerador de senha', route: 'PasswordGerador' },
 		],
 	},
 	{
@@ -65,6 +67,10 @@ const drawerMenu: (
 			{ title: 'Base64', route: 'Base64' },
 			{ title: 'Codigo Binario', route: 'CodigoBinario' },
 		],
+	},
+	{
+		title: 'Minha rede',
+		route: 'MyNetwork',
 	},
 ];
 
@@ -102,10 +108,8 @@ const CustomDrawerContent = () => {
 							LayoutAnimation.configureNext(
 								LayoutAnimation.create(200, 'easeInEaseOut', 'opacity'),
 							);
-							if (index === 0) {
-								navigation.navigate('Main');
-							} else if (index === 1) {
-								navigation.navigate('InfoPage');
+							if (!item.menuList) {
+								navigation.navigate(item.route);
 							}
 							setMenuIndex(menuIndex === index ? -1 : index);
 						}}

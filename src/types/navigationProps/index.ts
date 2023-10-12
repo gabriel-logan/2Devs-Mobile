@@ -12,6 +12,9 @@ interface MyNavigationProps {
 	CreditCardValidador: undefined;
 	Base64: undefined;
 	CodigoBinario: undefined;
+	MyNetwork: undefined;
+	Mathematics: undefined;
+	PasswordGerador: undefined;
 }
 
 export type NavigationType = NavigationProp<MyNavigationProps>;

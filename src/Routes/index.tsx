@@ -11,6 +11,8 @@ import CnpjGeneratorPage from '../pages/generators/Cnpj';
 import CreditCardValidatorPage from '../pages/validators/CreditCard';
 import CreditCardGeneratorPage from '../pages/generators/CreditCard';
 import GeneralInfoPage from '../pages/Informations';
+import MyNetwork from '../pages/MyNetwork';
+import PasswordGenerator from '../pages/generators/PasswordGen';
 
 import PrivacyPolicesAndTerms from '../components/PrivacyPolicesAndTerms';
 
@@ -36,8 +38,6 @@ function DrawerNavigator() {
 				headerTitleStyle: { color: getThemeColor(theme, 'title') },
 				headerTintColor: getThemeColor(theme, 'title'),
 				drawerStyle: { backgroundColor: getThemeColor(theme, 'background') },
-				drawerActiveTintColor: getThemeColor(theme, 'text'),
-				drawerInactiveTintColor: getThemeColor(theme, 'text'),
 			}}
 		>
 			<Drawer.Group>
@@ -66,6 +66,11 @@ function DrawerNavigator() {
 					options={{ title: t('Gerador de Cartão de credito') }}
 					component={CreditCardGeneratorPage}
 				/>
+				<Drawer.Screen
+					name="PasswordGerador"
+					options={{ title: t('Gerador de senha') }}
+					component={PasswordGenerator}
+				/>
 			</Drawer.Group>
 			<Drawer.Group>
 				<Drawer.Screen
@@ -90,6 +95,13 @@ function DrawerNavigator() {
 					name="CodigoBinario"
 					options={{ title: t('Codigo Binario') }}
 					component={BinaryCodePage}
+				/>
+			</Drawer.Group>
+			<Drawer.Group>
+				<Drawer.Screen
+					name="MyNetwork"
+					options={{ title: t('Minha rede') }}
+					component={MyNetwork}
 				/>
 			</Drawer.Group>
 		</Drawer.Navigator>

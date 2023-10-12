@@ -91,6 +91,25 @@
 		"Alguma coisa errada aconteceu, contate o desenvolvedor": "Something went wrong, contact the developer",
 		"Geradores": "Generators",
 		"Validadores": "Validators",
-		"Encoders and Decoders": "Encoders and Decoders"
+		"Encoders and Decoders": "Encoders and Decoders",
+
+		"Informações de Rede": "Network Information",
+		"Endereço IP local:": "Local IP Address:",
+		"Endereço IP da rede:": "Network IP Address:",
+		"Modo Avião:": "Airplane Mode:",
+		"Houve um problema não identificado na solicitação, tente novamente mais tarde": "An unidentified problem occurred in the request, please try again later",
+		"Carregando...": "Loading...",
+		"Ativado": "Enabled",
+		"Desativado": "Disabled",
+		"Minha rede": "My network",
+
+		"Gerador de senha": "Password Generator",
+		"Utilize o nosso gerador para criar uma senha forte e segura.": "Use our generator to create a strong and secure password.",
+		"Personalizar": "Customize",
+		"Tamanho: ": "Length: ",
+		"Maiúsculas": "Uppercase",
+		"Números": "Numbers",
+		"Caracteres especiais": "Special Characters",
+		"Copiar senha": "Copy Password"
 	}
 }

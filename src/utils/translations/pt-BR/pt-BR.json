@@ -97,6 +97,25 @@
 		"Alguma coisa errada aconteceu, contate o desenvolvedor": "Alguma coisa errada aconteceu, contate o desenvolvedor",
 		"Geradores": "Geradores",
 		"Validadores": "Validadores",
-		"Encoders and Decoders": "Encoders e Decoders"
+		"Encoders and Decoders": "Encoders e Decoders",
+
+		"Informações de Rede": "Informações de Rede",
+		"Endereço IP local:": "Endereço IP Local:",
+		"Endereço IP da rede:": "Endereço IP da Rede:",
+		"Modo Avião:": "Modo Avião:",
+		"Houve um problema não identificado na solicitação, tente novamente mais tarde": "Houve um problema não identificado na solicitação, tente novamente mais tarde",
+		"Carregando...": "Carregando...",
+		"Ativado": "Ativado",
+		"Desativado": "Desativado",
+		"Minha rede": "Minha rede",
+
+		"Gerador de senha": "Gerador de senha",
+		"Utilize o nosso gerador para criar uma senha forte e segura.": "Utilize o nosso gerador para criar uma senha forte e segura.",
+		"Personalizar": "Personalizar",
+		"Tamanho: ": "Tamanho: ",
+		"Maiúsculas": "Maiúsculas",
+		"Números": "Números",
+		"Caracteres especiais": "Caracteres especiais",
+		"Copiar senha": "Copiar senha"
 	}
 }
