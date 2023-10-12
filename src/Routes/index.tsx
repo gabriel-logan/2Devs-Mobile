@@ -30,7 +30,7 @@ function DrawerNavigator() {
 
 	return (
 		<Drawer.Navigator
-			drawerContent={(props) => <CustomDrawerContent {...props} theme={theme} />}
+			drawerContent={() => <CustomDrawerContent />}
 			screenOptions={{
 				headerStyle: { backgroundColor: getThemeColor(theme, 'background') },
 				headerTitleStyle: { color: getThemeColor(theme, 'title') },
@@ -40,48 +40,58 @@ function DrawerNavigator() {
 				drawerInactiveTintColor: getThemeColor(theme, 'text'),
 			}}
 		>
-			<Drawer.Screen name="Main" options={{ title: t('Principal') }} component={Main} />
-			<Drawer.Screen
-				name="InfoPage"
-				options={{ title: t('Informações') }}
-				component={GeneralInfoPage}
-			/>
-			<Drawer.Screen name="Base64" options={{ title: t('Base64') }} component={Base64Page} />
-			<Drawer.Screen
-				name="CpfValidador"
-				options={{ title: t('Validador de Cpf') }}
-				component={CpfValidatorPage}
-			/>
-			<Drawer.Screen
-				name="CpfGerador"
-				options={{ title: t('Gerador de Cpf') }}
-				component={CpfGeradorPage}
-			/>
-			<Drawer.Screen
-				name="CodigoBinario"
-				options={{ title: t('Codigo Binario') }}
-				component={BinaryCodePage}
-			/>
-			<Drawer.Screen
-				name="CnpjValidador"
-				options={{ title: t('Validador de Cnpj') }}
-				component={CnpjValidatorPage}
-			/>
-			<Drawer.Screen
-				name="CnpjGerador"
-				options={{ title: t('Gerador de Cnpj') }}
-				component={CnpjGeneratorPage}
-			/>
-			<Drawer.Screen
-				name="CreditCardGerador"
-				options={{ title: t('Gerador de Cartão de credito') }}
-				component={CreditCardGeneratorPage}
-			/>
-			<Drawer.Screen
-				name="CreditCardValidador"
-				options={{ title: t('Validador de Cartão de credito') }}
-				component={CreditCardValidatorPage}
-			/>
+			<Drawer.Group>
+				<Drawer.Screen name="Main" options={{ title: t('Principal') }} component={Main} />
+			</Drawer.Group>
+			<Drawer.Group>
+				<Drawer.Screen
+					name="InfoPage"
+					options={{ title: t('Informações') }}
+					component={GeneralInfoPage}
+				/>
+			</Drawer.Group>
+			<Drawer.Group>
+				<Drawer.Screen
+					name="CpfGerador"
+					options={{ title: t('Gerador de Cpf') }}
+					component={CpfGeradorPage}
+				/>
+				<Drawer.Screen
+					name="CnpjGerador"
+					options={{ title: t('Gerador de Cnpj') }}
+					component={CnpjGeneratorPage}
+				/>
+				<Drawer.Screen
+					name="CreditCardGerador"
+					options={{ title: t('Gerador de Cartão de credito') }}
+					component={CreditCardGeneratorPage}
+				/>
+			</Drawer.Group>
+			<Drawer.Group>
+				<Drawer.Screen
+					name="CpfValidador"
+					options={{ title: t('Validador de Cpf') }}
+					component={CpfValidatorPage}
+				/>
+				<Drawer.Screen
+					name="CnpjValidador"
+					options={{ title: t('Validador de Cnpj') }}
+					component={CnpjValidatorPage}
+				/>
+				<Drawer.Screen
+					name="CreditCardValidador"
+					options={{ title: t('Validador de Cartão de credito') }}
+					component={CreditCardValidatorPage}
+				/>
+			</Drawer.Group>
+			<Drawer.Group>
+				<Drawer.Screen name="Base64" options={{ title: t('Base64') }} component={Base64Page} />
+				<Drawer.Screen
+					name="CodigoBinario"
+					options={{ title: t('Codigo Binario') }}
+					component={BinaryCodePage}
+				/>
+			</Drawer.Group>
 		</Drawer.Navigator>
 	);
 }

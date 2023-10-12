@@ -63,7 +63,7 @@
 
 		"Informações Gerais": "General Information",
 		"Informações": "Information",
-		"Bem-vindo à nossa aplicação de exemplo": "Welcome to our example application. Here you will find important information about our app.",
+		"Bem-vindo à nossa aplicação de exemplo": "Welcome to our application. Here you will find important information about our app.",
 		"Se você precisar de uma validação específica": "If you need specific validation, please send an email to the contact below with details of your request.",
 		"Se ocorreu algum erro, entre em contato abaixo": "If you encountered any errors, please contact us below.",
 		"Se quiser contribuir, pode fazer um commit": "If you want to contribute, you can make a commit to the public repository of this application. This app is open source.",
@@ -86,6 +86,11 @@
 		"Ler politicas de privacidade": "Read privacy policies",
 		"Continuar": "Continue",
 
-		"Considerar espaço ?": "Consider space?"
+		"Considerar espaço ?": "Consider space?",
+
+		"Alguma coisa errada aconteceu, contate o desenvolvedor": "Something went wrong, contact the developer",
+		"Geradores": "Generators",
+		"Validadores": "Validators",
+		"Encoders and Decoders": "Encoders and Decoders"
 	}
 }

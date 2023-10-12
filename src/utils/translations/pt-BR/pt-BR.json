@@ -92,6 +92,11 @@
 		"Ler politicas de privacidade": "Ler politicas de privacidade",
 		"Continuar": "Continuar",
 
-		"Considerar espaço ?": "Considerar espaço ?"
+		"Considerar espaço ?": "Considerar espaço ?",
+
+		"Alguma coisa errada aconteceu, contate o desenvolvedor": "Alguma coisa errada aconteceu, contate o desenvolvedor",
+		"Geradores": "Geradores",
+		"Validadores": "Validadores",
+		"Encoders and Decoders": "Encoders and Decoders"
 	}
 }
