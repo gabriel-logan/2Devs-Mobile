@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import {
-	View,
-	Text,
-	TouchableOpacity,
-	StyleSheet,
-	Switch,
-	useColorScheme,
-	Modal,
-} from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Switch, useColorScheme } from 'react-native';
 
 import { Image } from 'expo-image';
 import * as Linking from 'expo-linking';
@@ -16,12 +8,17 @@ import * as Linking from 'expo-linking';
 import { useTheme } from '../components/ThemeContext';
 
 import getThemeColor from '../configs/colors';
+
 import { RFValue, width } from '../components/Responsive';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { useTranslation } from 'react-i18next';
 
+import ChangeLangModal from './ChangeLandModal';
+
 export default function Main() {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	const { theme, toggleTheme } = useTheme();
 	const systemTheme = useColorScheme() as typeof theme;
 
@@ -88,27 +85,6 @@ export default function Main() {
 		switch: {
 			transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }],
 		},
-		modalContainer: {
-			flex: 1,
-			justifyContent: 'center',
-			alignItems: 'center',
-			backgroundColor: 'rgba(0, 0, 0, 0.5)', // Um fundo semi-transparente para o modal
-		},
-		scrollContainer: {
-			width: '80%', // Largura do conteúdo do ScrollView
-			backgroundColor: 'white', // Cor de fundo do ScrollView
-			borderRadius: 10,
-			padding: 20,
-		},
-		languageButton: {
-			padding: 10,
-			borderBottomWidth: 1,
-			borderBottomColor: '#ccc', // Cor da linha separadora
-		},
-		languageText: {
-			fontSize: 18,
-			fontWeight: 'bold',
-		},
 	});
 
 	const handleThemeChange = async (selectedTheme: typeof theme | 'system') => {
@@ -125,11 +101,6 @@ export default function Main() {
 
 		setSelectedTheme(selectedTheme);
 		await AsyncStorage.setItem('themeSelected', selectedTheme);
-	};
-
-	const changeLanguage = async (lang: string) => {
-		await AsyncStorage.setItem('selectedLanguage', lang);
-		i18n.changeLanguage(lang);
 	};
 
 	const blurhash =
@@ -171,30 +142,7 @@ export default function Main() {
 				<Text style={styles.buttonText}>{t('Alterar idioma')}</Text>
 			</TouchableOpacity>
 
-			<Modal visible={modalChangeLang} onRequestClose={() => setModalChangeLang(false)} transparent>
-				<TouchableOpacity style={styles.modalContainer} onPress={() => setModalChangeLang(false)}>
-					<View style={styles.scrollContainer}>
-						<TouchableOpacity
-							style={styles.languageButton}
-							onPress={() => {
-								changeLanguage('en');
-								setModalChangeLang(false);
-							}}
-						>
-							<Text style={styles.languageText}>English</Text>
-						</TouchableOpacity>
-						<TouchableOpacity
-							style={styles.languageButton}
-							onPress={() => {
-								changeLanguage('ptBR');
-								setModalChangeLang(false);
-							}}
-						>
-							<Text style={styles.languageText}>Português</Text>
-						</TouchableOpacity>
-					</View>
-				</TouchableOpacity>
-			</Modal>
+			<ChangeLangModal modalChangeLang={modalChangeLang} setModalChangeLang={setModalChangeLang} />
 
 			<View style={styles.themeContainer}>
 				<Text style={styles.themeTitle}>{t('Escolha o Tema:')}</Text>
