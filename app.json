@@ -2,7 +2,7 @@
   "expo": {
     "name": "2Devs",
     "slug": "2Devs",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Your All-in-One IT Solution, Data Generation, Validation, and Comprehensive Tools for Professionals in the Field of Technology. Your IT toolkit - generate, validate, and more!",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,7 +11,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#abbaab"
+      "backgroundColor": "#2ab7ca"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -22,7 +22,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#2ab7ca"
       },
       "package": "com.gabriellogan.toDevs",
       "versionCode": 5

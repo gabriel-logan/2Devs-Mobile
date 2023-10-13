@@ -17,6 +17,8 @@ import { useTranslation } from 'react-i18next';
 
 import ChangeLangModal from './ChangeLandModal';
 
+import { StatusBar } from 'expo-status-bar';
+
 export default function Main() {
 	const { t } = useTranslation();
 	const { theme, toggleTheme } = useTheme();
@@ -116,6 +118,7 @@ export default function Main() {
 	}, []);
 	return (
 		<View style={styles.container}>
+			<StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
 			<Image
 				source={
 					theme === 'light'
