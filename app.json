@@ -25,7 +25,7 @@
         "backgroundColor": "#2ab7ca"
       },
       "package": "com.gabriellogan.toDevs",
-      "versionCode": 5
+      "versionCode": 6
     },
     "web": {
       "favicon": "./assets/favicon.png"
