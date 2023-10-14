@@ -31,7 +31,10 @@ const drawerMenu: (
 					| 'CreditCardValidador'
 					| 'Base64'
 					| 'CodigoBinario'
-					| 'PasswordGerador';
+					| 'PasswordGerador'
+					| 'MmcMdc'
+					| 'LinearEquation'
+					| 'QuadraticEquation';
 			}[];
 			route?: undefined;
 	  }
@@ -66,6 +69,14 @@ const drawerMenu: (
 		menuList: [
 			{ title: 'Base64', route: 'Base64' },
 			{ title: 'Codigo Binario', route: 'CodigoBinario' },
+		],
+	},
+	{
+		title: 'Matemática',
+		menuList: [
+			{ title: 'Equação de primeiro grau', route: 'LinearEquation' },
+			{ title: 'Equação de segundo grau', route: 'QuadraticEquation' },
+			{ title: 'Mmc e Mdc', route: 'MmcMdc' },
 		],
 	},
 	{
@@ -143,28 +154,28 @@ const styles = (theme: 'dark' | 'light') =>
 		container: {
 			alignItems: 'center',
 			marginBottom: RFValue(20),
-			marginTop: RFValue(20),
+			marginTop: RFValue(35),
 		},
 		logo: {
 			width: RFValue(128 + 50),
 			height: RFValue((128 + 50) / 2),
-			marginBottom: 25,
+			marginBottom: RFValue(25),
 		},
 		menuItem: {
 			marginBottom: RFValue(10),
 			borderWidth: 0.5,
 			width: '90%',
-			padding: 5,
-			marginVertical: 6,
+			padding: RFValue(5),
+			marginVertical: RFValue(6),
 			borderRadius: 10,
 			backgroundColor: getThemeColor(theme, 'cardBackground'), // Defina as cores de fundo para light e dark
 		},
 		item: {
-			paddingVertical: 8,
+			paddingVertical: RFValue(8),
 		},
 		menuTitle: {
 			fontWeight: 'bold',
-			marginVertical: 5,
+			marginVertical: RFValue(5),
 			fontSize: RFValue(16),
 			paddingHorizontal: RFValue(16),
 			color: getThemeColor(theme, 'title'), // Defina as cores de texto para light e dark
@@ -172,7 +183,7 @@ const styles = (theme: 'dark' | 'light') =>
 		subMenu: {
 			paddingVertical: RFValue(14),
 			borderWidth: 0.25,
-			marginVertical: 5,
+			marginVertical: RFValue(5),
 			borderRadius: 8,
 			paddingHorizontal: RFValue(10),
 			backgroundColor: getThemeColor(theme, 'tertiaryBackground'), // Defina as cores de fundo para light e dark

@@ -13,8 +13,10 @@ interface MyNavigationProps {
 	Base64: undefined;
 	CodigoBinario: undefined;
 	MyNetwork: undefined;
-	Mathematics: undefined;
 	PasswordGerador: undefined;
+	MmcMdc: undefined;
+	LinearEquation: undefined;
+	QuadraticEquation: undefined;
 }
 
 export type NavigationType = NavigationProp<MyNavigationProps>;

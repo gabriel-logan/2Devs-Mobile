@@ -14,6 +14,10 @@ import GeneralInfoPage from '../pages/Informations';
 import MyNetwork from '../pages/MyNetwork';
 import PasswordGenerator from '../pages/generators/PasswordGen';
 
+import MmcMdcPage from '../pages/mathematics/MmcMdc';
+import LinearEquationPage from '../pages/mathematics/LinearEquation';
+import QuadraticEquationPage from '../pages/mathematics/QuadraticEquation';
+
 import PrivacyPolicesAndTerms from '../components/PrivacyPolicesAndTerms';
 
 import CustomDrawerContent from '../components/DrawerContent';
@@ -95,6 +99,19 @@ function DrawerNavigator() {
 					name="CodigoBinario"
 					options={{ title: t('Codigo Binario') }}
 					component={BinaryCodePage}
+				/>
+			</Drawer.Group>
+			<Drawer.Group>
+				<Drawer.Screen name="MmcMdc" options={{ title: t('Mmc e Mdc') }} component={MmcMdcPage} />
+				<Drawer.Screen
+					name="LinearEquation"
+					options={{ title: t('Equação de primeiro grau') }}
+					component={LinearEquationPage}
+				/>
+				<Drawer.Screen
+					name="QuadraticEquation"
+					options={{ title: t('Equação de segundo grau') }}
+					component={QuadraticEquationPage}
 				/>
 			</Drawer.Group>
 			<Drawer.Group>
