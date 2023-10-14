@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "= \"Sut vIghoSbe'\" jangmeH yavDaq +",
         "Equação inválida. Use o formato": "'ej quvqu' chotwI'. = + \"juHDaq'",
         "a não pode ser zero.": "'e' vIYajlaHbe'.",
-        "O valor de x é: ": "teHbogh rIntaH ghu'vam, 'ej Hurvo' ghe''e'. "
+        "O valor de x é: ": "teHbogh rIntaH ghu'vam, 'ej Hurvo' ghe''e'. ",
+        "First root:": "Qapla'. ",
+        "Second root:": "'etlh, qaStaHvIS jaj latlh. "
     }
 }

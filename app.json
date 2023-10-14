@@ -11,7 +11,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#00000000"
+      "backgroundColor": "#231f21"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -22,10 +22,10 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#ffffff00"
+        "backgroundColor": "#231f21"
       },
       "package": "com.gabriellogan.toDevs",
-      "versionCode": 6
+      "versionCode": 7
     },
     "web": {
       "favicon": "./assets/favicon.png"

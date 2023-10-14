@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Geben Sie die lineare Gleichung im Format \"ax + b = c\" ein.",
         "Equação inválida. Use o formato": "Ungültige Gleichung. Verwenden Sie das Format \"ax + b = c\".",
         "a não pode ser zero.": "A kann nicht Null sein.",
-        "O valor de x é: ": "Der Wert von x ist: "
+        "O valor de x é: ": "Der Wert von x ist: ",
+        "First root:": "Erste Wurzel: ",
+        "Second root:": "Zweite Wurzel: "
     }
 }

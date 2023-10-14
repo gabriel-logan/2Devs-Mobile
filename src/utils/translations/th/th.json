@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "ป้อนสมการเชิงเส้นในรูปแบบ \"ax + b = c\"",
         "Equação inválida. Use o formato": "สมการไม่ถูกต้อง ใช้รูปแบบ \"ax + b = c\"",
         "a não pode ser zero.": "a ไม่สามารถเป็นศูนย์ได้",
-        "O valor de x é: ": "ค่าของ x คือ: "
+        "O valor de x é: ": "ค่าของ x คือ: ",
+        "First root:": "รากแรก: ",
+        "Second root:": "รากที่สอง: "
     }
 }

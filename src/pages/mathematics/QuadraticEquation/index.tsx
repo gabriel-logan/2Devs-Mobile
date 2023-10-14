@@ -4,8 +4,6 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'reac
 
 import Checkbox from 'expo-checkbox';
 
-import loganmatic from 'loganmatic';
-
 import { useTheme } from '../../../components/ThemeContext';
 import getThemeColor from '../../../configs/colors';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -19,82 +17,61 @@ export default function QuadraticEquationPage() {
 	const [a, setA] = useState('');
 	const [b, setB] = useState('');
 	const [c, setC] = useState('');
+
 	const [aproxima, setAproxima] = useState(false);
 	const [deleteAfter, setDeleteAfter] = useState(false);
+
 	const [result, setResult] = useState('');
 
 	const valorARef = useRef<TextInput | null>(null);
 	const valorBRef = useRef<TextInput | null>(null);
 	const valorCRef = useRef<TextInput | null>(null);
 
+	const raizQuadrada = function (valorParaCalcular: number) {
+		return Math.pow(valorParaCalcular, 1 / 2);
+	};
+
 	const calculateQuadraticEquation = () => {
 		if (a && b && c) {
-			const resultado = loganmatic.raizDeSegundoGrau(Number(a), Number(b), Number(c));
-			if (deleteAfter) {
-				if (Number(a) === 0 && Number(b) === 0) {
-					return setResult(t('Constante = ') + resultado);
-				}
-				if (aproxima) {
-					if (typeof resultado === 'string') {
-						setResult(t(resultado));
-					} else if (Array.isArray(resultado) && resultado.length === 2) {
-						setResult(
-							`${t('Primeira raiz:')} ${resultado[0].toFixed(3)}, ${t(
-								'Segunda raiz:',
-							)} ${resultado[1].toFixed(3)}`,
-						);
-					} else if (!Array.isArray(resultado)) {
-						setResult(t('Possui apenas 1 raiz real em ' + resultado.toFixed(2)));
-					} else {
-						setResult(t('Resultado desconhecido'));
-					}
+			const numeroA = Number(a);
+			const numeroB = Number(b);
+			const numeroC = Number(c);
+
+			if (numeroA === 0 && numeroB === 0) {
+				return setResult(t('Constante = ' + numeroC));
+			}
+
+			if (Math.pow(numeroB, 2) - 4 * numeroA * numeroC < 0) {
+				return setResult(t('Não possui raizes reais'));
+			}
+
+			const raiz1 =
+				(-numeroB + raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) / (2 * numeroA);
+			const raiz2 =
+				(-numeroB - raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) / (2 * numeroA);
+
+			if (!Number.isNaN(raiz1) || !Number.isNaN(raiz2)) {
+				let resultMessage = '';
+
+				const aproximaRaiz1 = aproxima ? raiz1.toFixed(2) : raiz1;
+				const aproximaRaiz2 = aproxima ? raiz2.toFixed(2) : raiz2;
+
+				if (raiz1 === raiz2) {
+					resultMessage = t('Possui apenas 1 raiz real') + aproximaRaiz1;
 				} else {
-					if (typeof resultado === 'string') {
-						setResult(t(resultado));
-					} else if (Array.isArray(resultado) && resultado.length === 2) {
-						setResult(
-							`${t('Primeira raiz:')} ${resultado[0]}, ${t('Segunda raiz:')} ${resultado[1]}`,
-						);
-					} else if (!Array.isArray(resultado)) {
-						setResult(t('Possui apenas 1 raiz real em ' + resultado));
-					} else {
-						setResult(t('Resultado desconhecido'));
-					}
+					resultMessage =
+						t('First root:') + aproximaRaiz1 + ' ' + t('Second root:') + aproximaRaiz2;
 				}
-				setA('');
-				setB('');
-				setC('');
+
+				if (deleteAfter) {
+					setA('');
+					setB('');
+					setC('');
+				}
+
+				return setResult(resultMessage);
 			} else {
-				if (Number(a) === 0 && Number(b) === 0) {
-					return setResult(t('Constante = ') + resultado);
-				}
-				if (aproxima) {
-					if (typeof resultado === 'string') {
-						setResult(t(resultado));
-					} else if (Array.isArray(resultado) && resultado.length === 2) {
-						setResult(
-							`${t('Primeira raiz:')} ${resultado[0].toFixed(3)}, ${t(
-								'Segunda raiz:',
-							)} ${resultado[1].toFixed(3)}`,
-						);
-					} else if (!Array.isArray(resultado)) {
-						setResult(t('Possui apenas 1 raiz real em ' + resultado.toFixed(2)));
-					} else {
-						setResult(t('Resultado desconhecido'));
-					}
-				} else {
-					if (typeof resultado === 'string') {
-						setResult(t(resultado));
-					} else if (Array.isArray(resultado) && resultado.length === 2) {
-						setResult(
-							`${t('Primeira raiz:')} ${resultado[0]}, ${t('Segunda raiz:')} ${resultado[1]}`,
-						);
-					} else if (!Array.isArray(resultado)) {
-						setResult(t('Possui apenas 1 raiz real em ' + resultado));
-					} else {
-						setResult(t('Resultado desconhecido'));
-					}
-				}
+				Alert.alert(t('Erro'), t('Digite valores válidos para a, b e c'));
 			}
 		} else {
 			Alert.alert(t('Erro'), t('Digite valores válidos para a, b e c'));

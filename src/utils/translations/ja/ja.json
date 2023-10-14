@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "線形方程式を「ax + b = c」の形式で入力します",
         "Equação inválida. Use o formato": "無効な式です。\"ax + b = c\" の形式を使用します。",
         "a não pode ser zero.": "a を 0 にすることはできません。",
-        "O valor de x é: ": "x の値は次のとおりです。"
+        "O valor de x é: ": "x の値は次のとおりです。",
+        "First root:": "最初のルート:",
+        "Second root:": "2番目のルート:"
     }
 }

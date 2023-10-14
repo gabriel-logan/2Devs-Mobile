@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Skriv inn den lineære ligningen i formatet \"ax + b = c\"",
         "Equação inválida. Use o formato": "Ugyldig formel. Bruk formatet \"ax + b = c\".",
         "a não pode ser zero.": "A kan ikke være null.",
-        "O valor de x é: ": "Verdien av x er: "
+        "O valor de x é: ": "Verdien av x er: ",
+        "First root:": "Første rot: ",
+        "Second root:": "Andre rot: "
     }
 }

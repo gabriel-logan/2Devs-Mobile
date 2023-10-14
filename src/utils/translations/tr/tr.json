@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Doğrusal denklemi \"ax + b = c\" biçiminde girin",
         "Equação inválida. Use o formato": "Geçersiz denklem. \"ax + b = c\" biçimini kullanın.",
         "a não pode ser zero.": "a sıfır olamaz.",
-        "O valor de x é: ": "x'in değeri: "
+        "O valor de x é: ": "x'in değeri: ",
+        "First root:": "İlk kök: ",
+        "Second root:": "İkinci kök: "
     }
 }

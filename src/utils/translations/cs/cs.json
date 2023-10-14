@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Zadejte lineární rovnici ve formátu \"ax + b = c\"",
         "Equação inválida. Use o formato": "Neplatná rovnice. Použijte formát \"ax + b = c\".",
         "a não pode ser zero.": "a nemůže být nula.",
-        "O valor de x é: ": "Hodnota x je: "
+        "O valor de x é: ": "Hodnota x je: ",
+        "First root:": "První kořen: ",
+        "Second root:": "Druhý kořen: "
     }
 }

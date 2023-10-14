@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Voer die lineêre vergelyking in die formaat \"ax + b = c\" in",
         "Equação inválida. Use o formato": "Ongeldige vergelyking. Gebruik die formaat \"ax + b = c\".",
         "a não pode ser zero.": "a kan nie nul wees nie.",
-        "O valor de x é: ": "Die waarde van x is: "
+        "O valor de x é: ": "Die waarde van x is: ",
+        "First root:": "Eerste wortel: ",
+        "Second root:": "Tweede wortel: "
     }
 }

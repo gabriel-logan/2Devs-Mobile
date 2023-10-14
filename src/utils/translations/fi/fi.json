@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Kirjoita lineaarinen yhtälö muodossa \"ax + b = c\"",
         "Equação inválida. Use o formato": "Virheellinen yhtälö. Käytä muotoa \"ax + b = c\".",
         "a não pode ser zero.": "A ei voi olla nolla.",
-        "O valor de x é: ": "X: n arvo on: "
+        "O valor de x é: ": "X: n arvo on: ",
+        "First root:": "Ensimmäinen juuri: ",
+        "Second root:": "Toinen juuri: "
     }
 }

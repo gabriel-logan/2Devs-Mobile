@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "선형 방정식을 \"ax + b = c\" 형식으로 입력합니다.",
         "Equação inválida. Use o formato": "잘못된 수식입니다. \"ax + b = c\" 형식을 사용합니다.",
         "a não pode ser zero.": "a는 0이 될 수 없습니다.",
-        "O valor de x é: ": "x의 값은 다음과 같습니다. "
+        "O valor de x é: ": "x의 값은 다음과 같습니다. ",
+        "First root:": "첫 번째 루트 : ",
+        "Second root:": "두 번째 루트 : "
     }
 }

@@ -176,6 +176,8 @@
 		"Digite a equação linear no formato": "Digite a equação linear no formato \"ax + b = c\"",
 		"Equação inválida. Use o formato": "Equação inválida. Use o formato \"ax + b = c\".",
 		"a não pode ser zero.": "a não pode ser zero.",
-		"O valor de x é: ": "O valor de x é: "
+		"O valor de x é: ": "O valor de x é: ",
+		"First root:": "Primeira raiz: ",
+		"Second root:": "Segunda raiz: "
 	}
 }

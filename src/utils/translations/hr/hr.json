@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Unesite linearnu jednadžbu u obliku \"ax + b = c\"",
         "Equação inválida. Use o formato": "Jednadžba nije valjana. Koristite oblik \"ax + b = c\".",
         "a não pode ser zero.": "A ne može biti nula.",
-        "O valor de x é: ": "Vrijednost x je: "
+        "O valor de x é: ": "Vrijednost x je: ",
+        "First root:": "Prvi korijen: ",
+        "Second root:": "Drugi korijen: "
     }
 }

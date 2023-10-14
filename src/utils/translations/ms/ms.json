@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Masukkan persamaan linear dalam format \"ax + b = c\"",
         "Equação inválida. Use o formato": "Persamaan tidak sah. Gunakan format \"ax + b = c\".",
         "a não pode ser zero.": "a tidak boleh sifar.",
-        "O valor de x é: ": "Nilai x ialah: "
+        "O valor de x é: ": "Nilai x ialah: ",
+        "First root:": "Akar pertama: ",
+        "Second root:": "Akar kedua: "
     }
 }

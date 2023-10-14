@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Введите линейное уравнение в формате «ax + b = c»",
         "Equação inválida. Use o formato": "Недопустимое уравнение. Используйте формат «ax + b = c».",
         "a não pode ser zero.": "a не может быть равно нулю.",
-        "O valor de x é: ": "Значение x равно следующему: "
+        "O valor de x é: ": "Значение x равно следующему: ",
+        "First root:": "Первый корень: ",
+        "Second root:": "Второй корень: "
     }
 }

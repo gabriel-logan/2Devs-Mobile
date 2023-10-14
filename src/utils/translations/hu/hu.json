@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Adja meg a lineáris egyenletet \"ax + b = c\" formátumban",
         "Equação inválida. Use o formato": "Érvénytelen egyenlet. Használja az \"ax + b = c\" formátumot.",
         "a não pode ser zero.": "A nem lehet nulla.",
-        "O valor de x é: ": "Az x értéke: "
+        "O valor de x é: ": "Az x értéke: ",
+        "First root:": "Első gyökér: ",
+        "Second root:": "Második gyökér: "
     }
 }

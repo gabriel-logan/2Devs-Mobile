@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "فارمیٹ \"ax + b = c\" میں لکیری مساوات درج کریں",
         "Equação inválida. Use o formato": "غیر قانونی مساوات. فارمیٹ \"ax + b = c\" استعمال کریں۔",
         "a não pode ser zero.": "a صفر نہیں ہو سکتا۔",
-        "O valor de x é: ": "x کی قدر یہ ہے: "
+        "O valor de x é: ": "x کی قدر یہ ہے: ",
+        "First root:": "پہلی جڑ: ",
+        "Second root:": "دوسری جڑ: "
     }
 }

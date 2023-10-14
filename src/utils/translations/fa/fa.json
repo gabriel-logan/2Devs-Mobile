@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "معادله خطی را در قالب \"ax + b = c\" وارد کنید",
         "Equação inválida. Use o formato": "معادله نامعتبر. از فرمت \"ax + b = c\" استفاده کنید.",
         "a não pode ser zero.": "a نمیتواند صفر باشد.",
-        "O valor de x é: ": "مقدار x به این قرار است: "
+        "O valor de x é: ": "مقدار x به این قرار است: ",
+        "First root:": "ریشه اول: ",
+        "Second root:": "ریشه دوم: "
     }
 }

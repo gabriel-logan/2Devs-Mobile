@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "\"ax + b = c\" प्रारूप में रैखिक समीकरण दर्ज करें",
         "Equação inválida. Use o formato": "अमान्य समीकरण. \"ax + b = c\" स्वरूप का उपयोग करें।",
         "a não pode ser zero.": "a शून्य नहीं हो सकता।",
-        "O valor de x é: ": "x का मान क्या है? "
+        "O valor de x é: ": "x का मान क्या है? ",
+        "First root:": "पहला मूल: ",
+        "Second root:": "दूसरा मूल: "
     }
 }

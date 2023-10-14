@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Introduce la ecuación lineal en el formato \"ax + b = c\"",
         "Equação inválida. Use o formato": "Ecuación no válida. Utilice el formato \"ax + b = c\".",
         "a não pode ser zero.": "a no puede ser cero.",
-        "O valor de x é: ": "El valor de x es: "
+        "O valor de x é: ": "El valor de x es: ",
+        "First root:": "Primera raíz: ",
+        "Second root:": "Segunda raíz: "
     }
 }

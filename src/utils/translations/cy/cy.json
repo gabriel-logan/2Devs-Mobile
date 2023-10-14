@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Rhowch yr hafaliad llinol yn y fformat \"ax + b = c\"",
         "Equação inválida. Use o formato": "hafaliad annilys. Defnyddiwch y fformat \"ax + b = c\".",
         "a não pode ser zero.": "Ni all fod yn sero.",
-        "O valor de x é: ": "Gwerth x yw: "
+        "O valor de x é: ": "Gwerth x yw: ",
+        "First root:": "Gwreiddiau cyntaf: ",
+        "Second root:": "Ail wreiddyn: "
     }
 }

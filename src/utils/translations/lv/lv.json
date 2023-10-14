@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Ievadiet lineāro vienādojumu formātā \"ax + b = c\"",
         "Equação inválida. Use o formato": "Nederīgs vienādojums. Izmantojiet formātu \"ax + b = c\".",
         "a não pode ser zero.": "a nevar būt nulle.",
-        "O valor de x é: ": "X vērtība ir: "
+        "O valor de x é: ": "X vērtība ir: ",
+        "First root:": "Pirmā sakne: ",
+        "Second root:": "Otrā sakne: "
     }
 }

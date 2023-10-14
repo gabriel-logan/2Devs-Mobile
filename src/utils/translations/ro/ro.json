@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Introduceți ecuația liniară în formatul \"ax + b = c\"",
         "Equação inválida. Use o formato": "Ecuație nevalidă. Utilizați formatul \"ax + b = c\".",
         "a não pode ser zero.": "a nu poate fi zero.",
-        "O valor de x é: ": "Valoarea lui x este: "
+        "O valor de x é: ": "Valoarea lui x este: ",
+        "First root:": "Prima rădăcină: ",
+        "Second root:": "A doua rădăcină: "
     }
 }

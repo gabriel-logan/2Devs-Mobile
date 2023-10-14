@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Εισαγάγετε τη γραμμική εξίσωση με τη μορφή \"ax + b = c\"",
         "Equação inválida. Use o formato": "Μη έγκυρη εξίσωση. Χρησιμοποιήστε τη μορφή \"ax + b = c\".",
         "a não pode ser zero.": "Το A δεν μπορεί να είναι μηδέν.",
-        "O valor de x é: ": "Η τιμή του x είναι: "
+        "O valor de x é: ": "Η τιμή του x είναι: ",
+        "First root:": "Πρώτη ρίζα: ",
+        "Second root:": "Δεύτερη ρίζα: "
     }
 }

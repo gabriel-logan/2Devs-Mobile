@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Ange den linjära ekvationen i formatet \"ax + b = c\"",
         "Equação inválida. Use o formato": "Ogiltig ekvation. Använd formatet \"ax + b = c\".",
         "a não pode ser zero.": "a kan inte vara noll.",
-        "O valor de x é: ": "Värdet på x är: "
+        "O valor de x é: ": "Värdet på x är: ",
+        "First root:": "Första roten: ",
+        "Second root:": "Andra roten: "
     }
 }

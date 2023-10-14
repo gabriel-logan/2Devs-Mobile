@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "הזן את המשוואה הליניארית בתבנית \"ax + b = c\"",
         "Equação inválida. Use o formato": "משוואה לא חוקית. השתמש בפורמט \"ax + b = c\".",
         "a não pode ser zero.": "A לא יכול להיות אפס.",
-        "O valor de x é: ": "הערך של x הוא: "
+        "O valor de x é: ": "הערך של x הוא: ",
+        "First root:": "שורש ראשון: ",
+        "Second root:": "שורש שני: "
     }
 }

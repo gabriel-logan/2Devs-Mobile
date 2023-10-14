@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Введіть лінійне рівняння у форматі «ax + b = c»",
         "Equação inválida. Use o formato": "Неприпустиме рівняння. Використовуйте формат «ax + b = c».",
         "a não pode ser zero.": "А не може дорівнювати нулю.",
-        "O valor de x é: ": "Значення x дорівнює: "
+        "O valor de x é: ": "Значення x дорівнює: ",
+        "First root:": "Перший корінь: ",
+        "Second root:": "Другий корінь: "
     }
 }

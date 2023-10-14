@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Įveskite tiesinę lygtį formatu \"ax + b = c\"",
         "Equação inválida. Use o formato": "Neteisinga lygtis. Naudokite formatą \"ax + b = c\".",
         "a não pode ser zero.": "a negali būti nulis.",
-        "O valor de x é: ": "x vertė yra: "
+        "O valor de x é: ": "x vertė yra: ",
+        "First root:": "Pirmoji šaknis: ",
+        "Second root:": "Antroji šaknis: "
     }
 }

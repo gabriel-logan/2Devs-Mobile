@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Færið línulegu jöfnuna inn á sniðinu \"ax + b = c\"",
         "Equação inválida. Use o formato": "Ógild jafna. Notið sniðið \"ax + b = c\".",
         "a não pode ser zero.": "a getur ekki verið núll.",
-        "O valor de x é: ": "Gildi x er: "
+        "O valor de x é: ": "Gildi x er: ",
+        "First root:": "Fyrsta rót: ",
+        "Second root:": "Önnur rót: "
     }
 }

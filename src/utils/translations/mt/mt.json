@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Daħħal l-ekwazzjoni lineari fil-format \"ax + b = c\"",
         "Equação inválida. Use o formato": "Ekwazzjoni invalida. Uża l-format \"ax + b = c\".",
         "a não pode ser zero.": "a ma jistax ikun żero.",
-        "O valor de x é: ": "Il-valur ta' x huwa: "
+        "O valor de x é: ": "Il-valur ta' x huwa: ",
+        "First root:": "L-ewwel għerq: ",
+        "Second root:": "It-tieni għerq: "
     }
 }

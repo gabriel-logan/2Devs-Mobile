@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "以“ax + b = c”格式輸入線性方程",
         "Equação inválida. Use o formato": "無效的公式。使用格式“ax + b = c”。",
         "a não pode ser zero.": "a 不能為零。",
-        "O valor de x é: ": "x 的值為："
+        "O valor de x é: ": "x 的值為：",
+        "First root:": "第一個根：",
+        "Second root:": "第二個根："
     }
 }

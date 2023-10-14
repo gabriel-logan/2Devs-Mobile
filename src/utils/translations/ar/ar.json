@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "أدخل المعادلة الخطية بالتنسيق \"ax + b = c\"",
         "Equação inválida. Use o formato": "معادلة غير صالحة. استخدم التنسيق \"ax + b = c\".",
         "a não pode ser zero.": "(أ) لا يمكن أن يكون صفرا.",
-        "O valor de x é: ": "قيمة x هي: "
+        "O valor de x é: ": "قيمة x هي: ",
+        "First root:": "الجذر الأول: ",
+        "Second root:": "الجذر الثاني: "
     }
 }

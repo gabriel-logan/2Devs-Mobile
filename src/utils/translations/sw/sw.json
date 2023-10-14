@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Ingiza usawa wa mstari katika umbizo \"ax + b = c\"",
         "Equação inválida. Use o formato": "Mlingano batili. Tumia muundo wa \"ax + b = c\".",
         "a não pode ser zero.": "a haiwezi kuwa sifuri.",
-        "O valor de x é: ": "Thamani ya x ni: "
+        "O valor de x é: ": "Thamani ya x ni: ",
+        "First root:": "Mzizi wa kwanza: ",
+        "Second root:": "Mzizi wa pili: "
     }
 }

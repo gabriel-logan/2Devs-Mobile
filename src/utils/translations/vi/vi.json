@@ -151,6 +151,8 @@
         "Digite a equação linear no formato": "Nhập phương trình tuyến tính theo định dạng \"ax + b = c\"",
         "Equação inválida. Use o formato": "Phương trình không hợp lệ. Sử dụng định dạng \"ax + b = c\".",
         "a não pode ser zero.": "A không thể bằng không.",
-        "O valor de x é: ": "Giá trị của x là: "
+        "O valor de x é: ": "Giá trị của x là: ",
+        "First root:": "Gốc thứ nhất: ",
+        "Second root:": "Gốc thứ hai: "
     }
 }
