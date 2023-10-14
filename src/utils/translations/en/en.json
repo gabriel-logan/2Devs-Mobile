@@ -132,6 +132,44 @@
 
 		"Força da Senha": "Password Strength:",
 		"Tempo estimado para quebrar a senha": "Estimated Time to Crack Password:",
-		"Os cálculos são baseados em um processador de 4 GHz": "Calculations are based on a 4 GHz processor."
+		"Os cálculos são baseados em um processador de 4 GHz": "Calculations are based on a 4 GHz processor.",
+
+		"Matemática": "Mathematics",
+
+		"Digite os números a calcular": "Enter the numbers to calculate",
+		"Ex. 4, 8, 12": "E.g. 4, 8, 12",
+		"Digite valores numéricos separados por vírgulas": "Enter numeric values separated by commas",
+		"Digite valores válidos, separados por vírgulas": "Enter valid values separated by commas",
+		"Calcular": "Calculate",
+		"Mmc entre": "LCM between",
+		"Mdc entre": "GCD between",
+		"=": "=",
+
+		"Mmc e Mdc": "Lcm and Gcd",
+		"Equação de primeiro grau": "Linear Equation",
+		"Equação de segundo grau": "Quadratic Equation",
+
+		"Não possui raizes reais": "Does not have real roots",
+		"Possui apenas 1 raiz real": "Has only 1 real root",
+		"Constante = ": "Constant = ",
+
+		"Digite o valor de A:": "Enter the value of A:",
+		"Termo que acompanha o x², ex: 5x²": "Term accompanying x², e.g., 5x²",
+		"Digite o valor de B:": "Enter the value of B:",
+		"Termo que acompanha o x, ex: 3x": "Term accompanying x, e.g., 3x",
+		"Digite o valor de C:": "Enter the value of C:",
+		"Termo independente, ex: -4": "Independent term, e.g., -4",
+		"Usar aproximação ?": "Use approximation?",
+		"Resultado: ": "Result: ",
+		"Primeira raiz:": "First root:",
+		"Segunda raiz:": "Second root:",
+		"Resultado desconhecido": "Unknown result",
+		"Digite valores válidos para a, b e c": "Enter valid values for a, b, and c",
+		"Limpar campos após gerar ?": "Clear fields after generating?",
+
+		"Digite a equação linear no formato": "Enter the linear equation in the format \"ax + b = c\"",
+		"Equação inválida. Use o formato": "Invalid equation. Use the format \"ax + b = c\".",
+		"a não pode ser zero.": "a cannot be zero.",
+		"O valor de x é: ": "The value of x is: "
 	}
 }

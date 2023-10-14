@@ -84,9 +84,6 @@ export default function Main() {
 			fontSize: RFValue(16),
 			color: getThemeColor(theme, 'text'), // Usando a paleta de cores para o texto
 		},
-		switch: {
-			transform: [{ scaleX: 1 }, { scaleY: 1 }],
-		},
 	});
 
 	const handleThemeChange = async (selectedTheme: typeof theme | 'system') => {
@@ -154,7 +151,6 @@ export default function Main() {
 					<Switch
 						thumbColor={theme === 'dark' ? '#4b95f5' : '#f4f3f4'}
 						trackColor={{ false: '#767577', true: '#81b0ff' }}
-						style={styles.switch}
 						value={selectedTheme === 'light'} // Define o valor do switch com base no tema selecionado
 						onValueChange={() => handleThemeChange('light')}
 					/>
@@ -164,7 +160,6 @@ export default function Main() {
 					<Switch
 						thumbColor={theme === 'dark' ? '#4b95f5' : '#f4f3f4'}
 						trackColor={{ false: '#767577', true: '#81b0ff' }}
-						style={styles.switch}
 						value={selectedTheme === 'dark'} // Define o valor do switch com base no tema selecionado
 						onValueChange={() => handleThemeChange('dark')}
 					/>
@@ -174,7 +169,6 @@ export default function Main() {
 					<Switch
 						thumbColor={theme === 'dark' ? '#4b95f5' : '#f4f3f4'}
 						trackColor={{ false: '#767577', true: '#81b0ff' }}
-						style={styles.switch}
 						value={selectedTheme === 'system'} // Define o valor do switch com base no tema selecionado
 						onValueChange={() => handleThemeChange('system')}
 					/>

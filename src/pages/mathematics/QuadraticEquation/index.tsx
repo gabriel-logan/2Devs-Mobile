@@ -1,73 +1,234 @@
-import React, { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+
+import Checkbox from 'expo-checkbox';
+
+import loganmatic from 'loganmatic';
+
+import { useTheme } from '../../../components/ThemeContext';
+import getThemeColor from '../../../configs/colors';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { RFValue } from '../../../components/Responsive';
 
 export default function QuadraticEquationPage() {
 	const { t } = useTranslation();
+	const { theme } = useTheme();
+	const stylesWithTheme = styles(theme);
 
 	const [a, setA] = useState('');
 	const [b, setB] = useState('');
 	const [c, setC] = useState('');
-	const [result, setResult] = useState(null);
+	const [aproxima, setAproxima] = useState(false);
+	const [deleteAfter, setDeleteAfter] = useState(false);
+	const [result, setResult] = useState('');
+
+	const valorARef = useRef<TextInput | null>(null);
+	const valorBRef = useRef<TextInput | null>(null);
+	const valorCRef = useRef<TextInput | null>(null);
 
 	const calculateQuadraticEquation = () => {
-		// Implemente aqui a lógica para calcular a equação quadrática com os valores de a, b e c.
-		// O resultado pode ser armazenado em setResult.
+		if (a && b && c) {
+			const resultado = loganmatic.raizDeSegundoGrau(Number(a), Number(b), Number(c));
+			if (deleteAfter) {
+				if (Number(a) === 0 && Number(b) === 0) {
+					return setResult(t('Constante = ') + resultado);
+				}
+				if (aproxima) {
+					if (typeof resultado === 'string') {
+						setResult(t(resultado));
+					} else if (Array.isArray(resultado) && resultado.length === 2) {
+						setResult(
+							`${t('Primeira raiz:')} ${resultado[0].toFixed(3)}, ${t(
+								'Segunda raiz:',
+							)} ${resultado[1].toFixed(3)}`,
+						);
+					} else if (!Array.isArray(resultado)) {
+						setResult(t('Possui apenas 1 raiz real em ' + resultado.toFixed(2)));
+					} else {
+						setResult(t('Resultado desconhecido'));
+					}
+				} else {
+					if (typeof resultado === 'string') {
+						setResult(t(resultado));
+					} else if (Array.isArray(resultado) && resultado.length === 2) {
+						setResult(
+							`${t('Primeira raiz:')} ${resultado[0]}, ${t('Segunda raiz:')} ${resultado[1]}`,
+						);
+					} else if (!Array.isArray(resultado)) {
+						setResult(t('Possui apenas 1 raiz real em ' + resultado));
+					} else {
+						setResult(t('Resultado desconhecido'));
+					}
+				}
+				setA('');
+				setB('');
+				setC('');
+			} else {
+				if (Number(a) === 0 && Number(b) === 0) {
+					return setResult(t('Constante = ') + resultado);
+				}
+				if (aproxima) {
+					if (typeof resultado === 'string') {
+						setResult(t(resultado));
+					} else if (Array.isArray(resultado) && resultado.length === 2) {
+						setResult(
+							`${t('Primeira raiz:')} ${resultado[0].toFixed(3)}, ${t(
+								'Segunda raiz:',
+							)} ${resultado[1].toFixed(3)}`,
+						);
+					} else if (!Array.isArray(resultado)) {
+						setResult(t('Possui apenas 1 raiz real em ' + resultado.toFixed(2)));
+					} else {
+						setResult(t('Resultado desconhecido'));
+					}
+				} else {
+					if (typeof resultado === 'string') {
+						setResult(t(resultado));
+					} else if (Array.isArray(resultado) && resultado.length === 2) {
+						setResult(
+							`${t('Primeira raiz:')} ${resultado[0]}, ${t('Segunda raiz:')} ${resultado[1]}`,
+						);
+					} else if (!Array.isArray(resultado)) {
+						setResult(t('Possui apenas 1 raiz real em ' + resultado));
+					} else {
+						setResult(t('Resultado desconhecido'));
+					}
+				}
+			}
+		} else {
+			Alert.alert(t('Erro'), t('Digite valores válidos para a, b e c'));
+		}
 	};
 
+	useEffect(() => {
+		(async () => {
+			const valueAproximaFunc = await AsyncStorage.getItem('aproximaQuadraticEq');
+			if (valueAproximaFunc) {
+				setAproxima(JSON.parse(valueAproximaFunc));
+			}
+			const apagaQuadraticAfterGen = await AsyncStorage.getItem('apagaQuadraticAfterGen');
+			if (apagaQuadraticAfterGen) {
+				setDeleteAfter(JSON.parse(apagaQuadraticAfterGen));
+			}
+		})();
+	}, []);
+
 	return (
-		<View style={styles.container}>
-			<Text style={styles.label}>{t('Digite o valor de A:')}</Text>
-			<TextInput
-				style={styles.input}
-				value={a}
-				onChangeText={(text) => setA(text)}
-				keyboardType="numeric"
-			/>
-			<Text style={styles.label}>{t('Digite o valor de B:')}</Text>
-			<TextInput
-				style={styles.input}
-				value={b}
-				onChangeText={(text) => setB(text)}
-				keyboardType="numeric"
-			/>
-			<Text style={styles.label}>{t('Digite o valor de C:')}</Text>
-			<TextInput
-				style={styles.input}
-				value={c}
-				onChangeText={(text) => setC(text)}
-				keyboardType="numeric"
-			/>
-			<Button title={t('Calcular')} onPress={calculateQuadraticEquation} />
-			{result !== null && (
-				<Text style={styles.result}>
-					{t('O resultado é:')} {result}
+		<View style={stylesWithTheme.container}>
+			<View style={stylesWithTheme.inputContainer}>
+				<Text style={stylesWithTheme.label}>{t('Digite o valor de A:')}</Text>
+				<TextInput
+					style={stylesWithTheme.input}
+					value={a}
+					placeholder={t('Termo que acompanha o x², ex: 5x²')}
+					placeholderTextColor={getThemeColor(theme, 'placeHolderColor')}
+					onChangeText={(text) => setA(text)}
+					keyboardType="numeric"
+					returnKeyType="next"
+					ref={valorARef} // Defina a referência para o primeiro campo
+					onSubmitEditing={() => valorBRef.current!.focus()}
+				/>
+				<Text style={stylesWithTheme.label}>{t('Digite o valor de B:')}</Text>
+				<TextInput
+					style={stylesWithTheme.input}
+					value={b}
+					placeholder={t('Termo que acompanha o x, ex: 3x')}
+					placeholderTextColor={getThemeColor(theme, 'placeHolderColor')}
+					onChangeText={(text) => setB(text)}
+					keyboardType="numeric"
+					returnKeyType="next"
+					ref={valorBRef} // Defina a referência para o segundo campo
+					onSubmitEditing={() => valorCRef.current!.focus()} // Quando pressionado "Next", vá para o próximo campo
+				/>
+				<Text style={stylesWithTheme.label}>{t('Digite o valor de C:')}</Text>
+				<TextInput
+					style={stylesWithTheme.input}
+					value={c}
+					placeholder={t('Termo independente, ex: -4')}
+					placeholderTextColor={getThemeColor(theme, 'placeHolderColor')}
+					onChangeText={(text) => setC(text)}
+					keyboardType="numeric"
+					returnKeyType="done"
+					ref={valorCRef} // Defina a referência para o terceiro campo
+				/>
+			</View>
+			<View style={stylesWithTheme.checkboxContainer}>
+				<Text style={stylesWithTheme.label}>{t('Usar aproximação ?')}</Text>
+				<Checkbox
+					value={aproxima}
+					onValueChange={async (value) => {
+						await AsyncStorage.setItem('aproximaQuadraticEq', JSON.stringify(value));
+						setAproxima(value);
+					}}
+				/>
+			</View>
+			<View style={stylesWithTheme.checkboxContainer}>
+				<Text style={stylesWithTheme.label}>{t('Limpar campos após gerar ?')}</Text>
+				<Checkbox
+					value={deleteAfter}
+					onValueChange={async (value) => {
+						await AsyncStorage.setItem('apagaQuadraticAfterGen', JSON.stringify(value));
+						setDeleteAfter(value);
+					}}
+				/>
+			</View>
+			<TouchableOpacity style={stylesWithTheme.button} onPress={calculateQuadraticEquation}>
+				<Text style={stylesWithTheme.buttonText}>{t('Calcular')}</Text>
+			</TouchableOpacity>
+			<View style={stylesWithTheme.resultContainer}>
+				<Text style={stylesWithTheme.label}>
+					{t('Resultado: ')}
+					{result}
 				</Text>
-			)}
+			</View>
 		</View>
 	);
 }
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-	label: {
-		fontSize: 16,
-		marginBottom: 5,
-	},
-	input: {
-		width: 200,
-		height: 40,
-		borderWidth: 1,
-		borderColor: 'gray',
-		marginBottom: 10,
-		paddingLeft: 5,
-	},
-	result: {
-		fontSize: 18,
-		marginTop: 10,
-	},
-});
+const styles = (theme: 'dark' | 'light') =>
+	StyleSheet.create({
+		container: {
+			flex: 1,
+			padding: RFValue(16),
+			backgroundColor: getThemeColor(theme, 'background'),
+		},
+		inputContainer: {
+			marginBottom: RFValue(16),
+		},
+		label: {
+			fontSize: RFValue(16),
+			marginBottom: RFValue(8),
+			color: getThemeColor(theme, 'text'), // Altere a cor apropriada
+		},
+		input: {
+			height: RFValue(50),
+			borderColor: getThemeColor(theme, 'border'),
+			borderWidth: 1,
+			paddingLeft: RFValue(10),
+			borderRadius: 4,
+			color: getThemeColor(theme, 'text'), // Altere a cor apropriada
+			backgroundColor: getThemeColor(theme, 'inputBackground'),
+		},
+		checkboxContainer: {
+			flexDirection: 'row',
+			alignItems: 'center',
+			gap: RFValue(5),
+			justifyContent: 'center',
+			height: RFValue(50),
+		},
+		button: {
+			backgroundColor: getThemeColor(theme, 'buttonBackground'), // Altere a cor apropriada
+			alignItems: 'center',
+			justifyContent: 'center',
+			height: RFValue(50),
+			borderRadius: 4,
+		},
+		buttonText: {
+			color: 'white',
+			fontSize: RFValue(16),
+		},
+		resultContainer: {
+			marginTop: RFValue(16),
+		},
+	});

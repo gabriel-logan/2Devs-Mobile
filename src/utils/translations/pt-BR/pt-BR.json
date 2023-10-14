@@ -138,6 +138,44 @@
 
 		"Força da Senha": "Força da Senha:",
 		"Tempo estimado para quebrar a senha": "Tempo estimado para quebrar a senha:",
-		"Os cálculos são baseados em um processador de 4 GHz": "Os cálculos são baseados em um processador de 4 GHz."
+		"Os cálculos são baseados em um processador de 4 GHz": "Os cálculos são baseados em um processador de 4 GHz.",
+
+		"Matemática": "Matemática",
+
+		"Digite os números a calcular": "Digite os números para calcular",
+		"Ex. 4, 8, 12": "Por exemplo, 4, 8, 12",
+		"Digite valores numéricos separados por vírgulas": "Digite valores numéricos separados por vírgulas",
+		"Digite valores válidos, separados por vírgulas": "Digite valores válidos, separados por vírgulas",
+		"Calcular": "Calcular",
+		"Mmc entre": "Mínimo Múltiplo Comum entre",
+		"Mdc entre": "Máximo Divisor Comum entre",
+		"=": "=",
+
+		"Mmc e Mdc": "Mmc e Mdc",
+		"Equação de primeiro grau": "Equação de primeiro grau",
+		"Equação de segundo grau": "Equação de segundo grau",
+
+		"Não possui raizes reais": "Não possui raizes reais",
+		"Possui apenas 1 raiz real": "Possui apenas 1 raiz real",
+		"Constante = ": "Constante = ",
+
+		"Digite o valor de A:": "Digite o valor de A:",
+		"Termo que acompanha o x², ex: 5x²": "Termo que acompanha o x², ex: 5x²",
+		"Digite o valor de B:": "Digite o valor de B:",
+		"Termo que acompanha o x, ex: 3x": "Termo que acompanha o x, ex: 3x",
+		"Digite o valor de C:": "Digite o valor de C:",
+		"Termo independente, ex: -4": "Termo independente, ex: -4",
+		"Usar aproximação ?": "Usar aproximação ?",
+		"Resultado: ": "Resultado: ",
+		"Primeira raiz:": "Primeira raiz:",
+		"Segunda raiz:": "Segunda raiz:",
+		"Resultado desconhecido": "Resultado desconhecido",
+		"Digite valores válidos para a, b e c": "Digite valores válidos para a, b e c",
+		"Limpar campos após gerar ?": "Limpar campos após gerar ?",
+
+		"Digite a equação linear no formato": "Digite a equação linear no formato \"ax + b = c\"",
+		"Equação inválida. Use o formato": "Equação inválida. Use o formato \"ax + b = c\".",
+		"a não pode ser zero.": "a não pode ser zero.",
+		"O valor de x é: ": "O valor de x é: "
 	}
 }
