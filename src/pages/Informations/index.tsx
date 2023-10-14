@@ -8,6 +8,8 @@ import getThemeColor from '../../configs/colors';
 
 import * as Linking from 'expo-linking';
 
+import { RFValue } from '../../components/Responsive';
+
 export default function GeneralInfoPage() {
 	const { t } = useTranslation();
 
@@ -16,13 +18,13 @@ export default function GeneralInfoPage() {
 	const styles = StyleSheet.create({
 		container: {
 			flex: 1,
-			padding: 15,
+			padding: RFValue(15),
 			backgroundColor: getThemeColor(theme, 'cardBackground'),
 		},
 		section: {
-			marginBottom: 20,
+			marginBottom: RFValue(20),
 			backgroundColor: getThemeColor(theme, 'background'),
-			padding: 15,
+			padding: RFValue(15),
 			borderRadius: 10,
 			shadowColor: '#000',
 			shadowOffset: { width: 0, height: 2 },
@@ -30,19 +32,19 @@ export default function GeneralInfoPage() {
 			shadowRadius: 2,
 		},
 		sectionTitle: {
-			fontSize: 24,
+			fontSize: RFValue(24),
 			fontWeight: 'bold',
 			color: getThemeColor(theme, 'title'),
 		},
 		sectionText: {
-			fontSize: 16,
+			fontSize: RFValue(16),
 			color: getThemeColor(theme, 'text'),
 		},
 		githubButton: {
 			backgroundColor: getThemeColor(theme, 'buttonBlack'),
-			padding: 10,
+			padding: RFValue(10),
 			borderRadius: 5,
-			marginTop: 10,
+			marginTop: RFValue(10),
 		},
 		githubButtonText: {
 			color: getThemeColor(theme, 'textInverted'),
@@ -50,13 +52,16 @@ export default function GeneralInfoPage() {
 		},
 		linkButton: {
 			backgroundColor: '#3887db',
-			padding: 10,
+			padding: RFValue(10),
 			borderRadius: 5,
-			marginTop: 10,
+			marginTop: RFValue(10),
+			height: RFValue(45),
+			justifyContent: 'center',
 		},
 		buttonText: {
 			color: 'white',
 			textAlign: 'center',
+			fontSize: RFValue(14),
 		},
 	});
 	return (

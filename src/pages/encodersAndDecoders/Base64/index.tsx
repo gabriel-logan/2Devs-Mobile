@@ -237,31 +237,31 @@ const styles = (theme: 'dark' | 'light') =>
 	StyleSheet.create({
 		container: {
 			flex: 1,
-			padding: 20,
+			padding: RFValue(20),
 			backgroundColor: getThemeColor(theme, 'background'),
 		},
 		inputContainer: {
 			width: '100%',
 			flexDirection: 'row',
 			alignItems: 'center',
-			marginBottom: 10,
+			marginBottom: RFValue(10),
 		},
 		input: {
 			flex: 1,
-			height: 200,
+			height: RFValue(200),
 			borderColor: 'gray',
 			borderWidth: 0.5,
 			borderRadius: 4,
 			textAlignVertical: 'top',
-			padding: 10,
+			padding: RFValue(10),
 			color: getThemeColor(theme, 'text'),
 			backgroundColor: getThemeColor(theme, 'cardBackground'),
 		},
 		button: {
 			backgroundColor: '#007AFF',
-			padding: 10,
+			padding: RFValue(10),
 			borderRadius: 5,
-			margin: 10,
+			margin: RFValue(10),
 		},
 		buttonText: {
 			color: 'white',
@@ -269,20 +269,20 @@ const styles = (theme: 'dark' | 'light') =>
 		},
 		divButtonCopy: {
 			position: 'absolute',
-			right: 15,
+			right: RFValue(15),
 		},
 		buttonCopy: {
-			marginVertical: 10,
+			marginVertical: RFValue(10),
 		},
 		section: {
 			flexDirection: 'row',
 			alignItems: 'center',
 		},
 		paragraph: {
-			fontSize: 15,
+			fontSize: RFValue(15),
 			color: getThemeColor(theme, 'text'),
 		},
 		checkbox: {
-			margin: 8,
+			margin: RFValue(8),
 		},
 	});

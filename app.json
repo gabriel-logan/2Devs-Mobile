@@ -11,7 +11,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#2ab7ca"
+      "backgroundColor": "#00000000"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -22,7 +22,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#2ab7ca"
+        "backgroundColor": "#ffffff00"
       },
       "package": "com.gabriellogan.toDevs",
       "versionCode": 6

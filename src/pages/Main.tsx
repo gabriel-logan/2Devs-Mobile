@@ -34,26 +34,26 @@ export default function Main() {
 			flex: 1,
 			alignItems: 'center',
 			justifyContent: 'center',
-			padding: 20,
+			padding: RFValue(20),
 			backgroundColor: getThemeColor(theme, 'background'), // Usando a paleta de cores para o fundo da página
 		},
 		logo: {
 			width: RFValue(256),
 			height: RFValue(128),
-			marginBottom: 30,
+			marginBottom: RFValue(30),
 		},
 		headerText: {
 			fontSize: RFValue(24),
 			fontWeight: 'bold',
-			marginBottom: 20,
+			marginBottom: RFValue(20),
 			color: getThemeColor(theme, 'text'), // Usando a paleta de cores para o texto
 		},
 		button: {
 			backgroundColor: getThemeColor(theme, 'primary'), // Usando a paleta de cores para o botão primário
-			paddingVertical: 15,
-			paddingHorizontal: 40,
-			borderRadius: 25,
-			marginBottom: 20,
+			paddingVertical: RFValue(15),
+			paddingHorizontal: RFValue(40),
+			borderRadius: RFValue(25),
+			marginBottom: RFValue(20),
 		},
 		buttonText: {
 			color: '#fff',
@@ -62,14 +62,14 @@ export default function Main() {
 			textAlign: 'center',
 		},
 		themeContainer: {
-			marginTop: 40,
+			marginTop: RFValue(40),
 			alignItems: 'center',
 			width: width(100),
 		},
 		themeTitle: {
 			fontSize: RFValue(20),
 			fontWeight: 'bold',
-			marginBottom: 15,
+			marginBottom: RFValue(15),
 			color: getThemeColor(theme, 'text'), // Usando a paleta de cores para o texto
 		},
 		themeOption: {
@@ -77,15 +77,15 @@ export default function Main() {
 			alignItems: 'center',
 			justifyContent: 'space-between',
 			width: '70%',
-			marginBottom: 15,
-			paddingHorizontal: 20,
+			marginBottom: RFValue(15),
+			paddingHorizontal: RFValue(20),
 		},
 		themeText: {
-			fontSize: RFValue(18),
+			fontSize: RFValue(16),
 			color: getThemeColor(theme, 'text'), // Usando a paleta de cores para o texto
 		},
 		switch: {
-			transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }],
+			transform: [{ scaleX: 1 }, { scaleY: 1 }],
 		},
 	});
 

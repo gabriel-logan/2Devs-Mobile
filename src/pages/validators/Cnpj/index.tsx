@@ -138,12 +138,12 @@ const styles = (theme: 'dark' | 'light', cnpjIsValidResult?: boolean) =>
 		divButtonCopy: {
 			flexDirection: 'row',
 			justifyContent: 'space-around',
-			marginVertical: 15,
+			marginVertical: RFValue(15),
 		},
 		buttonCopy: {},
 		cnpjStatus: {
 			backgroundColor: cnpjIsValidResult ? '#4CAF50' : '#F44336',
-			padding: 10,
+			padding: RFValue(10),
 			borderRadius: 5,
 			alignItems: 'center',
 			justifyContent: 'center',

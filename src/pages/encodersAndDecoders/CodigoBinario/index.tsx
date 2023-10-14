@@ -97,28 +97,28 @@ export default function BinaryCodePage() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		padding: 20,
+		padding: RFValue(20),
 	},
 	label: {
-		fontSize: 18,
-		marginTop: 15,
+		fontSize: RFValue(18),
+		marginTop: RFValue(15),
 	},
 	input: {
 		borderWidth: 1,
 		borderColor: '#ccc',
 		borderRadius: 5,
-		padding: 10,
-		marginVertical: 10,
-		fontSize: 16,
+		padding: RFValue(10),
+		marginVertical: RFValue(10),
+		fontSize: RFValue(16),
 		height: 200,
 		textAlignVertical: 'top',
 	},
 	divButtonCopy: {
 		position: 'absolute',
-		right: 15,
+		right: RFValue(15),
 		bottom: 80,
 	},
 	buttonCopy: {
-		marginVertical: 10,
+		marginVertical: RFValue(10),
 	},
 });

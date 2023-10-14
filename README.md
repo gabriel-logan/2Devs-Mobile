@@ -15,3 +15,7 @@ terms of use and privacy
 https://gabriel-logan.github.io/2Devs-Mobile/
 
 https://gabriel-logan.github.io/2Devs-Mobile/terms.html
+
+Downloads
+
+Android - https://gabriel-logan.github.io/2Devs-Mobile/appsDownload.html

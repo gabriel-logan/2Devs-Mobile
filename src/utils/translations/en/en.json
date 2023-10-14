@@ -67,7 +67,7 @@
 		"Se você precisar de uma validação específica": "If you need specific validation, please send an email to the contact below with details of your request.",
 		"Se ocorreu algum erro, entre em contato abaixo": "If you encountered any errors, please contact us below.",
 		"Se quiser contribuir, pode fazer um commit": "If you want to contribute, you can make a commit to the public repository of this application. This app is open source.",
-		"Este código opensorce": "This application is open-source.",
+		"Este codigo opensorce": "This application is open-source.",
 		"E-mail: contato@exemplo.com": "Email: gabriellogan1717@gmail.com",
 		"Políticas de Privacidade": "Privacy Policy",
 		"Termos de Uso": "Terms of Use",
@@ -110,6 +110,28 @@
 		"Maiúsculas": "Uppercase",
 		"Números": "Numbers",
 		"Caracteres especiais": "Special Characters",
-		"Copiar senha": "Copy Password"
+		"Copiar senha": "Copy Password",
+
+		"Péssima": "Poor",
+		"Fraca": "Weak",
+		"Moderada": "Moderate",
+		"Boa": "Good",
+		"Ótima": "Excellent",
+		"Excelente": "Outstanding",
+		"Excepcional": "Exceptional",
+		"Estrondosa": "Stunning",
+		"Desconhecida": "Unknown",
+
+		"segundos": "seconds",
+		"minutos": "minutes",
+		"horas": "hours",
+		"dias": "days",
+		"anos": "years",
+		"décadas": "decades",
+		"centenas de anos": "centuries",
+
+		"Força da Senha": "Password Strength:",
+		"Tempo estimado para quebrar a senha": "Estimated Time to Crack Password:",
+		"Os cálculos são baseados em um processador de 4 GHz": "Calculations are based on a 4 GHz processor."
 	}
 }

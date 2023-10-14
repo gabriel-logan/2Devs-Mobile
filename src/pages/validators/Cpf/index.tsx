@@ -139,12 +139,12 @@ const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
 		divButtonCopy: {
 			flexDirection: 'row',
 			justifyContent: 'space-around',
-			marginVertical: 15,
+			marginVertical: RFValue(15),
 		},
 		buttonCopy: {},
 		cpfStatus: {
 			backgroundColor: cpfIsValidResult ? '#4CAF50' : '#F44336',
-			padding: 10,
+			padding: RFValue(10),
 			borderRadius: 5,
 			alignItems: 'center',
 			justifyContent: 'center',

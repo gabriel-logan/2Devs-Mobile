@@ -116,6 +116,28 @@
 		"Maiúsculas": "Maiúsculas",
 		"Números": "Números",
 		"Caracteres especiais": "Caracteres especiais",
-		"Copiar senha": "Copiar senha"
+		"Copiar senha": "Copiar senha",
+
+		"Péssima": "Péssima",
+		"Fraca": "Fraca",
+		"Moderada": "Moderada",
+		"Boa": "Boa",
+		"Ótima": "Ótima",
+		"Excelente": "Excelente",
+		"Excepcional": "Excepcional",
+		"Estrondosa": "Estrondosa",
+		"Desconhecida": "Desconhecida",
+
+		"segundos":"segundos",
+		"minutos":"minutos",
+		"horas":"horas",
+		"dias":"dias",
+		"anos":"anos",
+		"décadas":"décadas",
+		"centenas de anos":"centenas de anos",
+
+		"Força da Senha": "Força da Senha:",
+		"Tempo estimado para quebrar a senha": "Tempo estimado para quebrar a senha:",
+		"Os cálculos são baseados em um processador de 4 GHz": "Os cálculos são baseados em um processador de 4 GHz."
 	}
 }

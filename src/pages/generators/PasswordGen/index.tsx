@@ -17,6 +17,7 @@ import { useTheme } from '../../../components/ThemeContext';
 import getThemeColor from '../../../configs/colors';
 
 import { RFValue } from '../../../components/Responsive';
+import { locale } from 'expo-localization';
 
 export default function PasswordGenerator() {
 	const { t } = useTranslation();
@@ -116,14 +117,77 @@ export default function PasswordGenerator() {
 			case 2:
 				return '#ffcc00'; // yellow
 			case 3:
-				return '#99ff00'; // light green
+				return '#70c000'; // light green
 			case 4:
 				return '#33cc33'; // green
 			case 5:
-				return '#00ccff'; // blue
+				return '#00ff80'; // bluegreen
+			case 6:
+				return '#00eeff'; // bluemeio green
+			case 7:
+				return '#007bff'; // blue
 			default:
 				return '#ff0000'; // red
 		}
+	}
+
+	// Função para obter a descrição da força da senha
+	function getPasswordStrengthDescription() {
+		const strength = getStrength(); // Certifique-se de que você tenha uma função getStrength() que retorne a força da senha.
+
+		switch (strength) {
+			case 0:
+				return 'Péssima';
+			case 1:
+				return 'Fraca';
+			case 2:
+				return 'Moderada';
+			case 3:
+				return 'Boa';
+			case 4:
+				return 'Ótima';
+			case 5:
+				return 'Excelente';
+			case 6:
+				return 'Excepcional';
+			case 7:
+				return 'Estrondosa';
+			default:
+				return 'Desconhecida';
+		}
+	}
+
+	function estimatePasswordCrackTime(): { time: string; unit: string } {
+		const charsetSize = 26 + 26 + 10 + 10; // Letras minúsculas, letras maiúsculas, números, caracteres especiais
+		const passwordLength = inputEl.length;
+		const attemptsPerSecond = 4000000000; // 4 GHz (ajuste conforme necessário)
+
+		// Suposição de complexidade da senha (número de combinações possíveis)
+		const complexity = Math.pow(charsetSize, passwordLength);
+
+		// Tempo estimado em segundos
+		let crackTimeSeconds = complexity / attemptsPerSecond;
+
+		// Converter o tempo estimado para unidades mais humanas
+		const units: string[] = [
+			'segundos',
+			'minutos',
+			'horas',
+			'dias',
+			'anos',
+			'décadas',
+			'centenas de anos',
+		];
+		let index = 0;
+		while (crackTimeSeconds >= 60 && index < units.length - 1) {
+			crackTimeSeconds /= 60;
+			index++;
+		}
+
+		return {
+			time: crackTimeSeconds.toFixed(2),
+			unit: units[index],
+		};
 	}
 
 	useEffect(() => {
@@ -210,6 +274,27 @@ export default function PasswordGenerator() {
 					<Text style={stylesWithTheme.copyButtonText}>{t('Copiar senha')}</Text>
 				</TouchableOpacity>
 			</View>
+			<View>
+				<View style={{ backgroundColor: getPasswordStrengthColor(), padding: 10 }}>
+					<Text style={stylesWithTheme.infoText}>
+						{t('Força da Senha')} {t(getPasswordStrengthDescription())}
+					</Text>
+				</View>
+				<View style={{ backgroundColor: getPasswordStrengthColor(), padding: 10, marginTop: 15 }}>
+					<Text style={stylesWithTheme.infoText}>
+						{t('Tempo estimado para quebrar a senha')}{' '}
+						{Number(estimatePasswordCrackTime().time).toLocaleString(locale, {
+							maximumFractionDigits: 2,
+						})}{' '}
+						{t(estimatePasswordCrackTime().unit)}
+					</Text>
+				</View>
+				<View style={{ marginTop: RFValue(15) }}>
+					<Text style={stylesWithTheme.infoTextCalc}>
+						{t('Os cálculos são baseados em um processador de 4 GHz')}
+					</Text>
+				</View>
+			</View>
 		</View>
 	);
 }
@@ -285,12 +370,26 @@ const styles = (theme: 'dark' | 'light') =>
 		},
 		copyButton: {
 			backgroundColor: '#b985e9',
-			padding: RFValue(16),
+			padding: RFValue(14),
 			borderRadius: 4,
 			alignItems: 'center',
 		},
 		copyButtonText: {
 			color: '#fff',
 			fontWeight: 'bold',
+			fontSize: RFValue(14),
+		},
+		infoText: {
+			color: 'white',
+			fontSize: RFValue(15),
+			textAlign: 'center',
+			textShadowColor: 'rgba(0, 0, 0, 0.7)', // Cor da sombra
+			textShadowOffset: { width: 0.5, height: 0.5 }, // Deslocamento da sombra
+			textShadowRadius: 2, // Raio da sombra
+			fontWeight: 'bold',
+		},
+		infoTextCalc: {
+			color: getThemeColor(theme, 'text'),
+			fontSize: RFValue(15),
 		},
 	});

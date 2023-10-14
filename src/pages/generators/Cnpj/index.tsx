@@ -162,7 +162,7 @@ const styles = (theme: 'dark' | 'light') =>
 			alignItems: 'center',
 		},
 		paragraph: {
-			fontSize: 15,
+			fontSize: RFValue(15),
 			color: getThemeColor(theme, 'text'),
 		},
 		checkbox: {
