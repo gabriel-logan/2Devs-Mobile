@@ -153,6 +153,21 @@
         "a não pode ser zero.": "A no pot ser zero.",
         "O valor de x é: ": "El valor de x és: ",
         "First root:": "Primera arrel: ",
-        "Second root:": "Segona arrel: "
+        "Second root:": "Segona arrel: ",
+        "Codificar para Md5": "Codificar a Md5",
+        "MD5 HASH:": "MD5 HAIXIX:",
+        "Conversor de dados": "Convertidor de dades",
+        "Ascii e Hexadecimal": "ASCII i hexadecimal",
+        "Hexadecimal e Decimal": "Hexadecimal i decimal",
+        "Pagina para conversoes": "Pàgina de conversions",
+        "Modulos disponiveis": "Mòduls disponibles",
+        "Converte entre ascii e hexadecimal": "Convertir entre ASCII i hexadecimal",
+        "Converte entre decimal e hexadecimal": "Convertir entre decimal i hexadecimal",
+        "Cole ou digite o numero decimal aqui": "Enganxeu o escriviu el nombre decimal aquí",
+        "Codificar para Hex": "Codificar a hexadecimal",
+        "Cole ou digite o código Hex aqui": "Enganxeu o escriviu el codi Hexadecimal aquí",
+        "Decodificar para decimal": "Descodificar a decimal",
+        "Digite apenas numeros": "Escriu només números",
+        "O valor de entrada não é valido": "El valor d'entrada no és vàlid"
     }
 }

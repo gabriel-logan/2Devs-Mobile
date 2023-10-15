@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a getur ekki verið núll.",
         "O valor de x é: ": "Gildi x er: ",
         "First root:": "Fyrsta rót: ",
-        "Second root:": "Önnur rót: "
+        "Second root:": "Önnur rót: ",
+        "Codificar para Md5": "Kóða í Md5",
+        "MD5 HASH:": "MD5-tæti:",
+        "Conversor de dados": "Gagnabreytir",
+        "Ascii e Hexadecimal": "ASCII og sextándakerfi",
+        "Hexadecimal e Decimal": "Sextándakerfi og aukastafur",
+        "Pagina para conversoes": "Síða fyrir viðskipti",
+        "Modulos disponiveis": "Tiltækar einingar",
+        "Converte entre ascii e hexadecimal": "Umbreyttu á milli ASCII og sextándakerfis",
+        "Converte entre decimal e hexadecimal": "Umbreyta milli aukastaf og sextándakerfi",
+        "Cole ou digite o numero decimal aqui": "Límdu eða sláðu inn tugakerfistöluna hér",
+        "Codificar para Hex": "Umrita í dulmál til Álög",
+        "Cole ou digite o código Hex aqui": "Límdu eða sláðu inn Hex kóðann hér",
+        "Decodificar para decimal": "Afkóða í aukastaf",
+        "Digite apenas numeros": "Sláðu aðeins inn tölustafi",
+        "O valor de entrada não é valido": "Ílagsgildið er ógilt"
     }
 }

@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a nevar būt nulle.",
         "O valor de x é: ": "X vērtība ir: ",
         "First root:": "Pirmā sakne: ",
-        "Second root:": "Otrā sakne: "
+        "Second root:": "Otrā sakne: ",
+        "Codificar para Md5": "Kodēt uz Md5",
+        "MD5 HASH:": "MD5 JAUCĒJKODS:",
+        "Conversor de dados": "Datu Pārveidotājs",
+        "Ascii e Hexadecimal": "ASCII un heksadecimāls",
+        "Hexadecimal e Decimal": "Heksadecimālais un decimālais",
+        "Pagina para conversoes": "Lapa reklāmguvumiem",
+        "Modulos disponiveis": "Pieejamie moduļi",
+        "Converte entre ascii e hexadecimal": "Konvertēšana starp ASCII un heksadecimālo",
+        "Converte entre decimal e hexadecimal": "Konvertēšana starp decimāldaļu un heksadecimālo",
+        "Cole ou digite o numero decimal aqui": "Ielīmējiet vai ierakstiet decimālskaitli šeit",
+        "Codificar para Hex": "Kodēt uz Hex",
+        "Cole ou digite o código Hex aqui": "Ielīmējiet vai ierakstiet Hex kodu šeit",
+        "Decodificar para decimal": "Dekodēt līdz decimāldaļai",
+        "Digite apenas numeros": "Ierakstiet tikai skaitļus",
+        "O valor de entrada não é valido": "Ievades vērtība nav derīga"
     }
 }

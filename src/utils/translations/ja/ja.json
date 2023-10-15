@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a を 0 にすることはできません。",
         "O valor de x é: ": "x の値は次のとおりです。",
         "First root:": "最初のルート:",
-        "Second root:": "2番目のルート:"
+        "Second root:": "2番目のルート:",
+        "Codificar para Md5": "md5 へのエンコード",
+        "MD5 HASH:": "MD5 ハッシュ:",
+        "Conversor de dados": "データコンバータ",
+        "Ascii e Hexadecimal": "ASCII および 16 進数",
+        "Hexadecimal e Decimal": "16 進数と 10 進数",
+        "Pagina para conversoes": "コンバージョンのページ",
+        "Modulos disponiveis": "利用可能なモジュール",
+        "Converte entre ascii e hexadecimal": "ASCII と 16 進数の間で変換する",
+        "Converte entre decimal e hexadecimal": "10進数と16進数の間の変換",
+        "Cole ou digite o numero decimal aqui": "ここに10進数を貼り付けるか入力します",
+        "Codificar para Hex": "16 進数にエンコード",
+        "Cole ou digite o código Hex aqui": "ここにHexコードを貼り付けるか入力します",
+        "Decodificar para decimal": "10進数へのデコード",
+        "Digite apenas numeros": "数字のみ入力",
+        "O valor de entrada não é valido": "入力値が無効です"
     }
 }

@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a sıfır olamaz.",
         "O valor de x é: ": "x'in değeri: ",
         "First root:": "İlk kök: ",
-        "Second root:": "İkinci kök: "
+        "Second root:": "İkinci kök: ",
+        "Codificar para Md5": "md5'e kodlama",
+        "MD5 HASH:": "MD5 KARMASI:",
+        "Conversor de dados": "Veri dönüştürücü",
+        "Ascii e Hexadecimal": "ASCII ve Onaltılık",
+        "Hexadecimal e Decimal": "Onaltılık ve Ondalık",
+        "Pagina para conversoes": "Dönüşüm Sayfası",
+        "Modulos disponiveis": "Mevcut Modüller",
+        "Converte entre ascii e hexadecimal": "ASCII ve onaltılık arasında dönüştürme",
+        "Converte entre decimal e hexadecimal": "Ondalık ve onaltılık arasında dönüştürme",
+        "Cole ou digite o numero decimal aqui": "Ondalık sayıyı buraya yapıştırın veya yazın",
+        "Codificar para Hex": "Hex'e Kodlama",
+        "Cole ou digite o código Hex aqui": "Hex kodunu buraya yapıştırın veya yazın",
+        "Decodificar para decimal": "Ondalık sayıya kod çözme",
+        "Digite apenas numeros": "Yalnızca sayıları yazma",
+        "O valor de entrada não é valido": "Giriş değeri geçerli değil"
     }
 }

@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a nemůže být nula.",
         "O valor de x é: ": "Hodnota x je: ",
         "First root:": "První kořen: ",
-        "Second root:": "Druhý kořen: "
+        "Second root:": "Druhý kořen: ",
+        "Codificar para Md5": "Enkódování do Md5",
+        "MD5 HASH:": "HODNOTA HASH MD5:",
+        "Conversor de dados": "Převodník dat",
+        "Ascii e Hexadecimal": "ASCII a šestnáctkové soustavy",
+        "Hexadecimal e Decimal": "Hexadecimální a desítkové",
+        "Pagina para conversoes": "Stránka pro konverze",
+        "Modulos disponiveis": "Dostupné moduly",
+        "Converte entre ascii e hexadecimal": "Převod mezi ASCII a šestnáctkovou soustavou",
+        "Converte entre decimal e hexadecimal": "Převod mezi desítkovou a šestnáctkovou soustavou",
+        "Cole ou digite o numero decimal aqui": "Sem vložte nebo zadejte desetinné číslo",
+        "Codificar para Hex": "Kódování do hexadecimální soustavy",
+        "Cole ou digite o código Hex aqui": "Sem vložte nebo zadejte hexadecimální kód",
+        "Decodificar para decimal": "Dekódování na desetinné číslo",
+        "Digite apenas numeros": "Pište pouze čísla",
+        "O valor de entrada não é valido": "Vstupní hodnota není platná"
     }
 }

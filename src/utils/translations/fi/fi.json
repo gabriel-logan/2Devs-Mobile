@@ -153,6 +153,21 @@
         "a não pode ser zero.": "A ei voi olla nolla.",
         "O valor de x é: ": "X: n arvo on: ",
         "First root:": "Ensimmäinen juuri: ",
-        "Second root:": "Toinen juuri: "
+        "Second root:": "Toinen juuri: ",
+        "Codificar para Md5": "Koodaa Md5: een",
+        "MD5 HASH:": "MD5-TIIVISTE:",
+        "Conversor de dados": "Tietojen muunnin",
+        "Ascii e Hexadecimal": "ASCII ja heksadesimaali",
+        "Hexadecimal e Decimal": "Heksadesimaali ja desimaali",
+        "Pagina para conversoes": "Tulossivu",
+        "Modulos disponiveis": "Saatavilla olevat moduulit",
+        "Converte entre ascii e hexadecimal": "Muunna ASCII:n ja heksadesimaalin välillä",
+        "Converte entre decimal e hexadecimal": "Desimaalin ja heksadesimaalin muuntaminen",
+        "Cole ou digite o numero decimal aqui": "Liitä tai kirjoita desimaaliluku tähän",
+        "Codificar para Hex": "Koodaa heksadesimaaliin",
+        "Cole ou digite o código Hex aqui": "Liitä tai kirjoita Hex-koodi tähän",
+        "Decodificar para decimal": "Dekoodaa desimaaliksi",
+        "Digite apenas numeros": "Kirjoita vain numeroita",
+        "O valor de entrada não é valido": "Syötetty arvo ei kelpaa"
     }
 }

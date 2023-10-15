@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a शून्य नहीं हो सकता।",
         "O valor de x é: ": "x का मान क्या है? ",
         "First root:": "पहला मूल: ",
-        "Second root:": "दूसरा मूल: "
+        "Second root:": "दूसरा मूल: ",
+        "Codificar para Md5": "Md5 के लिए एन्कोड करें",
+        "MD5 HASH:": "MD5 HASH:",
+        "Conversor de dados": "डेटा कनवर्टर",
+        "Ascii e Hexadecimal": "ASCII और हेक्साडेसिमल",
+        "Hexadecimal e Decimal": "हेक्साडेसिमल और दशमलव",
+        "Pagina para conversoes": "रूपांतरण ों के लिए पृष्ठ",
+        "Modulos disponiveis": "उपलब्ध मॉड्यूल",
+        "Converte entre ascii e hexadecimal": "ASCII और हेक्साडेसिमल के बीच कनवर्ट करें",
+        "Converte entre decimal e hexadecimal": "दशमलव और हेक्साडेसिमल के बीच कनवर्ट करें",
+        "Cole ou digite o numero decimal aqui": "दशमलव संख्या यहाँ चिपकाएँ या लिखें",
+        "Codificar para Hex": "हेक्स को एन्कोड करें",
+        "Cole ou digite o código Hex aqui": "हेक्स कोड यहाँ चिपकाएँ या टाइप करें",
+        "Decodificar para decimal": "दशमलव में डिकोड करें",
+        "Digite apenas numeros": "केवल संख्याएँ लिखें",
+        "O valor de entrada não é valido": "इनपुट मान मान्य नहीं है"
     }
 }

@@ -153,6 +153,21 @@
         "a não pode ser zero.": "Το A δεν μπορεί να είναι μηδέν.",
         "O valor de x é: ": "Η τιμή του x είναι: ",
         "First root:": "Πρώτη ρίζα: ",
-        "Second root:": "Δεύτερη ρίζα: "
+        "Second root:": "Δεύτερη ρίζα: ",
+        "Codificar para Md5": "Κωδικοποίηση σε MD5",
+        "MD5 HASH:": "ΚΑΤΑΚΕΡΜΑΤΙΣΜΌΣ MD5:",
+        "Conversor de dados": "Μετατροπέας δεδομένων",
+        "Ascii e Hexadecimal": "ASCII και δεκαεξαδικό",
+        "Hexadecimal e Decimal": "Δεκαεξαδικό και δεκαδικό",
+        "Pagina para conversoes": "Σελίδα για μετατροπές",
+        "Modulos disponiveis": "Διαθέσιμες ενότητες",
+        "Converte entre ascii e hexadecimal": "Μετατροπή μεταξύ ASCII και δεκαεξαδικού",
+        "Converte entre decimal e hexadecimal": "Μετατροπή μεταξύ δεκαδικών και δεκαεξαδικών",
+        "Cole ou digite o numero decimal aqui": "Επικολλήστε ή πληκτρολογήστε τον δεκαδικό αριθμό εδώ",
+        "Codificar para Hex": "Κωδικοποίηση σε δεκαεξαδικό",
+        "Cole ou digite o código Hex aqui": "Επικολλήστε ή πληκτρολογήστε τον δεκαεξαδικό κώδικα εδώ",
+        "Decodificar para decimal": "Αποκωδικοποίηση σε δεκαδικό",
+        "Digite apenas numeros": "Πληκτρολογήστε μόνο αριθμούς",
+        "O valor de entrada não é valido": "Η τιμή εισόδου δεν είναι έγκυρη"
     }
 }

@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a ma jistax ikun żero.",
         "O valor de x é: ": "Il-valur ta' x huwa: ",
         "First root:": "L-ewwel għerq: ",
-        "Second root:": "It-tieni għerq: "
+        "Second root:": "It-tieni għerq: ",
+        "Codificar para Md5": "Ikkodifika għal Md5",
+        "MD5 HASH:": "MD5 HASH:",
+        "Conversor de dados": "Konvertitur tad-Dejta",
+        "Ascii e Hexadecimal": "ASCII u Eżadeċimali",
+        "Hexadecimal e Decimal": "Eżadeċimali u deċimali",
+        "Pagina para conversoes": "Paġna għall-Konverżjonijiet",
+        "Modulos disponiveis": "Moduli Disponibbli",
+        "Converte entre ascii e hexadecimal": "Ikkonverti bejn ASCII u hexadecimal",
+        "Converte entre decimal e hexadecimal": "Ikkonverti bejn deċimali u eżadeċimali",
+        "Cole ou digite o numero decimal aqui": "Ippejstja jew ittajpja n-numru deċimali hawnhekk",
+        "Codificar para Hex": "Ikkodifika għal Hex",
+        "Cole ou digite o código Hex aqui": "Pejst jew ittajpja l-kodiċi Hex hawn",
+        "Decodificar para decimal": "Iddekowdja sal-punt deċimali",
+        "Digite apenas numeros": "Ittajpja biss numri",
+        "O valor de entrada não é valido": "Il-valur tal-input mhux validu"
     }
 }

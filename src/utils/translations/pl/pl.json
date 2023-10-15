@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a nie może być zerem.",
         "O valor de x é: ": "Wartość x wynosi: ",
         "First root:": "Pierwszy korzeń: ",
-        "Second root:": "Drugi korzeń: "
+        "Second root:": "Drugi korzeń: ",
+        "Codificar para Md5": "Kodowanie do Md5",
+        "MD5 HASH:": "SKRÓT MD5:",
+        "Conversor de dados": "Konwerter danych",
+        "Ascii e Hexadecimal": "ASCII i szesnastkowy",
+        "Hexadecimal e Decimal": "Szesnastkowy i dziesiętny",
+        "Pagina para conversoes": "Strona konwersji",
+        "Modulos disponiveis": "Dostępne moduły",
+        "Converte entre ascii e hexadecimal": "Konwertuj między ASCII a szesnastkowym",
+        "Converte entre decimal e hexadecimal": "Konwertuj między dziesiętnym a szesnastkowym",
+        "Cole ou digite o numero decimal aqui": "Wklej lub wpisz tutaj liczbę dziesiętną",
+        "Codificar para Hex": "Kodowanie do szesnastkowego",
+        "Cole ou digite o código Hex aqui": "Wklej lub wpisz tutaj kod szesnastkowy",
+        "Decodificar para decimal": "Dekodowanie do dziesiętnego",
+        "Digite apenas numeros": "Wpisywanie tylko liczb",
+        "O valor de entrada não é valido": "Wartość wejściowa jest nieprawidłowa"
     }
 }

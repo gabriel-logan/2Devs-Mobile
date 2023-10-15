@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a nu poate fi zero.",
         "O valor de x é: ": "Valoarea lui x este: ",
         "First root:": "Prima rădăcină: ",
-        "Second root:": "A doua rădăcină: "
+        "Second root:": "A doua rădăcină: ",
+        "Codificar para Md5": "Codificare la Md5",
+        "MD5 HASH:": "HASH MD5:",
+        "Conversor de dados": "Convertor de date",
+        "Ascii e Hexadecimal": "ASCII și hexazecimal",
+        "Hexadecimal e Decimal": "Hexazecimal și zecimal",
+        "Pagina para conversoes": "Pagina pentru conversii",
+        "Modulos disponiveis": "Module disponibile",
+        "Converte entre ascii e hexadecimal": "Conversia între ASCII și hexazecimal",
+        "Converte entre decimal e hexadecimal": "Conversia între zecimal și hexazecimal",
+        "Cole ou digite o numero decimal aqui": "Lipiți sau tastați numărul zecimal aici",
+        "Codificar para Hex": "Codificați la hexazecimal",
+        "Cole ou digite o código Hex aqui": "Lipiți sau tastați codul hexazecimal aici",
+        "Decodificar para decimal": "Decodare la zecimal",
+        "Digite apenas numeros": "Tastați numai numere",
+        "O valor de entrada não é valido": "Valoarea de intrare nu este validă"
     }
 }

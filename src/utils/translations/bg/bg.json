@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a не може да бъде нула.",
         "O valor de x é: ": "Стойността на x е: ",
         "First root:": "Първи корен: ",
-        "Second root:": "Втори корен: "
+        "Second root:": "Втори корен: ",
+        "Codificar para Md5": "Кодиране в Md5",
+        "MD5 HASH:": "MD5 ХЕШ:",
+        "Conversor de dados": "Конвертор на данни",
+        "Ascii e Hexadecimal": "ASCII и шестнадесетичен",
+        "Hexadecimal e Decimal": "Шестнадесетично и десетично",
+        "Pagina para conversoes": "Страница за конвертиране",
+        "Modulos disponiveis": "Налични модули",
+        "Converte entre ascii e hexadecimal": "Преобразуване между ASCII и шестнадесетично",
+        "Converte entre decimal e hexadecimal": "Преобразуване между десетично и шестнадесетично",
+        "Cole ou digite o numero decimal aqui": "Поставете или въведете десетичното число тук",
+        "Codificar para Hex": "Кодиране в шестнадесетичен",
+        "Cole ou digite o código Hex aqui": "Поставете или въведете шестнадесетичния код тук",
+        "Decodificar para decimal": "Декодиране до десетична запетая",
+        "Digite apenas numeros": "Въведете само числа",
+        "O valor de entrada não é valido": "Входната стойност не е валидна"
     }
 }

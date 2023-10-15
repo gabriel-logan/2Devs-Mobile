@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a 不能为零。",
         "O valor de x é: ": "x 的值为：",
         "First root:": "第一个根：",
-        "Second root:": "第二个根："
+        "Second root:": "第二个根：",
+        "Codificar para Md5": "编码为 Md5",
+        "MD5 HASH:": "MD5 哈希：",
+        "Conversor de dados": "数据转换器",
+        "Ascii e Hexadecimal": "ASCII 和十六进制",
+        "Hexadecimal e Decimal": "十六进制和十进制",
+        "Pagina para conversoes": "转化页面",
+        "Modulos disponiveis": "可用模块",
+        "Converte entre ascii e hexadecimal": "在 ASCII 和十六进制之间转换",
+        "Converte entre decimal e hexadecimal": "在十进制和十六进制之间转换",
+        "Cole ou digite o numero decimal aqui": "在此处粘贴或键入十进制数",
+        "Codificar para Hex": "编码为十六进制",
+        "Cole ou digite o código Hex aqui": "在此处粘贴或键入十六进制代码",
+        "Decodificar para decimal": "解码为十进制",
+        "Digite apenas numeros": "仅键入数字",
+        "O valor de entrada não é valido": "输入值无效"
     }
 }

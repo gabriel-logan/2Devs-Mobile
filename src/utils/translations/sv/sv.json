@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a kan inte vara noll.",
         "O valor de x é: ": "Värdet på x är: ",
         "First root:": "Första roten: ",
-        "Second root:": "Andra roten: "
+        "Second root:": "Andra roten: ",
+        "Codificar para Md5": "Koda till Md5",
+        "MD5 HASH:": "MD5-HASH:",
+        "Conversor de dados": "Data Omvandlare",
+        "Ascii e Hexadecimal": "ASCII och hexadecimal",
+        "Hexadecimal e Decimal": "Hexadecimal och decimal",
+        "Pagina para conversoes": "Sida för konverteringar",
+        "Modulos disponiveis": "Tillgängliga moduler",
+        "Converte entre ascii e hexadecimal": "Konvertera mellan ASCII och hexadecimal",
+        "Converte entre decimal e hexadecimal": "Konvertera mellan decimal och hexadecimal",
+        "Cole ou digite o numero decimal aqui": "Klistra in eller skriv decimaltalet här",
+        "Codificar para Hex": "Koda till Hex",
+        "Cole ou digite o código Hex aqui": "Klistra in eller skriv in Hex-koden här",
+        "Decodificar para decimal": "Avkoda till decimal",
+        "Digite apenas numeros": "Skriv bara siffror",
+        "O valor de entrada não é valido": "Indatavärdet är inte giltigt"
     }
 }

@@ -153,6 +153,21 @@
         "a não pode ser zero.": "'e' vIYajlaHbe'.",
         "O valor de x é: ": "teHbogh rIntaH ghu'vam, 'ej Hurvo' ghe''e'. ",
         "First root:": "Qapla'. ",
-        "Second root:": "'etlh, qaStaHvIS jaj latlh. "
+        "Second root:": "'etlh, qaStaHvIS jaj latlh. ",
+        "Codificar para Md5": "tlha'",
+        "MD5 HASH:": "JATLHPU':",
+        "Conversor de dados": "yIbuS",
+        "Ascii e Hexadecimal": "molwI'",
+        "Hexadecimal e Decimal": "HeghwI' je",
+        "Pagina para conversoes": "qorDu'ghomHa'wI'",
+        "Modulos disponiveis": "loSlu'meH DuHbe'",
+        "Converte entre ascii e hexadecimal": "chal tera' je Qoy'lI' je",
+        "Converte entre decimal e hexadecimal": "je' ghogh je",
+        "Cole ou digite o numero decimal aqui": "bIH DeghwI' 'u' tu'lu'",
+        "Codificar para Hex": "che' 'enqIyDu",
+        "Cole ou digite o código Hex aqui": "mIpna'chaj lupabmeH mIwna'chaj qang",
+        "Decodificar para decimal": "HeghchoHlaw'",
+        "Digite apenas numeros": "cha'logh Qoy'wI'pu'",
+        "O valor de entrada não é valido": "qIvHa'wI' mab nIv"
     }
 }

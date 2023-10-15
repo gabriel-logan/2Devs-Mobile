@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a ไม่สามารถเป็นศูนย์ได้",
         "O valor de x é: ": "ค่าของ x คือ: ",
         "First root:": "รากแรก: ",
-        "Second root:": "รากที่สอง: "
+        "Second root:": "รากที่สอง: ",
+        "Codificar para Md5": "เข้ารหัสเป็น Md5",
+        "MD5 HASH:": "แฮช MD5:",
+        "Conversor de dados": "ตัวแปลงข้อมูล",
+        "Ascii e Hexadecimal": "ASCII และเลขฐานสิบหก",
+        "Hexadecimal e Decimal": "เลขฐานสิบหกและทศนิยม",
+        "Pagina para conversoes": "หน้าสําหรับคอนเวอร์ชั่น",
+        "Modulos disponiveis": "โมดูลที่ใช้ได้",
+        "Converte entre ascii e hexadecimal": "แปลงระหว่าง ASCII และเลขฐานสิบหก",
+        "Converte entre decimal e hexadecimal": "แปลงระหว่างทศนิยมและเลขฐานสิบหก",
+        "Cole ou digite o numero decimal aqui": "วางหรือพิมพ์เลขฐานสิบที่นี่",
+        "Codificar para Hex": "เข้ารหัสเป็น Hex",
+        "Cole ou digite o código Hex aqui": "วางหรือพิมพ์รหัส Hex ที่นี่",
+        "Decodificar para decimal": "ถอดรหัสเป็นทศนิยม",
+        "Digite apenas numeros": "พิมพ์เฉพาะตัวเลข",
+        "O valor de entrada não é valido": "ค่าอินพุตไม่ถูกต้อง"
     }
 }

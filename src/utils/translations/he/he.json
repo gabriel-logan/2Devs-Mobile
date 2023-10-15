@@ -153,6 +153,21 @@
         "a não pode ser zero.": "A לא יכול להיות אפס.",
         "O valor de x é: ": "הערך של x הוא: ",
         "First root:": "שורש ראשון: ",
-        "Second root:": "שורש שני: "
+        "Second root:": "שורש שני: ",
+        "Codificar para Md5": "קידוד ל- MD5",
+        "MD5 HASH:": "חשיש MD5:",
+        "Conversor de dados": "ממיר נתונים",
+        "Ascii e Hexadecimal": "ASCII והקסדצימאלי",
+        "Hexadecimal e Decimal": "הקסדצימאלי ועשרוני",
+        "Pagina para conversoes": "דף להמרות",
+        "Modulos disponiveis": "מודולים זמינים",
+        "Converte entre ascii e hexadecimal": "המרה בין ASCII להקסדצימאלי",
+        "Converte entre decimal e hexadecimal": "המרה בין עשרוני להקסדצימאלי",
+        "Cole ou digite o numero decimal aqui": "הדבק או הקלד את המספר העשרוני כאן",
+        "Codificar para Hex": "קידוד ל- Hex",
+        "Cole ou digite o código Hex aqui": "הדבק או הקלד את קוד Hex כאן",
+        "Decodificar para decimal": "פענוח עשרוני",
+        "Digite apenas numeros": "הקלד מספרים בלבד",
+        "O valor de entrada não é valido": "ערך הקלט אינו חוקי"
     }
 }

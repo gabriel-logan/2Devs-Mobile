@@ -153,6 +153,21 @@
         "a não pode ser zero.": "A ne more biti nič.",
         "O valor de x é: ": "Vrednost x je: ",
         "First root:": "Prvi koren: ",
-        "Second root:": "Drugi koren: "
+        "Second root:": "Drugi koren: ",
+        "Codificar para Md5": "Kodiranje v Md5",
+        "MD5 HASH:": "MD5 HASH:",
+        "Conversor de dados": "Pretvornik podatkov",
+        "Ascii e Hexadecimal": "ASCII in šestnajstiška",
+        "Hexadecimal e Decimal": "Šestnajstiška in decimalna",
+        "Pagina para conversoes": "Stran za konverzije",
+        "Modulos disponiveis": "Razpoložljivi moduli",
+        "Converte entre ascii e hexadecimal": "Pretvarjanje med ASCII in šestnajstiško",
+        "Converte entre decimal e hexadecimal": "Pretvarjanje med desetiško in šestnajstiško",
+        "Cole ou digite o numero decimal aqui": "Prilepite ali vnesite decimalno število tukaj",
+        "Codificar para Hex": "Kodiranje v Hex",
+        "Cole ou digite o código Hex aqui": "Prilepite ali vnesite kodo Hex tukaj",
+        "Decodificar para decimal": "Dekodiranje v decimalno",
+        "Digite apenas numeros": "Vnašanje samo številk",
+        "O valor de entrada não é valido": "Vhodna vrednost ni veljavna"
     }
 }

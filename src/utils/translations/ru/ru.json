@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a не может быть равно нулю.",
         "O valor de x é: ": "Значение x равно следующему: ",
         "First root:": "Первый корень: ",
-        "Second root:": "Второй корень: "
+        "Second root:": "Второй корень: ",
+        "Codificar para Md5": "Кодирование в Md5",
+        "MD5 HASH:": "MD5 ХЭШ:",
+        "Conversor de dados": "Конвертер данных",
+        "Ascii e Hexadecimal": "ASCII и шестнадцатеричный код",
+        "Hexadecimal e Decimal": "Шестнадцатеричный и десятичный",
+        "Pagina para conversoes": "Страница для конверсий",
+        "Modulos disponiveis": "Доступные модули",
+        "Converte entre ascii e hexadecimal": "Преобразование между ASCII и шестнадцатеричным числом",
+        "Converte entre decimal e hexadecimal": "Преобразование между десятичным и шестнадцатеричным числом",
+        "Cole ou digite o numero decimal aqui": "Вставьте или введите здесь десятичное число",
+        "Codificar para Hex": "Кодирование в шестнадцатеричный формат",
+        "Cole ou digite o código Hex aqui": "Вставьте или введите шестнадцатеричный код здесь",
+        "Decodificar para decimal": "Декодирование в десятичное число",
+        "Digite apenas numeros": "Вводите только цифры",
+        "O valor de entrada não é valido": "Входное значение недопустимо"
     }
 }

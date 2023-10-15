@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a صفر نہیں ہو سکتا۔",
         "O valor de x é: ": "x کی قدر یہ ہے: ",
         "First root:": "پہلی جڑ: ",
-        "Second root:": "دوسری جڑ: "
+        "Second root:": "دوسری جڑ: ",
+        "Codificar para Md5": "ایم ڈی 5 میں انکوڈ کریں",
+        "MD5 HASH:": "ایم ڈی 5 ایچ اے ایس ایچ:",
+        "Conversor de dados": "Data Converter",
+        "Ascii e Hexadecimal": "ASCII and Hexadecimal",
+        "Hexadecimal e Decimal": "ہیکسا ڈیسیمل اور اعشاریہ",
+        "Pagina para conversoes": "تبادلوں کے لئے صفحہ",
+        "Modulos disponiveis": "دستیاب ماڈیولز",
+        "Converte entre ascii e hexadecimal": "اے ایس سی آئی آئی اور ہیکسا ڈیسیمل کے درمیان تبدیل کریں",
+        "Converte entre decimal e hexadecimal": "اعشاریہ اور ہیکسا ڈیسیمل کے درمیان تبدیل کریں",
+        "Cole ou digite o numero decimal aqui": "اعشاریہ نمبر یہاں پیسٹ کریں یا ٹائپ کریں",
+        "Codificar para Hex": "ہیکس میں انکوڈ کریں",
+        "Cole ou digite o código Hex aqui": "ہیکس کوڈ یہاں پیسٹ یا ٹائپ کریں",
+        "Decodificar para decimal": "Decode to اعشاریal",
+        "Digite apenas numeros": "صرف نمبر ٹائپ کریں",
+        "O valor de entrada não é valido": "ان پٹ ویلیو درست نہیں ہے"
     }
 }

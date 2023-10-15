@@ -153,6 +153,21 @@
         "a não pode ser zero.": "A nem lehet nulla.",
         "O valor de x é: ": "Az x értéke: ",
         "First root:": "Első gyökér: ",
-        "Second root:": "Második gyökér: "
+        "Second root:": "Második gyökér: ",
+        "Codificar para Md5": "Kódolás Md5-re",
+        "MD5 HASH:": "MD5 KIVONAT:",
+        "Conversor de dados": "Adatkonvertáló",
+        "Ascii e Hexadecimal": "ASCII és hexadecimális",
+        "Hexadecimal e Decimal": "Hexadecimális és decimális",
+        "Pagina para conversoes": "Konverziós oldal",
+        "Modulos disponiveis": "Elérhető modulok",
+        "Converte entre ascii e hexadecimal": "Konvertálás ASCII és hexadecimális között",
+        "Converte entre decimal e hexadecimal": "Konvertálás decimális és hexadecimális között",
+        "Cole ou digite o numero decimal aqui": "Illessze be vagy írja be ide a decimális számot",
+        "Codificar para Hex": "Kódolás hexadecimális formátumba",
+        "Cole ou digite o código Hex aqui": "Illessze be vagy írja be ide a hexadecimális kódot",
+        "Decodificar para decimal": "Dekódolás decimálisra",
+        "Digite apenas numeros": "Csak számokat írjon be",
+        "O valor de entrada não é valido": "A bemeneti érték érvénytelen"
     }
 }

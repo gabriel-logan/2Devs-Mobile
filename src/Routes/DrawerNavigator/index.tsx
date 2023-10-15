@@ -25,6 +25,8 @@ import LinearEquationPage from '../../pages/mathematics/LinearEquation';
 import QuadraticEquationPage from '../../pages/mathematics/QuadraticEquation';
 import MyNetwork from '../../pages/MyNetwork';
 
+import DataConverterNavigator from '../DataConverterNavigator';
+
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
@@ -93,6 +95,11 @@ export default function DrawerNavigator() {
 			<Drawer.Group>
 				<Drawer.Screen name="Base64" options={{ title: t('Base64') }} component={Base64Page} />
 				<Drawer.Screen name="Md5" options={{ title: t('Md5') }} component={Md5Page} />
+				<Drawer.Screen
+					name="DataConverter"
+					options={{ title: t('Conversor de dados') }}
+					component={DataConverterNavigator}
+				/>
 				<Drawer.Screen
 					name="CodigoBinario"
 					options={{ title: t('Codigo Binario') }}

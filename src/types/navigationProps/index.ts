@@ -19,17 +19,19 @@ const RoutesProps = {
 	LinearEquation: undefined,
 	QuadraticEquation: undefined,
 	Md5: undefined,
-	NumberConverter: undefined,
+	DataConverter: undefined,
+	AsciiAndHex: undefined,
+	HexAndDecimal: undefined,
+	DataConverterMain: undefined,
 };
+
+export type RoutesStringsProps = keyof typeof RoutesProps;
 
 // Rotas diretas no caso não abre um submenu no drawer
 export type DirectRoutesProps = 'Main' | 'InfoPage' | 'MyNetwork';
 
 // rotas as rotas tirando as rotas diretas e Initial e Drawer
-export type SubRoutesProps = Exclude<
-	keyof typeof RoutesProps,
-	DirectRoutesProps | 'Initial' | 'Drawer'
->;
+export type SubRoutesProps = Exclude<RoutesStringsProps, DirectRoutesProps | 'Initial' | 'Drawer'>;
 
 // Tipagem do Navigation
 export type NavigationType = NavigationProp<typeof RoutesProps>;

@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a tidak bisa nol.",
         "O valor de x é: ": "Nilai x adalah: ",
         "First root:": "Akar pertama: ",
-        "Second root:": "Akar kedua: "
+        "Second root:": "Akar kedua: ",
+        "Codificar para Md5": "Encode ke Md5",
+        "MD5 HASH:": "HASH MD5:",
+        "Conversor de dados": "Alat konversi data",
+        "Ascii e Hexadecimal": "ASCII dan Heksadesimal",
+        "Hexadecimal e Decimal": "Heksadesimal dan desimal",
+        "Pagina para conversoes": "Halaman untuk Konversi",
+        "Modulos disponiveis": "Modul yang Tersedia",
+        "Converte entre ascii e hexadecimal": "Konversi antara ASCII dan heksadesimal",
+        "Converte entre decimal e hexadecimal": "Konversi antara desimal dan heksadesimal",
+        "Cole ou digite o numero decimal aqui": "Tempel atau ketik angka desimal di sini",
+        "Codificar para Hex": "Encode ke Hex",
+        "Cole ou digite o código Hex aqui": "Tempel atau ketik kode Hex di sini",
+        "Decodificar para decimal": "Dekode ke desimal",
+        "Digite apenas numeros": "Ketik angka saja",
+        "O valor de entrada não é valido": "Nilai input tidak valid"
     }
 }

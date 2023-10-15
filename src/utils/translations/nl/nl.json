@@ -153,6 +153,21 @@
         "a não pode ser zero.": "A kan niet nul zijn.",
         "O valor de x é: ": "De waarde van x is: ",
         "First root:": "Eerste wortel: ",
-        "Second root:": "Tweede wortel: "
+        "Second root:": "Tweede wortel: ",
+        "Codificar para Md5": "Coderen naar Md5",
+        "MD5 HASH:": "MD5 HASH:",
+        "Conversor de dados": "Gegevensomzetter",
+        "Ascii e Hexadecimal": "ASCII en hexadecimaal",
+        "Hexadecimal e Decimal": "Hexadecimaal en decimaal",
+        "Pagina para conversoes": "Pagina voor conversies",
+        "Modulos disponiveis": "Beschikbare modules",
+        "Converte entre ascii e hexadecimal": "Converteren tussen ASCII en hexadecimaal",
+        "Converte entre decimal e hexadecimal": "Converteren tussen decimaal en hexadecimaal",
+        "Cole ou digite o numero decimal aqui": "Plak of typ hier het decimale getal",
+        "Codificar para Hex": "Coderen naar Hex",
+        "Cole ou digite o código Hex aqui": "Plak of typ de Hex-code hier",
+        "Decodificar para decimal": "Decoderen tot op de komma",
+        "Digite apenas numeros": "Typ alleen getallen",
+        "O valor de entrada não é valido": "De invoerwaarde is niet geldig"
     }
 }

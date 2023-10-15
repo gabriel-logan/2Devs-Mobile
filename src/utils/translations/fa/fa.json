@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a نمیتواند صفر باشد.",
         "O valor de x é: ": "مقدار x به این قرار است: ",
         "First root:": "ریشه اول: ",
-        "Second root:": "ریشه دوم: "
+        "Second root:": "ریشه دوم: ",
+        "Codificar para Md5": "کد به MD5",
+        "MD5 HASH:": "هش MD5:",
+        "Conversor de dados": "مبدل داده",
+        "Ascii e Hexadecimal": "ASCII و هگزادسیمال",
+        "Hexadecimal e Decimal": "هگزادسیمال و دهدهی",
+        "Pagina para conversoes": "صفحه برای تبدیل",
+        "Modulos disponiveis": "ماژول های موجود",
+        "Converte entre ascii e hexadecimal": "تبدیل بین ASCII و هگزادسیمال",
+        "Converte entre decimal e hexadecimal": "تبدیل بین decimal و hexadecimal",
+        "Cole ou digite o numero decimal aqui": "چسباندن یا تایپ کردن عدد دهدهی در اینجا",
+        "Codificar para Hex": "رمزگذاری به هگز",
+        "Cole ou digite o código Hex aqui": "کد Hex را در اینجا جایگذاری یا تایپ کنید",
+        "Decodificar para decimal": "رمزگشایی به دهدهی",
+        "Digite apenas numeros": "فقط اعداد را تایپ کنید",
+        "O valor de entrada não é valido": "مقدار ورودی معتبر نیست"
     }
 }

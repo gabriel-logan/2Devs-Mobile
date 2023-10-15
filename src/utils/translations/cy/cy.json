@@ -153,6 +153,21 @@
         "a não pode ser zero.": "Ni all fod yn sero.",
         "O valor de x é: ": "Gwerth x yw: ",
         "First root:": "Gwreiddiau cyntaf: ",
-        "Second root:": "Ail wreiddyn: "
+        "Second root:": "Ail wreiddyn: ",
+        "Codificar para Md5": "Amgodio i Md5",
+        "MD5 HASH:": "MD5 HASH:",
+        "Conversor de dados": "Data Converter",
+        "Ascii e Hexadecimal": "ASCII a Hexadecimal",
+        "Hexadecimal e Decimal": "Hexadecimal a degol",
+        "Pagina para conversoes": "Tudalen ar gyfer Trawsnewidiadau",
+        "Modulos disponiveis": "Y modiwlau sydd ar gael",
+        "Converte entre ascii e hexadecimal": "Trosi rhwng ascii a hexadecimal",
+        "Converte entre decimal e hexadecimal": "Trosi rhwng degol a hexadecimal",
+        "Cole ou digite o numero decimal aqui": "Gludwch neu deipio'r rhif degol yma",
+        "Codificar para Hex": "Amgodio i Hex",
+        "Cole ou digite o código Hex aqui": "Gludwch neu deipio'r cod Hex yma",
+        "Decodificar para decimal": "Dadgodio i ddegol",
+        "Digite apenas numeros": "Teipiwch rifau yn unig",
+        "O valor de entrada não é valido": "Nid yw'r gwerth mewnbwn yn ddilys"
     }
 }

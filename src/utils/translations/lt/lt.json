@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a negali būti nulis.",
         "O valor de x é: ": "x vertė yra: ",
         "First root:": "Pirmoji šaknis: ",
-        "Second root:": "Antroji šaknis: "
+        "Second root:": "Antroji šaknis: ",
+        "Codificar para Md5": "Kodavimas į Md5",
+        "MD5 HASH:": "MD5 MAIŠA:",
+        "Conversor de dados": "Duomenų keitiklis",
+        "Ascii e Hexadecimal": "ASCII ir šešioliktainis",
+        "Hexadecimal e Decimal": "Šešioliktainė ir dešimtainė",
+        "Pagina para conversoes": "Konversijų puslapis",
+        "Modulos disponiveis": "Galimi moduliai",
+        "Converte entre ascii e hexadecimal": "Konvertuoti tarp ASCII ir šešioliktainio",
+        "Converte entre decimal e hexadecimal": "Konvertuoti tarp dešimtainės ir šešioliktainės",
+        "Cole ou digite o numero decimal aqui": "Dešimtainio skaičiaus įklijavimas arba įvedimas čia",
+        "Codificar para Hex": "Koduoti į šešiakampį",
+        "Cole ou digite o código Hex aqui": "Įklijuokite arba įveskite šešioliktainį kodą čia",
+        "Decodificar para decimal": "Dekoduoti iki dešimtainio skaičiaus",
+        "Digite apenas numeros": "Įveskite tik skaičius",
+        "O valor de entrada não é valido": "Įvesties reikšmė negalioja"
     }
 }

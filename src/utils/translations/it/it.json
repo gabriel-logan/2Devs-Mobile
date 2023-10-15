@@ -153,6 +153,21 @@
         "a não pode ser zero.": "A non può essere zero.",
         "O valor de x é: ": "Il valore di x è: ",
         "First root:": "Prima radice: ",
-        "Second root:": "Seconda radice: "
+        "Second root:": "Seconda radice: ",
+        "Codificar para Md5": "Codifica in Md5",
+        "MD5 HASH:": "HASH MD5:",
+        "Conversor de dados": "Convertitore di dati",
+        "Ascii e Hexadecimal": "ASCII ed esadecimale",
+        "Hexadecimal e Decimal": "Esadecimale e decimale",
+        "Pagina para conversoes": "Pagina per le conversioni",
+        "Modulos disponiveis": "Moduli disponibili",
+        "Converte entre ascii e hexadecimal": "Conversione tra ASCII ed esadecimale",
+        "Converte entre decimal e hexadecimal": "Converti tra decimale ed esadecimale",
+        "Cole ou digite o numero decimal aqui": "Incolla o digita qui il numero decimale",
+        "Codificar para Hex": "Codifica in esadecimale",
+        "Cole ou digite o código Hex aqui": "Incolla o digita qui il codice esadecimale",
+        "Decodificar para decimal": "Decodifica in decimale",
+        "Digite apenas numeros": "Digita solo i numeri",
+        "O valor de entrada não é valido": "Il valore di input non è valido"
     }
 }

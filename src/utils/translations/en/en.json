@@ -173,6 +173,22 @@
 		"O valor de x é: ": "The value of x is: ",
 
 		"Codificar para Md5": "Encode to Md5",
-		"MD5 HASH:": "MD5 HASH:"
+		"MD5 HASH:": "MD5 HASH:",
+
+		"Conversor de dados": "Data Converter",
+		"Ascii e Hexadecimal": "ASCII and Hexadecimal",
+		"Hexadecimal e Decimal": "Hexadecimal and Decimal",
+
+		"Pagina para conversoes": "Page for Conversions",
+		"Modulos disponiveis": "Available Modules",
+		"Converte entre ascii e hexadecimal": "Convert between ASCII and hexadecimal",
+		"Converte entre decimal e hexadecimal": "Convert between decimal and hexadecimal",
+
+		"Cole ou digite o numero decimal aqui": "Paste or type the decimal number here",
+		"Codificar para Hex": "Encode to Hex",
+		"Cole ou digite o código Hex aqui": "Paste or type the Hex code here",
+		"Decodificar para decimal": "Decode to decimal",
+		"Digite apenas numeros": "Type only numbers",
+		"O valor de entrada não é valido": "The input value is not valid"
 	}
 }

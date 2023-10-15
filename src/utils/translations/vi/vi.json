@@ -153,6 +153,21 @@
         "a não pode ser zero.": "A không thể bằng không.",
         "O valor de x é: ": "Giá trị của x là: ",
         "First root:": "Gốc thứ nhất: ",
-        "Second root:": "Gốc thứ hai: "
+        "Second root:": "Gốc thứ hai: ",
+        "Codificar para Md5": "Mã hóa thành Md5",
+        "MD5 HASH:": "BĂM MD5:",
+        "Conversor de dados": "Chuyển đổi dữ liệu",
+        "Ascii e Hexadecimal": "ASCII và thập lục phân",
+        "Hexadecimal e Decimal": "Thập lục phân và thập phân",
+        "Pagina para conversoes": "Trang dành cho chuyển đổi",
+        "Modulos disponiveis": "Các mô-đun có sẵn",
+        "Converte entre ascii e hexadecimal": "Chuyển đổi giữa ASCII và thập lục phân",
+        "Converte entre decimal e hexadecimal": "Chuyển đổi giữa thập phân và thập lục phân",
+        "Cole ou digite o numero decimal aqui": "Dán hoặc nhập số thập phân vào đây",
+        "Codificar para Hex": "Mã hóa thành Hex",
+        "Cole ou digite o código Hex aqui": "Dán hoặc nhập mã Hex vào đây",
+        "Decodificar para decimal": "Giải mã thành số thập phân",
+        "Digite apenas numeros": "Chỉ nhập số",
+        "O valor de entrada não é valido": "Giá trị đầu vào không hợp lệ"
     }
 }

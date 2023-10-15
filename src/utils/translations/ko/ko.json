@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a는 0이 될 수 없습니다.",
         "O valor de x é: ": "x의 값은 다음과 같습니다. ",
         "First root:": "첫 번째 루트 : ",
-        "Second root:": "두 번째 루트 : "
+        "Second root:": "두 번째 루트 : ",
+        "Codificar para Md5": "md5로 인코딩",
+        "MD5 HASH:": "MD5 해시:",
+        "Conversor de dados": "데이터 컨버터",
+        "Ascii e Hexadecimal": "ASCII 및 16진수",
+        "Hexadecimal e Decimal": "16진수 및 10진수",
+        "Pagina para conversoes": "전환을 위한 페이지",
+        "Modulos disponiveis": "사용 가능한 모듈",
+        "Converte entre ascii e hexadecimal": "ASCII와 16진수 간 변환",
+        "Converte entre decimal e hexadecimal": "decimal과 hexadecimal 간 변환",
+        "Cole ou digite o numero decimal aqui": "여기에 10진수를 붙여넣거나 입력합니다",
+        "Codificar para Hex": "Hex로 인코딩",
+        "Cole ou digite o código Hex aqui": "여기에 Hex 코드를 붙여넣거나 입력합니다.",
+        "Decodificar para decimal": "10진수로 디코딩",
+        "Digite apenas numeros": "숫자만 입력",
+        "O valor de entrada não é valido": "입력 값이 올바르지 않습니다."
     }
 }

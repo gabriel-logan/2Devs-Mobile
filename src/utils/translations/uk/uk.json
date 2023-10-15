@@ -153,6 +153,21 @@
         "a não pode ser zero.": "А не може дорівнювати нулю.",
         "O valor de x é: ": "Значення x дорівнює: ",
         "First root:": "Перший корінь: ",
-        "Second root:": "Другий корінь: "
+        "Second root:": "Другий корінь: ",
+        "Codificar para Md5": "Кодування в Md5",
+        "MD5 HASH:": "MD5 ХЕШ:",
+        "Conversor de dados": "Конвертер даних",
+        "Ascii e Hexadecimal": "ASCII та шістнадцяткова система числення",
+        "Hexadecimal e Decimal": "Шістнадцятковий і десятковий дріб",
+        "Pagina para conversoes": "Сторінка для конверсій",
+        "Modulos disponiveis": "Доступні модулі",
+        "Converte entre ascii e hexadecimal": "Перетворення між ASCII та шістнадцятковою системою числення",
+        "Converte entre decimal e hexadecimal": "Перетворення між десятковим дробом і шістнадцятковим дробом",
+        "Cole ou digite o numero decimal aqui": "Вставте або введіть десяткове число тут",
+        "Codificar para Hex": "Кодування в шістнадцятковий формат",
+        "Cole ou digite o código Hex aqui": "Вставте або введіть шістнадцятковий код тут",
+        "Decodificar para decimal": "Декодування в десятковий дріб",
+        "Digite apenas numeros": "Вводити лише цифри",
+        "O valor de entrada não é valido": "Введене значення недійсне"
     }
 }

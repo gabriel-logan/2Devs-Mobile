@@ -153,6 +153,21 @@
         "a não pode ser zero.": "(أ) لا يمكن أن يكون صفرا.",
         "O valor de x é: ": "قيمة x هي: ",
         "First root:": "الجذر الأول: ",
-        "Second root:": "الجذر الثاني: "
+        "Second root:": "الجذر الثاني: ",
+        "Codificar para Md5": "ترميز إلى Md5",
+        "MD5 HASH:": "تجزئة MD5:",
+        "Conversor de dados": "محول البيانات",
+        "Ascii e Hexadecimal": "ASCII والنظام السداسي عشري",
+        "Hexadecimal e Decimal": "سداسي عشري وعشري",
+        "Pagina para conversoes": "صفحة للتحويلات",
+        "Modulos disponiveis": "الوحدات المتاحة",
+        "Converte entre ascii e hexadecimal": "التحويل بين ASCII والنظام الست عشري",
+        "Converte entre decimal e hexadecimal": "التحويل بين النظام العشري والسداسي عشري",
+        "Cole ou digite o numero decimal aqui": "الصق أو اكتب الرقم العشري هنا",
+        "Codificar para Hex": "ترميز إلى عرافة عشرية",
+        "Cole ou digite o código Hex aqui": "الصق أو اكتب الرمز السداسي عشري هنا",
+        "Decodificar para decimal": "فك التشفير إلى عشري",
+        "Digite apenas numeros": "اكتب الأرقام فقط",
+        "O valor de entrada não é valido": "قيمة الإدخال غير صالحة"
     }
 }

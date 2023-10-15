@@ -153,6 +153,21 @@
         "a não pode ser zero.": "a haiwezi kuwa sifuri.",
         "O valor de x é: ": "Thamani ya x ni: ",
         "First root:": "Mzizi wa kwanza: ",
-        "Second root:": "Mzizi wa pili: "
+        "Second root:": "Mzizi wa pili: ",
+        "Codificar para Md5": "Encode kwa Md5",
+        "MD5 HASH:": "MD5 HASH:",
+        "Conversor de dados": "Kigeuzi cha Data",
+        "Ascii e Hexadecimal": "ASCII na Hexadecimal",
+        "Hexadecimal e Decimal": "Hexadecimal na Decimal",
+        "Pagina para conversoes": "Ukurasa wa Uongofu",
+        "Modulos disponiveis": "Moduli zinazopatikana",
+        "Converte entre ascii e hexadecimal": "Badilisha kati ya ASCII na hexadecimal",
+        "Converte entre decimal e hexadecimal": "Badilisha kati ya desimali na hexadecimal",
+        "Cole ou digite o numero decimal aqui": "Bandika au chapa nambari ya desimali hapa",
+        "Codificar para Hex": "Encode kwa Hex",
+        "Cole ou digite o código Hex aqui": "Bandika au chapa msimbo wa Hex hapa",
+        "Decodificar para decimal": "Decode kwa desimali",
+        "Digite apenas numeros": "Andika namba pekee",
+        "O valor de entrada não é valido": "Thamani ya ingizo sio halali"
     }
 }

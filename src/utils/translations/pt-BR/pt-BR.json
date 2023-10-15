@@ -181,6 +181,24 @@
 		"Second root:": "Segunda raiz: ",
 
 		"Codificar para Md5": "Codificar para Md5",
-		"MD5 HASH:": "MD5 HASH:"
+		"MD5 HASH:": "MD5 HASH:",
+
+		"Conversor de dados": "Conversor de dados",
+		"Ascii e Hexadecimal": "Ascii e Hexadecimal",
+		"Hexadecimal e Decimal": "Hexadecimal e Decimal",
+
+		"Pagina para conversoes": "Página para conversões",
+		"Modulos disponiveis": "Módulos disponíveis",
+		"Converte entre ascii e hexadecimal": "Converte entre ASCII e hexadecimal",
+		"Converte entre decimal e hexadecimal": "Converte entre decimal e hexadecimal",
+
+		"Cole ou digite o numero decimal aqui": "Cole ou digite o número decimal aqui",
+		"Codificar para Hex": "Codificar para Hex",
+		"Cole ou digite o código Hex aqui": "Cole ou digite o código Hex aqui",
+		"Decodificar para decimal": "Decodificar para decimal",
+		"Digite apenas numeros": "Digite apenas números",
+		"O valor de entrada não é valido": "O valor de entrada não é válido"
+
+
 	}
 }

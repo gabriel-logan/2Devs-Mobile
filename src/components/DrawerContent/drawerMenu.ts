@@ -45,6 +45,7 @@ const drawerMenu: (
 		menuList: [
 			{ title: 'Base64', route: 'Base64' },
 			{ title: 'Md5', route: 'Md5' },
+			{ title: 'Conversor de dados', route: 'DataConverter' },
 			{ title: 'Codigo Binario', route: 'CodigoBinario' },
 		],
 	},

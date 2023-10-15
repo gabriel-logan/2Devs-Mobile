@@ -153,6 +153,21 @@
         "a não pode ser zero.": "A kan ikke være nul.",
         "O valor de x é: ": "Værdien af x er: ",
         "First root:": "Første rod: ",
-        "Second root:": "Anden rod: "
+        "Second root:": "Anden rod: ",
+        "Codificar para Md5": "Kod til MD5",
+        "MD5 HASH:": "MD5 HASH:",
+        "Conversor de dados": "Data konverter",
+        "Ascii e Hexadecimal": "ASCII og hexadecimal",
+        "Hexadecimal e Decimal": "Hexadecimal og decimal",
+        "Pagina para conversoes": "Side for konverteringer",
+        "Modulos disponiveis": "Tilgængelige moduler",
+        "Converte entre ascii e hexadecimal": "Konverter mellem ASCII og hexadecimal",
+        "Converte entre decimal e hexadecimal": "Konverter mellem decimal og hexadecimal",
+        "Cole ou digite o numero decimal aqui": "Indsæt eller skriv decimaltallet her",
+        "Codificar para Hex": "Kod til Hex",
+        "Cole ou digite o código Hex aqui": "Indsæt eller skriv Hex-koden her",
+        "Decodificar para decimal": "Afkode til decimal",
+        "Digite apenas numeros": "Indtast kun tal",
+        "O valor de entrada não é valido": "Inputværdien er ikke gyldig"
     }
 }
