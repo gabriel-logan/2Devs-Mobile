@@ -7,6 +7,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "owner": "gabriellogan",
+		"githubUrl": "https://github.com/gabriel-logan/2Devs-Mobile",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
@@ -20,12 +21,13 @@
       "supportsTablet": true
     },
     "android": {
+			"playStoreUrl": "https://play.google.com/store/apps/details?id=com.gabriellogan.toDevs",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#231f21"
       },
       "package": "com.gabriellogan.toDevs",
-      "versionCode": 8
+      "versionCode": 9
     },
     "web": {
       "favicon": "./assets/favicon.png"
