@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, LayoutAnimation } from 'react-native';
+import {
+	StyleSheet,
+	View,
+	Text,
+	TouchableOpacity,
+	LayoutAnimation,
+	ScrollView,
+} from 'react-native';
 
 import { Image } from 'expo-image';
 
@@ -10,31 +17,19 @@ import { useTheme } from '../ThemeContext';
 import getThemeColor from '../../configs/colors';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
-import { NavigationType } from '../../types/navigationProps';
+import { NavigationType, DirectRoutesProps, SubRoutesProps } from '../../types/navigationProps';
 
 const drawerMenu: (
 	| {
 			title: string;
-			route: 'Main' | 'InfoPage' | 'MyNetwork';
+			route: DirectRoutesProps;
 			menuList?: undefined;
 	  }
 	| {
 			title: string;
 			menuList: {
 				title: string;
-				route:
-					| 'CpfGerador'
-					| 'CnpjGerador'
-					| 'CreditCardGerador'
-					| 'CpfValidador'
-					| 'CnpjValidador'
-					| 'CreditCardValidador'
-					| 'Base64'
-					| 'CodigoBinario'
-					| 'PasswordGerador'
-					| 'MmcMdc'
-					| 'LinearEquation'
-					| 'QuadraticEquation';
+				route: SubRoutesProps;
 			}[];
 			route?: undefined;
 	  }
@@ -68,6 +63,7 @@ const drawerMenu: (
 		title: 'Encoders and Decoders',
 		menuList: [
 			{ title: 'Base64', route: 'Base64' },
+			{ title: 'Md5', route: 'Md5' },
 			{ title: 'Codigo Binario', route: 'CodigoBinario' },
 		],
 	},
@@ -112,39 +108,41 @@ const CustomDrawerContent = () => {
 				transition={350}
 				style={stylesWithTheme.logo}
 			/>
-			{drawerMenu.map((item, index) => (
-				<View key={index} style={stylesWithTheme.menuItem}>
-					<TouchableOpacity
-						onPress={() => {
-							LayoutAnimation.configureNext(
-								LayoutAnimation.create(200, 'easeInEaseOut', 'opacity'),
-							);
-							if (!item.menuList) {
-								navigation.navigate(item.route);
-							}
-							setMenuIndex(menuIndex === index ? -1 : index);
-						}}
-					>
-						<View style={stylesWithTheme.item}>
-							<Text style={stylesWithTheme.menuTitle}>{t(item.title)}</Text>
-						</View>
-						{menuIndex === index && (
-							<>
-								{item.menuList?.map((subItem, subIndex) => (
-									<TouchableOpacity
-										key={subIndex}
-										onPress={() => navigation.navigate(subItem.route)}
-									>
-										<View style={stylesWithTheme.subMenu}>
-											<Text style={stylesWithTheme.subMenuTitle}>{t(subItem.title)}</Text>
-										</View>
-									</TouchableOpacity>
-								))}
-							</>
-						)}
-					</TouchableOpacity>
-				</View>
-			))}
+			<ScrollView style={stylesWithTheme.menuScrollView} showsVerticalScrollIndicator={false}>
+				{drawerMenu.map((item, index) => (
+					<View key={index} style={stylesWithTheme.menuItem}>
+						<TouchableOpacity
+							onPress={() => {
+								LayoutAnimation.configureNext(
+									LayoutAnimation.create(200, 'easeInEaseOut', 'opacity'),
+								);
+								if (!item.menuList) {
+									navigation.navigate(item.route);
+								}
+								setMenuIndex(menuIndex === index ? -1 : index);
+							}}
+						>
+							<View style={stylesWithTheme.item}>
+								<Text style={stylesWithTheme.menuTitle}>{t(item.title)}</Text>
+							</View>
+							{menuIndex === index && (
+								<>
+									{item.menuList?.map((subItem, subIndex) => (
+										<TouchableOpacity
+											key={subIndex}
+											onPress={() => navigation.navigate(subItem.route)}
+										>
+											<View style={stylesWithTheme.subMenu}>
+												<Text style={stylesWithTheme.subMenuTitle}>{t(subItem.title)}</Text>
+											</View>
+										</TouchableOpacity>
+									))}
+								</>
+							)}
+						</TouchableOpacity>
+					</View>
+				))}
+			</ScrollView>
 		</View>
 	);
 };
@@ -153,18 +151,21 @@ const styles = (theme: 'dark' | 'light') =>
 	StyleSheet.create({
 		container: {
 			alignItems: 'center',
-			marginBottom: RFValue(20),
 			marginTop: RFValue(35),
+			flex: 1,
 		},
 		logo: {
 			width: RFValue(128 + 50),
 			height: RFValue((128 + 50) / 2),
 			marginBottom: RFValue(25),
 		},
+		menuScrollView: {
+			marginTop: RFValue(10),
+			width: '90%',
+		},
 		menuItem: {
 			marginBottom: RFValue(10),
 			borderWidth: 0.5,
-			width: '90%',
 			padding: RFValue(5),
 			marginVertical: RFValue(6),
 			borderRadius: 10,

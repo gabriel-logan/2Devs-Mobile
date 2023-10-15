@@ -17,6 +17,7 @@ import PasswordGenerator from '../pages/generators/PasswordGen';
 import MmcMdcPage from '../pages/mathematics/MmcMdc';
 import LinearEquationPage from '../pages/mathematics/LinearEquation';
 import QuadraticEquationPage from '../pages/mathematics/QuadraticEquation';
+import Md5Page from '../pages/encodersAndDecoders/Md5';
 
 import PrivacyPolicesAndTerms from '../components/PrivacyPolicesAndTerms';
 
@@ -95,6 +96,7 @@ function DrawerNavigator() {
 			</Drawer.Group>
 			<Drawer.Group>
 				<Drawer.Screen name="Base64" options={{ title: t('Base64') }} component={Base64Page} />
+				<Drawer.Screen name="Md5" options={{ title: t('Md5') }} component={Md5Page} />
 				<Drawer.Screen
 					name="CodigoBinario"
 					options={{ title: t('Codigo Binario') }}
