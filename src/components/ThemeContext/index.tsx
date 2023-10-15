@@ -1,14 +1,10 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+
 import { Alert, useColorScheme } from 'react-native';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-type Theme = 'light' | 'dark';
-type ThemeChanges = Theme | 'system';
-
-interface ThemeContextProps {
-	theme: Theme;
-	toggleTheme: (newTheme: Theme) => void;
-}
+import { Theme, ThemeChanges, ThemeContextProps } from '../../types/themeProps';
 
 const ThemeContext = createContext<ThemeContextProps | string>('light');
 
