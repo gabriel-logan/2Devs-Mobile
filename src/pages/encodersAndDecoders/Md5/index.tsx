@@ -27,27 +27,30 @@ export default function Md5Page() {
 	const { theme } = useTheme();
 
 	const [inputText, setInputText] = useState('');
+	const [md5Hash, setMd5Hash] = useState('');
 	const [cleanAlways, setCleanAlways] = useState(false);
-	const [considerSpace, setConsiderSpace] = useState(false);
 
 	const stylesWithTheme = styles(theme);
 
 	const encodeToMd5 = (text: string) => {
 		const valor = MD5(text).toString();
-		setInputText(valor);
-	};
-
-	const copyToClipboard = async (textToCopy: string | null) => {
-		if (textToCopy) {
-			await Clipboard.setStringAsync(textToCopy);
+		setMd5Hash(valor);
+		if (cleanAlways) {
+			setInputText('');
 		}
 	};
 
-	const cutToClipboard = async (textToCopy: string | null) => {
-		if (textToCopy) {
-			await Clipboard.setStringAsync(textToCopy);
+	const copyToClipboard = async () => {
+		if (md5Hash) {
+			await Clipboard.setStringAsync(md5Hash);
 		}
-		setInputText('');
+	};
+
+	const cutToClipboard = async () => {
+		if (md5Hash) {
+			await Clipboard.setStringAsync(md5Hash);
+		}
+		setMd5Hash('');
 	};
 
 	const pasteToClipboard = async () => {
@@ -55,17 +58,13 @@ export default function Md5Page() {
 		setInputText(text);
 	};
 
-	const cleanToClipboard = () => setInputText('');
+	const cleanToClipboard = () => setMd5Hash('');
 
 	useEffect(() => {
 		(async () => {
 			const md5AlwaysClean = await AsyncStorage.getItem('md5AlwaysCleanAfterGenerate');
 			if (md5AlwaysClean) {
 				setCleanAlways(JSON.parse(md5AlwaysClean));
-			}
-			const considerSpace = await AsyncStorage.getItem('considerSpaceAfterGenerate');
-			if (considerSpace) {
-				setConsiderSpace(JSON.parse(considerSpace));
 			}
 		})();
 	}, []);
@@ -87,21 +86,6 @@ export default function Md5Page() {
 					color={cleanAlways ? '#5446bf' : undefined}
 				/>
 			</View>
-			<View style={[stylesWithTheme.section, { marginBottom: 15 }]}>
-				<Text style={stylesWithTheme.paragraph}>{t('Considerar espaço ?')}</Text>
-				<Checkbox
-					style={stylesWithTheme.checkbox}
-					value={considerSpace}
-					onValueChange={async (considerSpace) => {
-						setConsiderSpace(considerSpace.valueOf());
-						await AsyncStorage.setItem(
-							'considerSpaceAfterGenerate',
-							JSON.stringify(considerSpace.valueOf()),
-						);
-					}}
-					color={considerSpace ? '#5446bf' : undefined}
-				/>
-			</View>
 			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={stylesWithTheme.inputContainer}>
 					<TextInput
@@ -112,30 +96,29 @@ export default function Md5Page() {
 						value={inputText}
 						multiline
 					/>
-					<View style={stylesWithTheme.divButtonCopy}>
-						<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={() => pasteToClipboard()}>
-							<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
-						</TouchableOpacity>
-						<TouchableOpacity
-							style={stylesWithTheme.buttonCopy}
-							onPress={() => copyToClipboard(inputText)}
-						>
-							<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
-						</TouchableOpacity>
-						<TouchableOpacity
-							style={stylesWithTheme.buttonCopy}
-							onPress={() => cutToClipboard(inputText)}
-						>
-							<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
-						</TouchableOpacity>
-						<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={() => cleanToClipboard()}>
-							<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
-						</TouchableOpacity>
-					</View>
 				</View>
 				<TouchableOpacity style={stylesWithTheme.button} onPress={() => encodeToMd5(inputText)}>
 					<Text style={stylesWithTheme.buttonText}>{t('Codificar para Md5')}</Text>
 				</TouchableOpacity>
+				<View style={stylesWithTheme.divButtonCopy}>
+					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={() => pasteToClipboard()}>
+						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
+					</TouchableOpacity>
+					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={() => copyToClipboard()}>
+						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
+					</TouchableOpacity>
+					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={() => cutToClipboard()}>
+						<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
+					</TouchableOpacity>
+					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={() => cleanToClipboard()}>
+						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
+					</TouchableOpacity>
+				</View>
+				<View style={{ backgroundColor: 'lightgray', padding: 10, borderRadius: 5, margin: 10 }}>
+					<Text style={{ fontSize: RFValue(16), fontWeight: 'bold', color: 'blue' }}>
+						{t('MD5 HASH:')} {md5Hash}
+					</Text>
+				</View>
 			</ScrollView>
 		</View>
 	);

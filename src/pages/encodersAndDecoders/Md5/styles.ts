@@ -38,8 +38,8 @@ const styles = (theme: Theme) =>
 			textAlign: 'center',
 		},
 		divButtonCopy: {
-			position: 'absolute',
-			right: RFValue(15),
+			flexDirection: 'row',
+			justifyContent: 'space-around',
 		},
 		buttonCopy: {
 			marginVertical: RFValue(10),

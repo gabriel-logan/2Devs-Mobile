@@ -178,6 +178,9 @@
 		"a não pode ser zero.": "a não pode ser zero.",
 		"O valor de x é: ": "O valor de x é: ",
 		"First root:": "Primeira raiz: ",
-		"Second root:": "Segunda raiz: "
+		"Second root:": "Segunda raiz: ",
+
+		"Codificar para Md5": "Codificar para Md5",
+		"MD5 HASH:": "MD5 HASH:"
 	}
 }

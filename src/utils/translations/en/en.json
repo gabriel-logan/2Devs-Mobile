@@ -170,6 +170,9 @@
 		"Digite a equação linear no formato": "Enter the linear equation in the format \"ax + b = c\"",
 		"Equação inválida. Use o formato": "Invalid equation. Use the format \"ax + b = c\".",
 		"a não pode ser zero.": "a cannot be zero.",
-		"O valor de x é: ": "The value of x is: "
+		"O valor de x é: ": "The value of x is: ",
+
+		"Codificar para Md5": "Encode to Md5",
+		"MD5 HASH:": "MD5 HASH:"
 	}
 }
