@@ -18,4 +18,6 @@ https://gabriel-logan.github.io/2Devs-Mobile/terms.html
 
 Downloads
 
-Android - https://gabriel-logan.github.io/2Devs-Mobile/appsDownload.html
+Playstore - https://play.google.com/store/apps/details?id=com.gabriellogan.toDevs
+
+Android Apk - https://gabriel-logan.github.io/2Devs-Mobile/appsDownload.html
