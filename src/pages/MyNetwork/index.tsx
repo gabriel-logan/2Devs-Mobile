@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 
 import { useFocusEffect } from '@react-navigation/native';
 
@@ -46,8 +46,12 @@ const MyNetwork = () => {
 						);
 					}
 
-					const airplane = await Network.isAirplaneModeEnabledAsync();
-					setAirplaneMode(airplane);
+					if (Platform.OS === 'android') {
+						const airplane = await Network.isAirplaneModeEnabledAsync();
+						setAirplaneMode(airplane);
+					} else {
+						setAirplaneMode(null);
+					}
 				} catch (error) {
 					console.error(error);
 				}
