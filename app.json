@@ -1,44 +1,4 @@
 {
-  "expo": {
-    "name": "2Devs",
-    "slug": "2Devs",
-    "version": "1.0.1",
-    "description": "Your All-in-One IT Solution, Data Generation, Validation, and Comprehensive Tools for Professionals in the Field of Technology. Your IT toolkit - generate, validate, and more!",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "owner": "gabriellogan",
-		"githubUrl": "https://github.com/gabriel-logan/2Devs-Mobile",
-    "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#231f21"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-			"playStoreUrl": "https://play.google.com/store/apps/details?id=com.gabriellogan.toDevs",
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#231f21"
-      },
-      "package": "com.gabriellogan.toDevs",
-      "versionCode": 9
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      "expo-localization"
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "f980c87c-ce79-4961-8672-f8ab2c86fe10"
-      }
-    }
-  }
+  "name": "toDevs",
+  "displayName": "toDevs"
 }
