@@ -1,0 +1,360 @@
+pt-BR: Brasil
+en-US: Estados Unidos
+af: África do Sul
+ar: Arábia Saudita
+bg: Bulgária
+ca: Catalunha
+cs-CZ: República Tcheca
+da-DK: Dinamarca
+de-DE: Alemanha
+el-GR: Grécia
+es-ES: Espanha
+fa: Irã
+fi-FI: Finlândia
+fr-FR: França
+hi-IN: Índia
+hr: Croácia
+hu-HU: Hungria
+id: Indonésia
+is-IS: Islândia
+it-IT: Itália
+ja-JP: Japão
+ko-KR: Coreia do Sul
+lt: Lituânia
+lv: Letônia
+ms-MY: Malásia
+nl-NL: Países Baixos
+pl-PL: Polônia
+pt-PT: Portugal
+ro: Romênia
+ru-RU: Rússia
+sk: Eslováquia
+sl: Eslovênia
+sv-SE: Suécia
+sw: Suaili
+th: Tailândia
+tr-TR: Turquia
+uk: Ucrânia
+ur: Urdu
+vi: Vietnamita
+zh-CN: China
+
+<pt-BR>
+Bem vindo a primeira versão do 2Devs,
+
+Neste app você irá encontrar várias ferramentas para auxiliar no desenvolvimento, como geradores de senha e muito mais.
+
+Esta versão está funcionando perfeitamente.
+</pt-BR>
+
+<en-US>
+Welcome to the first version of 2Devs,
+
+In this app, you will have various tools to assist in development, such as password generators and more.
+
+This version is working perfectly.
+</en-US>
+
+<af>
+Welkom by die eerste weergawe van 2Devs,
+
+In hierdie program sal jy verskeie hulpmiddels hê om in ontwikkeling te help, soos wagwoordopwekkers en meer.
+
+Hierdie weergawe werk perfek.
+</af>
+
+<ar>
+مرحبًا بك في الإصدار الأول من 2Devs،
+
+في هذا التطبيق، ستجد مجموعة متنوعة من الأدوات لمساعدتك في التطوير، مثل مُولِّدات كلمات المرور والمزيد.
+
+هذا الإصدار يعمل بشكل مثالي.
+</ar>
+
+<bg>
+Добре дошли в първата версия на 2Devs,
+
+В този приложение ще намерите различни инструменти, които да ви помогнат в разработката, като генератори на пароли и много други.
+
+Тази версия работи перфектно.
+</bg>
+
+<ca>
+Benvingut a la primera versió de 2Devs,
+
+En aquesta aplicació, tindràs diverses eines per ajudar en el desenvolupament, com generadors de contrasenya i molt més.
+
+Aquesta versió funciona perfectament.
+</ca>
+
+<cs-CZ>
+Vítejte ve verzi 2Devs,
+
+V této aplikaci najdete různé nástroje pro pomoc při vývoji, jako jsou generátory hesel a mnoho dalšího.
+
+Tato verze funguje perfektně.
+</cs-CZ>
+
+<da-DK>
+Velkommen til den første version af 2Devs,
+
+I denne app får du adgang til forskellige værktøjer til udvikling, såsom adgangskodegeneratorer og meget mere.
+
+Denne version fungerer perfekt.
+</da-DK>
+
+<de-DE>
+Willkommen zur ersten Version von 2Devs,
+
+In dieser App finden Sie verschiedene Tools zur Unterstützung bei der Entwicklung, wie Passwortgeneratoren und mehr.
+
+Diese Version funktioniert einwandfrei.
+</de-DE>
+
+<el-GR>
+Καλώς ήλθατε στην πρώτη έκδοση του 2Devs,
+
+Σε αυτήν την εφαρμογή, θα έχετε ποικίλα εργαλεία για την υποστήριξη της ανάπτυξης, όπως γεννήτριες κωδικών πρόσβασης και πολλά άλλα.
+
+Αυτή η έκδοση λειτουργεί άψογα.
+</el-GR>
+
+<es-ES>
+Bienvenido a la primera versión de 2Devs,
+
+En esta aplicación, tendrás varias herramientas para ayudarte en el desarrollo, como generadores de contraseñas y mucho más.
+
+Esta versión funciona perfectamente.
+</es-ES>
+
+<fa>
+خوش آمدید به نسخه اول 2Devs،
+
+در این برنامه، ابزارهای مختلفی برای کمک به توسعه مانند تولید کننده‌های رمز عبور و غیره خواهید داشت.
+
+این نسخه به طور کامل کار می‌کند.
+</fa>
+
+<fi-FI>
+Tervetuloa 2Devsin ensimmäiseen versioon,
+
+Tässä sovelluksessa sinulla on monia työkaluja kehityksen tueksi, kuten salasanojen generaattoreita ja paljon muuta.
+
+Tämä versio toimii täydellisesti.
+</fi-FI>
+
+<fr-FR>
+Bienvenue dans la première version de 2Devs,
+
+Dans cette application, vous trouverez divers outils pour vous aider dans le développement, tels que des générateurs de mots de passe et bien plus encore.
+
+Cette version fonctionne parfaitement.
+</fr-FR>
+
+<hi-IN>
+2Devs के पहले संस्करण में आपका स्वागत है,
+
+इस ऐप में आपको विकास में मदद के लिए कई टूल्स, जैसे पासवर्ड जेनरेटर और और भी कई चीजें मिलेंगी।
+
+इस संस्करण काम कर रहा है।
+</hi-IN>
+
+<hr>
+Dobrodošli u prvu verziju 2Devs-a,
+
+U ovoj aplikaciji imat ćete mnoge alatke za pomoć u razvoju, kao što su generatori lozinki i mnogo više.
+
+Ova verzija savršeno funkcionira.
+</hr>
+
+<hu-HU>
+Üdvözöljük az 2Devs első verziójában,
+
+Ebben az alkalmazásban számos eszköz áll rendelkezésre a fejlesztés segítésére, például jelszógenerátorok és még sok más.
+
+Ez a verzió tökéletesen működik.
+</hu-HU>
+
+<id>
+Selamat datang di versi pertama 2Devs,
+
+Di aplikasi ini, Anda akan memiliki berbagai alat untuk membantu dalam pengembangan, seperti generator kata sandi dan banyak lagi.
+
+Versi ini berfungsi dengan sempurna.
+</id>
+
+<is-IS>
+Velkomin(n) í fyrstu útgáfu 2Devs,
+
+Í þessari forriti munu þér vera mörg tól sem hjálpa þér við þróun, eins og lykilorðaframleiðendur og mörg önnur.
+
+Þessi útgáfa er að virka fullkomlega.
+</is-IS>
+
+<it-IT>
+Benvenuto nella prima versione di 2Devs,
+
+In questa app avrai a disposizione diverse strumenti per aiutarti nello sviluppo, come generatori di password e molto altro.
+
+Questa versione funziona perfettamente.
+</it-IT>
+
+<ja-JP>
+2Devsの最初のバージョンへようこそ、
+
+このアプリでは、パスワードジェネレータなど、開発の支援に役立つさまざまなツールが利用できます。
+
+このバージョンは完璧に動作しています。
+</ja-JP>
+
+<ko-KR>
+2Devs의 첫 번째 버전에 오신 것을 환영합니다,
+
+이 앱에서는 비밀번호 생성기 및 기타 개발 보조 도구와 같이 다양한 도구를 이용하실 수 있습니다.
+
+이 버전은 완벽하게 작동합니다.
+</ko-KR>
+
+<lt>
+Sveiki atvykę į pirmąją 2Devs versiją,
+
+Šioje programoje rasite daugybę įrankių, kurie padės jums plėtoti projektus, tokių kaip slaptažodžių generatoriai ir dar daugiau.
+
+Ši versija veikia puikiai.
+</lt>
+
+<lv>
+Laipni lūdzam pirmajā 2Devs versijā,
+
+Šajā lietotnē jums būs dažādi rīki, lai palīdzētu attīstībai, piemēram, paroles ģeneratori un daudz ko citu.
+
+Šī versija darbojas perfekti.
+</lv>
+
+<ms-MY>
+Selamat datang ke versi pertama 2Devs,
+
+Di aplikasi ini, anda akan mendapat pelbagai alat bantu untuk pembangunan, seperti pencipta kata laluan dan banyak lagi.
+
+Versi ini berfungsi dengan sempurna.
+</ms-MY>
+
+<nl-NL>
+Welkom bij de eerste versie van 2Devs,
+
+In deze app vindt u verschillende tools om te helpen bij de ontwikkeling, zoals wachtwoordgeneratoren en nog veel meer.
+
+Deze versie werkt perfect.
+</nl-NL>
+
+<pl-PL>
+Witaj w pierwszej wersji 2Devs,
+
+W tej aplikacji znajdziesz wiele narzędzi do pomocy w rozwoju, takich jak generatory haseł i wiele innych.
+
+Ta wersja działa doskonale.
+</pl-PL>
+
+<pt-PT>
+Bem-vindo à primeira versão do 2Devs,
+
+Nesta aplicação, terá várias ferramentas para auxiliar no desenvolvimento, como geradores de senhas e muito mais.
+
+Esta versão está a funcionar perfeitamente.
+</pt-PT>
+
+<ro>
+Bine ați venit la prima versiune a 2Devs,
+
+În această aplicație veți găsi diverse instrumente pentru dezvoltare, cum ar fi generatoare de parole și multe altele.
+
+Această versiune funcționează perfect.
+</ro>
+
+<ru-RU>
+Добро пожаловать в первую версию 2Devs,
+
+В этом приложении у вас есть множество инструментов для помощи в разработке, такие как генераторы паролей и многое другое.
+
+Эта версия работает отлично.
+</ru-RU>
+
+<sk>
+Vitajte v prvej verzii 2Devs,
+
+V tejto aplikácii nájdete rôzne nástroje na pomoc pri vývoji, ako sú generátory hesiel a ďalšie.
+
+Táto verzia funguje perfektne.
+</sk>
+
+<sl>
+Dobrodošli v prvi verziji 2Devs,
+
+V tej aplikaciji boste imeli na voljo različna orodja za pomoč pri razvoju, kot so generatorji gesel in še veliko več.
+
+Ta različica deluje popolno.
+</sl>
+
+<sv-SE>
+Välkommen till första versionen av 2Devs,
+
+I denna app har du flera verktyg för att underlätta utvecklingen, som lösenords­genererare och mycket mer.
+
+Denna version fungerar perfekt.
+</sv-SE>
+
+<sw>
+Karibu kwenye toleo la kwanza la 2Devs,
+
+Katika programu hii, utapata zana mbalimbali za kusaidia katika maendeleo, kama wazalishaji wa nywila na zaidi.
+
+Toleo hili linatenda kazi vizuri.
+</sw>
+
+<th>
+ยินดีต้อนรับสู่เวอร์ชันแรกของ 2Devs,
+
+ในแอปพลิเคชันนี้คุณจะได้รับเครื่องมือหลายรูปแบบสำหรับการช่วยในการพัฒนา เช่น เครื่องมือสร้างรหัสผ่าน และอื่น ๆ อีกมากมาย
+
+เวอร์ชันนี้ทำงานอย่างดี
+</th>
+
+<tr-TR>
+2Devs'ın ilk sürümüne hoş geldiniz,
+
+Bu uygulamada şifre üreticileri gibi geliştirme konusunda yardımcı olacak birçok araç bulacaksınız.
+
+Bu sürüm mükemmel bir şekilde çalışıyor.
+</tr-TR>
+
+<uk>
+Ласкаво просимо до першої версії 2Devs,
+
+У цьому додатку ви матимете багато інструментів для допомоги в розробці, такі як генератори паролів та багато іншого.
+
+Ця версія працює ідеально.
+</uk>
+
+<ur>
+2Devs کی پہلی ورژن میں خوش آمدید کہتے ہیں،
+
+اس ایپ میں آپ کو ترقی میں مدد کے لئے مختلف ٹولز ملیں گے، جیسے پاس ورڈ جنریٹر اور بہت کچھ.
+
+یہ ورژن مکمل طریقے سے کام کر رہا ہے.
+</ur>
+
+<vi>
+Chào mừng bạn đến phiên bản đầu tiên của 2Devs,
+
+Trong ứng dụng này, bạn sẽ có nhiều công cụ hữu ích để hỗ trợ trong quá trình phát triển, như trình tạo mật khẩu và nhiều thứ khác.
+
+Phiên bản này hoạt động hoàn hảo.
+</vi>
+
+<zh-CN>
+欢迎来到2Devs的第一个版本，
+
+在这个应用程序中，您将拥有各种工具，用于开发支持，如密码生成器等等。
+
+这个版本运行正常。
+</zh-CN>
