@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.19.3",
+    "@react-native-clipboard/clipboard": "^1.12.1",
+    "@react-native-community/checkbox": "^0.5.16",
+    "@react-native-community/netinfo": "^9.4.1",
     "@react-native-community/slider": "^4.4.3",
     "@react-native-picker/picker": "^2.5.1",
     "@react-navigation/drawer": "^6.6.5",
@@ -26,6 +29,7 @@
     "react-native": "0.72.6",
     "react-native-base64": "^0.2.1",
     "react-native-gesture-handler": "^2.13.3",
+    "react-native-localize": "^3.0.2",
     "react-native-paper": "^5.11.0",
     "react-native-reanimated": "^3.5.4",
     "react-native-responsive-fontsize": "^0.5.1",

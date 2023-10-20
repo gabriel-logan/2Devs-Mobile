@@ -1,8 +1,8 @@
 import i18n from 'i18next';
 
-import { initReactI18next } from 'react-i18next';
+import {initReactI18next} from 'react-i18next';
 
-import { locale, getLocales } from 'expo-localization';
+import {getLocales} from 'react-native-localize';
 
 // Minhas linguagens
 import af from './af/af.json'; // Africâner
@@ -107,9 +107,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 // (tip move them in a JSON file and import them,
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 
-const languageWithoutHyphen = locale.replace('-', '');
+const languageWithoutHyphen = getLocales()[0].languageTag.replace('-', '');
 
-const { languageCode } = getLocales()[0];
+const {languageCode} = getLocales()[0];
 
 const resources = {
 	af,
