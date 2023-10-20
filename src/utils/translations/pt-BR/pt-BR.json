@@ -197,8 +197,9 @@
 		"Cole ou digite o código Hex aqui": "Cole ou digite o código Hex aqui",
 		"Decodificar para decimal": "Decodificar para decimal",
 		"Digite apenas numeros": "Digite apenas números",
-		"O valor de entrada não é valido": "O valor de entrada não é válido"
+		"O valor de entrada não é valido": "O valor de entrada não é válido",
 
-
+		"Gateway Padrão": "Gateway Padrão",
+		"Máscara de Sub-rede": "Máscara de Sub-rede"
 	}
 }

@@ -189,6 +189,9 @@
 		"Cole ou digite o código Hex aqui": "Paste or type the Hex code here",
 		"Decodificar para decimal": "Decode to decimal",
 		"Digite apenas numeros": "Type only numbers",
-		"O valor de entrada não é valido": "The input value is not valid"
+		"O valor de entrada não é valido": "The input value is not valid",
+
+		"Gateway Padrão": "Default Gateway",
+    "Máscara de Sub-rede": "Subnet Mask"
 	}
 }

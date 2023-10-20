@@ -1,9 +1,11 @@
 import React, {useState, useCallback} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Platform} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 import {useFocusEffect} from '@react-navigation/native';
 
 import Clipboard from '@react-native-clipboard/clipboard';
+
+import {NetworkInfo} from 'react-native-network-info';
 
 import axios from 'axios';
 
@@ -25,15 +27,23 @@ const MyNetwork = () => {
 	const stylesWithTheme = styles(theme);
 
 	const [ipAddress, setIpAddress] = useState<string | null>(null);
+	const [geteway, setGeteway] = useState<string | null>(null);
+	const [subnet, setSubnet] = useState<string | null>(null);
 	const [ipAddressExternal, setIpAddressExternal] = useState<string | null>(null);
-	const [airplaneMode, setAirplaneMode] = useState<boolean | null>(null);
+	// const [airplaneMode, setAirplaneMode] = useState<boolean | null>(null);
 
 	useFocusEffect(
 		useCallback(() => {
 			const fetchNetworkInfo = async () => {
 				try {
-					const ip = 'await Network.getIpAddressAsync();';
+					const ip = await NetworkInfo.getIPV4Address();
 					setIpAddress(ip);
+
+					const geteway = await NetworkInfo.getGatewayIPAddress();
+					setGeteway(geteway);
+
+					const subnet = await NetworkInfo.getSubnet();
+					setSubnet(subnet);
 
 					const ipExternal = (await axios.get('https://api.ipify.org/?format=json')).data;
 
@@ -45,12 +55,14 @@ const MyNetwork = () => {
 						);
 					}
 
-					if (Platform.OS === 'android') {
-						const airplane = true;
+					/**
+ * 					if (Platform.OS === 'android') {
+						const airplane = false;
 						setAirplaneMode(airplane);
 					} else {
 						setAirplaneMode(null);
 					}
+ */
 				} catch (error) {
 					console.error(error);
 				}
@@ -69,11 +81,33 @@ const MyNetwork = () => {
 			<Text style={stylesWithTheme.title}>{t('Informações de Rede')}</Text>
 			<View style={stylesWithTheme.divContainer}>
 				<View style={stylesWithTheme.infoContainer}>
+					<Text style={stylesWithTheme.infoLabel}>{t('Gateway Padrão')}</Text>
+					<View style={stylesWithTheme.row}>
+						<Text style={stylesWithTheme.infoText}>{geteway || t('Carregando...')}</Text>
+						<TouchableOpacity
+							onPress={() => copyToClipboard(geteway ? geteway : t('000.000.0.0'))}
+							style={stylesWithTheme.copyButton}>
+							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
+						</TouchableOpacity>
+					</View>
+				</View>
+				<View style={stylesWithTheme.infoContainer}>
 					<Text style={stylesWithTheme.infoLabel}>{t('Endereço IP local:')}</Text>
 					<View style={stylesWithTheme.row}>
 						<Text style={stylesWithTheme.infoText}>{ipAddress || t('Carregando...')}</Text>
 						<TouchableOpacity
 							onPress={() => copyToClipboard(ipAddress ? ipAddress : t('000.000.000.000'))}
+							style={stylesWithTheme.copyButton}>
+							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
+						</TouchableOpacity>
+					</View>
+				</View>
+				<View style={stylesWithTheme.infoContainer}>
+					<Text style={stylesWithTheme.infoLabel}>{t('Máscara de Sub-rede')}</Text>
+					<View style={stylesWithTheme.row}>
+						<Text style={stylesWithTheme.infoText}>{subnet || t('Carregando...')}</Text>
+						<TouchableOpacity
+							onPress={() => copyToClipboard(subnet ? subnet : t('000.000.000.0'))}
 							style={stylesWithTheme.copyButton}>
 							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
 						</TouchableOpacity>
@@ -92,7 +126,8 @@ const MyNetwork = () => {
 						</TouchableOpacity>
 					</View>
 				</View>
-				<View style={stylesWithTheme.infoContainer}>
+				{/**
+ * 				<View style={stylesWithTheme.infoContainer}>
 					<Text style={stylesWithTheme.infoLabel}>{t('Modo Avião:')}</Text>
 					<Text style={stylesWithTheme.infoText}>
 						{airplaneMode !== null
@@ -102,6 +137,7 @@ const MyNetwork = () => {
 							: t('Carregando...')}
 					</Text>
 				</View>
+ */}
 			</View>
 		</View>
 	);
