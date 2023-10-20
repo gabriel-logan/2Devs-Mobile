@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-import {View, Text, TouchableOpacity, LayoutAnimation, ScrollView, Image} from 'react-native';
+import {View, Text, TouchableOpacity, LayoutAnimation, ScrollView} from 'react-native';
 
 import {useTheme} from '../ThemeContext';
 
@@ -13,6 +13,9 @@ import {NavigationType} from '../../types/navigationProps';
 import drawerMenu from './drawerMenu';
 
 import styles from './styles';
+
+import {RFValue} from '../Responsive';
+import LogoComponent from '../LogoComponent';
 
 const CustomDrawerContent = () => {
 	const {t} = useTranslation();
@@ -27,14 +30,12 @@ const CustomDrawerContent = () => {
 
 	return (
 		<View style={stylesWithTheme.container}>
-			<Image
-				source={
-					theme === 'light'
-						? require('../../../assets/marca.svg')
-						: require('../../../assets/marcalight.svg')
-				}
+			<LogoComponent
 				style={stylesWithTheme.logo}
+				width={RFValue(128 + 50)}
+				height={RFValue((128 + 50) / 2)}
 			/>
+
 			<ScrollView style={stylesWithTheme.menuScrollView} showsVerticalScrollIndicator={false}>
 				{drawerMenu.map((item, index) => (
 					<View key={index} style={stylesWithTheme.menuItem}>

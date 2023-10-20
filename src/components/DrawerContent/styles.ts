@@ -10,8 +10,6 @@ const styles = (theme: 'dark' | 'light') =>
 			flex: 1,
 		},
 		logo: {
-			width: RFValue(128 + 50),
-			height: RFValue((128 + 50) / 2),
 			marginBottom: RFValue(25),
 		},
 		menuScrollView: {

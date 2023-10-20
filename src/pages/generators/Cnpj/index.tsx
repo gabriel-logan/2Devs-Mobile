@@ -86,7 +86,6 @@ export default function CnpjGeneratorPage() {
 								JSON.stringify(cleanAlwaysChange.valueOf()),
 							);
 						}}
-						color={cnpjWithPeriod ? '#5446bf' : undefined}
 					/>
 				</View>
 				<Text style={stylesWithTheme.label}>{t('CNPJ Gerado:')}</Text>

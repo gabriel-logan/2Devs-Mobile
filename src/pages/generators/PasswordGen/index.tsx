@@ -246,26 +246,17 @@ export default function PasswordGenerator() {
 							<CheckBox
 								value={upperCaseCheckEl}
 								onValueChange={value => setUpperCaseCheckEl(value)}
-								color={upperCaseCheckEl ? '#b985e9' : undefined}
 							/>
 						</View>
 						<View style={stylesWithTheme.customizationCheckbox}>
 							<Text style={stylesWithTheme.customizationCheckboxText}>{t('Números')}</Text>
-							<CheckBox
-								value={numberCheckEl}
-								onValueChange={value => setNumberCheckEl(value)}
-								color={numberCheckEl ? '#b985e9' : undefined}
-							/>
+							<CheckBox value={numberCheckEl} onValueChange={value => setNumberCheckEl(value)} />
 						</View>
 						<View style={stylesWithTheme.customizationCheckbox}>
 							<Text style={stylesWithTheme.customizationCheckboxText}>
 								{t('Caracteres especiais')}
 							</Text>
-							<CheckBox
-								value={symbolCheckEl}
-								onValueChange={value => setSymbolCheckEl(value)}
-								color={symbolCheckEl ? '#b985e9' : undefined}
-							/>
+							<CheckBox value={symbolCheckEl} onValueChange={value => setSymbolCheckEl(value)} />
 						</View>
 					</View>
 				</View>

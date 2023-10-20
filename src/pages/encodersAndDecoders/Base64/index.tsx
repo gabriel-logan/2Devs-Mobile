@@ -123,7 +123,6 @@ export default function Base64Page() {
 							JSON.stringify(cleanAlwaysChange.valueOf()),
 						);
 					}}
-					color={cleanAlways ? '#5446bf' : undefined}
 				/>
 			</View>
 			<View style={[stylesWithTheme.section, {marginBottom: 15}]}>
@@ -138,7 +137,6 @@ export default function Base64Page() {
 							JSON.stringify(considerSpace.valueOf()),
 						);
 					}}
-					color={considerSpace ? '#5446bf' : undefined}
 				/>
 			</View>
 			<ScrollView showsVerticalScrollIndicator={false}>

@@ -7,11 +7,12 @@ import {
 	Switch,
 	useColorScheme,
 	StatusBar,
-	Image,
 	Linking,
 } from 'react-native';
 
 import {useTheme} from '../components/ThemeContext';
+import LogoComponent from '../components/LogoComponent';
+import {RFValue} from '../components/Responsive';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -20,6 +21,8 @@ import {useTranslation} from 'react-i18next';
 import ChangeLangModal from './ChangeLandModal';
 
 import styles from './styles';
+
+import getThemeColor from '../configs/colors';
 
 export default function Main() {
 	const {t} = useTranslation();
@@ -61,15 +64,14 @@ export default function Main() {
 	}, []);
 	return (
 		<View style={stylesWithTheme.container}>
-			<StatusBar />
-			<Image
-				source={
-					theme === 'light'
-						? require('../../assets/marca.svg')
-						: require('../../assets/marcalight.svg')
-				}
-				style={stylesWithTheme.logo}
+			<StatusBar
+				barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
+				backgroundColor={getThemeColor(theme, 'background')}
+				animated
 			/>
+
+			<LogoComponent style={stylesWithTheme.logo} width={RFValue(256)} height={RFValue(128)} />
+
 			<Text style={stylesWithTheme.headerText}>{t('Bem-vindo ao 2Devs')}</Text>
 
 			<TouchableOpacity

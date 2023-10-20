@@ -85,7 +85,6 @@ export default function CreditCardGeneratorPage() {
 								JSON.stringify(cleanAlwaysChange.valueOf()),
 							);
 						}}
-						color={creditCardWithPeriod ? '#5446bf' : undefined}
 					/>
 				</View>
 				<Text style={stylesWithTheme.label}>{t('Cartão de crédito Gerado:')}</Text>

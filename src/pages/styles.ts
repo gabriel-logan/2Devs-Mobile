@@ -14,8 +14,6 @@ const styles = (theme: Theme) =>
 			backgroundColor: getThemeColor(theme, 'background'), // Usando a paleta de cores para o fundo da página
 		},
 		logo: {
-			width: RFValue(256),
-			height: RFValue(128),
 			marginBottom: RFValue(30),
 		},
 		headerText: {

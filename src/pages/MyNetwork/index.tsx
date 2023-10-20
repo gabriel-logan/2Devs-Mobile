@@ -3,7 +3,6 @@ import {View, Text, StyleSheet, TouchableOpacity, Platform} from 'react-native';
 
 import {useFocusEffect} from '@react-navigation/native';
 
-import * as Network from 'expo-network';
 import Clipboard from '@react-native-clipboard/clipboard';
 
 import axios from 'axios';
@@ -33,7 +32,7 @@ const MyNetwork = () => {
 		useCallback(() => {
 			const fetchNetworkInfo = async () => {
 				try {
-					const ip = await Network.getIpAddressAsync();
+					const ip = 'await Network.getIpAddressAsync();';
 					setIpAddress(ip);
 
 					const ipExternal = (await axios.get('https://api.ipify.org/?format=json')).data;
@@ -47,7 +46,7 @@ const MyNetwork = () => {
 					}
 
 					if (Platform.OS === 'android') {
-						const airplane = await Network.isAirplaneModeEnabledAsync();
+						const airplane = true;
 						setAirplaneMode(airplane);
 					} else {
 						setAirplaneMode(null);

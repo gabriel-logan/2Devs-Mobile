@@ -75,8 +75,8 @@ export default function CpfGeneratorPage() {
 								JSON.stringify(cleanAlwaysChange.valueOf()),
 							);
 						}}
-						color={cpfWithPeriod ? '#5446bf' : undefined}
 					/>
+					{/** color={cpfWithPeriod ? '#5446bf' : undefined} checkbox old color */}
 				</View>
 				<Text style={stylesWithTheme.label}>{t('CPF Gerado:')}</Text>
 				<TextInput
