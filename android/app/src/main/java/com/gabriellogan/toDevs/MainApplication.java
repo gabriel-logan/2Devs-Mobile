@@ -1,4 +1,4 @@
-package com.todevs;
+package com.gabriellogan.toDevs;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
