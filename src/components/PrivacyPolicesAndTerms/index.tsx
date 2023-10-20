@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 import {StyleSheet, Text, View, Button, TouchableOpacity, Alert, Linking} from 'react-native';
 
@@ -31,8 +31,6 @@ export default function PrivacyPolicesAndTerms({navigation}: NavigationPropsType
 	// Estado do Loading
 	const [isLoading, setIsLoading] = useState(false);
 
-	const [termIsAccepts, setTermsIsAccepts] = useState(false);
-
 	const timeZone = getTimeZone();
 
 	const handleCheckboxChange = () => {
@@ -40,6 +38,7 @@ export default function PrivacyPolicesAndTerms({navigation}: NavigationPropsType
 	};
 
 	const handleContinue = async () => {
+		setIsLoading(true);
 		// Cria o tempo baseado no brasil
 		const currentTime = moment()
 			.tz(timeZone ? timeZone : t('America/Sao_Paulo'))
@@ -56,9 +55,12 @@ export default function PrivacyPolicesAndTerms({navigation}: NavigationPropsType
 				});
 			} catch (error) {
 				Alert.alert(t('Alguma coisa errada aconteceu, contate o desenvolvedor'));
+			} finally {
+				setIsLoading(false);
 			}
 		} else {
 			// Show an error message or prevent further actions if the checkbox is not checked
+			setIsLoading(false);
 			setActiveSpam(true);
 		}
 	};
@@ -79,40 +81,13 @@ export default function PrivacyPolicesAndTerms({navigation}: NavigationPropsType
 		/>
 	);
 
-	useEffect(() => {
-		(async () => {
-			setIsLoading(true);
-			try {
-				const termsAccept = await AsyncStorage.getItem('termsAccept');
-				if (termsAccept) {
-					if (JSON.parse(termsAccept)) {
-						setTermsIsAccepts(true);
-						setIsLoading(false);
-						navigation.reset({
-							index: 0,
-							routes: [{name: 'Drawer'}],
-						});
-					} else {
-						setTermsIsAccepts(false);
-						setIsLoading(false);
-					}
-				}
-				setIsLoading(false);
-			} catch (error) {
-				setTermsIsAccepts(false);
-				setIsLoading(false);
-				Alert.alert(t('Alguma coisa errada aconteceu, contate o desenvolvedor'));
-			}
-		})();
-	}, [navigation, t]);
-
 	// APenas o componente Loading
 	if (isLoading) {
 		return <Loading />;
 	}
 
 	return (
-		<View style={termIsAccepts ? {opacity: 0} : styles.container}>
+		<View style={styles.container}>
 			<TouchableOpacity
 				style={styles.checkboxContainer}
 				onPress={handleCheckboxChange}

@@ -2,6 +2,7 @@ import {NavigationProp} from '@react-navigation/native';
 
 // Todas as rotas
 const RoutesProps = {
+	Initial: undefined,
 	Drawer: undefined,
 	Main: undefined,
 	InfoPage: undefined,

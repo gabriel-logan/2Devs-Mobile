@@ -11,7 +11,7 @@ const ThemeContext = createContext<ThemeContextProps | string>('light');
 export default function ThemeProvider({children}: {children: ReactNode}) {
 	const systemTheme = useColorScheme() as Theme | null;
 
-	const [theme, setTheme] = useState<Theme>('light');
+	const [theme, setTheme] = useState<Theme>(systemTheme === 'dark' ? 'dark' : 'light');
 
 	const toggleTheme = async (newTheme: Theme) => {
 		try {
