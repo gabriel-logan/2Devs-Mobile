@@ -21,8 +21,7 @@ import {useTranslation} from 'react-i18next';
 // types
 import {NavigationPropsTypes} from '../../types/navigationProps';
 
-const termsURL = 'https://gabriel-logan.github.io/2Devs-Mobile/terms.html';
-const privacyURL = 'https://gabriel-logan.github.io/2Devs-Mobile';
+import {privacyURL, termsURL} from '../Urls';
 
 export default function PrivacyPolicesAndTerms({navigation}: NavigationPropsTypes) {
 	const {t} = useTranslation();

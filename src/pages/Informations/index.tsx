@@ -8,6 +8,8 @@ import getThemeColor from '../../configs/colors';
 
 import {RFValue} from '../../components/Responsive';
 
+import {buyMeACoffeeURL, privacyURL, repoGithubURL, termsURL} from '../../components/Urls';
+
 export default function GeneralInfoPage() {
 	const {t} = useTranslation();
 
@@ -80,7 +82,7 @@ export default function GeneralInfoPage() {
 					<Text style={styles.sectionText}>{t('Este codigo opensorce')}</Text>
 					<TouchableOpacity
 						style={styles.githubButton}
-						onPress={() => Linking.openURL('https://github.com/gabriel-logan/2Devs-Mobile')}>
+						onPress={() => Linking.openURL(repoGithubURL)}>
 						<Text style={styles.githubButtonText}>{t('Ir para o repositório GitHub')}</Text>
 					</TouchableOpacity>
 					<Text style={[styles.sectionText, {marginTop: 15}]}>
@@ -88,7 +90,7 @@ export default function GeneralInfoPage() {
 					</Text>
 					<TouchableOpacity
 						style={styles.githubButton}
-						onPress={() => Linking.openURL('https://www.buymeacoffee.com/gabriellogan')}>
+						onPress={() => Linking.openURL(buyMeACoffeeURL)}>
 						<Text style={styles.githubButtonText}>{t('Buy me a coffee')}</Text>
 					</TouchableOpacity>
 				</View>
@@ -100,15 +102,11 @@ export default function GeneralInfoPage() {
 				<Text style={styles.sectionText}>{t('E-mail: contato@exemplo.com')}</Text>
 			</View>
 
-			<TouchableOpacity
-				style={styles.linkButton}
-				onPress={() => Linking.openURL('https://gabriel-logan.github.io/2Devs-Mobile')}>
+			<TouchableOpacity style={styles.linkButton} onPress={() => Linking.openURL(privacyURL)}>
 				<Text style={styles.buttonText}>{t('Políticas de Privacidade')}</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity
-				style={styles.linkButton}
-				onPress={() => Linking.openURL('https://gabriel-logan.github.io/2Devs-Mobile/terms.html')}>
+			<TouchableOpacity style={styles.linkButton} onPress={() => Linking.openURL(termsURL)}>
 				<Text style={styles.buttonText}>{t('Termos de Uso')}</Text>
 			</TouchableOpacity>
 

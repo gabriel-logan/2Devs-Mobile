@@ -79,7 +79,7 @@ android {
         applicationId "com.gabriellogan.toDevs"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10
+        versionCode 11
         versionName "1.0.2"
     }
     signingConfigs {
