@@ -1,32 +1,32 @@
-import {useState} from 'react';
-import {useTranslation} from 'react-i18next';
-import {View, TextInput, Text, Button, StyleSheet, TouchableOpacity} from 'react-native';
-import Clipboard from '@react-native-clipboard/clipboard';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import {RFValue} from '../../../components/Responsive';
+import {useState} from "react";
+import {useTranslation} from "react-i18next";
+import {View, TextInput, Text, Button, StyleSheet, TouchableOpacity} from "react-native";
+import Clipboard from "@react-native-clipboard/clipboard";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import {RFValue} from "../../../components/Responsive";
 
-type WhichOne = 'text' | 'Binario';
+type WhichOne = "text" | "Binario";
 
 export default function BinaryCodePage() {
 	const {t} = useTranslation();
 
-	const [inputText, setInputText] = useState('');
-	const [binaryCode, setBinaryCode] = useState('');
+	const [inputText, setInputText] = useState("");
+	const [binaryCode, setBinaryCode] = useState("");
 
 	const encodeToBinary = () => {
 		const text = inputText;
-		let binary = '';
+		let binary = "";
 		for (let i = 0; i < text.length; i++) {
 			const charCode = text.charCodeAt(i);
-			const binaryChar = charCode.toString(2).padStart(8, '0');
-			binary += binaryChar + ' ';
+			const binaryChar = charCode.toString(2).padStart(8, "0");
+			binary += binaryChar + " ";
 		}
 		setBinaryCode(binary);
 	};
 
 	const decodeFromBinary = () => {
-		const binary = binaryCode.replace(/ /g, ''); // Remove espaços em branco
-		let text = '';
+		const binary = binaryCode.replace(/ /g, ""); // Remove espaços em branco
+		let text = "";
 		for (let i = 0; i < binary.length; i += 8) {
 			const binaryChar = binary.substr(i, 8);
 			const charCode = parseInt(binaryChar, 2);
@@ -42,21 +42,21 @@ export default function BinaryCodePage() {
 	};
 
 	const cleanToClipboard = (whichOne: WhichOne) => {
-		if (whichOne === 'text') {
-			setInputText('');
+		if (whichOne === "text") {
+			setInputText("");
 		} else {
-			setBinaryCode('');
+			setBinaryCode("");
 		}
 	};
 
 	return (
 		<View style={styles.container}>
 			<View>
-				<Text style={styles.label}>{t('Texto:')}</Text>
+				<Text style={styles.label}>{t("Texto:")}</Text>
 				<TextInput
 					style={styles.input}
 					multiline
-					placeholder={t('Digite o texto aqui')}
+					placeholder={t("Digite o texto aqui")}
 					value={inputText}
 					onChangeText={setInputText}
 					maxLength={3500}
@@ -65,18 +65,18 @@ export default function BinaryCodePage() {
 					<TouchableOpacity style={styles.buttonCopy} onPress={() => copyToClipboard(binaryCode)}>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.buttonCopy} onPress={() => cleanToClipboard('Binario')}>
+					<TouchableOpacity style={styles.buttonCopy} onPress={() => cleanToClipboard("Binario")}>
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 				</View>
-				<Button title={t('Codificar para Binário')} onPress={encodeToBinary} />
+				<Button title={t("Codificar para Binário")} onPress={encodeToBinary} />
 			</View>
 			<View>
-				<Text style={styles.label}>{t('Código Binário:')}</Text>
+				<Text style={styles.label}>{t("Código Binário:")}</Text>
 				<TextInput
 					style={styles.input}
 					multiline
-					placeholder={t('O código binário será exibido aqui')}
+					placeholder={t("O código binário será exibido aqui")}
 					value={binaryCode}
 					onChangeText={setBinaryCode}
 				/>
@@ -84,11 +84,11 @@ export default function BinaryCodePage() {
 					<TouchableOpacity style={styles.buttonCopy} onPress={() => copyToClipboard(binaryCode)}>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.buttonCopy} onPress={() => cleanToClipboard('Binario')}>
+					<TouchableOpacity style={styles.buttonCopy} onPress={() => cleanToClipboard("Binario")}>
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 				</View>
-				<Button title={t('Decodificar para Texto')} onPress={decodeFromBinary} />
+				<Button title={t("Decodificar para Texto")} onPress={decodeFromBinary} />
 			</View>
 		</View>
 	);
@@ -105,16 +105,16 @@ const styles = StyleSheet.create({
 	},
 	input: {
 		borderWidth: 1,
-		borderColor: '#ccc',
+		borderColor: "#ccc",
 		borderRadius: 5,
 		padding: RFValue(10),
 		marginVertical: RFValue(10),
 		fontSize: RFValue(16),
 		height: 200,
-		textAlignVertical: 'top',
+		textAlignVertical: "top",
 	},
 	divButtonCopy: {
-		position: 'absolute',
+		position: "absolute",
 		right: RFValue(15),
 		bottom: 80,
 	},

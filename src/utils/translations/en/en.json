@@ -76,7 +76,6 @@
 		"Ir para o repositório GitHub": "Go to GitHub Repository",
 		"Contatos": "Contacts",
 
-
 		"Você também pode me ajudar no buymeacoffe": "You can also help me on buymeacoffe",
 		"Buy me a coffee": "Buy me a coffee",
 
@@ -192,6 +191,6 @@
 		"O valor de entrada não é valido": "The input value is not valid",
 
 		"Gateway Padrão": "Default Gateway",
-    "Máscara de Sub-rede": "Subnet Mask"
+		"Máscara de Sub-rede": "Subnet Mask"
 	}
 }

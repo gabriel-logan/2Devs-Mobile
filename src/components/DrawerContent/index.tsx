@@ -1,21 +1,21 @@
-import {useState} from 'react';
+import {useState} from "react";
 
-import {View, Text, TouchableOpacity, LayoutAnimation, ScrollView} from 'react-native';
+import {View, Text, TouchableOpacity, LayoutAnimation, ScrollView} from "react-native";
 
-import {useTheme} from '../ThemeContext';
+import {useTheme} from "../ThemeContext";
 
-import {useTranslation} from 'react-i18next';
+import {useTranslation} from "react-i18next";
 
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation} from "@react-navigation/native";
 
-import {NavigationType} from '../../types/navigationProps';
+import {NavigationType} from "../../types/navigationProps";
 
-import drawerMenu from './drawerMenu';
+import drawerMenu from "./drawerMenu";
 
-import styles from './styles';
+import styles from "./styles";
 
-import {RFValue} from '../Responsive';
-import LogoComponent from '../LogoComponent';
+import {RFValue} from "../Responsive";
+import LogoComponent from "../LogoComponent";
 
 const CustomDrawerContent = () => {
 	const {t} = useTranslation();
@@ -42,7 +42,7 @@ const CustomDrawerContent = () => {
 						<TouchableOpacity
 							onPress={() => {
 								LayoutAnimation.configureNext(
-									LayoutAnimation.create(200, 'easeInEaseOut', 'opacity'),
+									LayoutAnimation.create(200, "easeInEaseOut", "opacity"),
 								);
 								if (!item.menuList) {
 									navigation.navigate(item.route);

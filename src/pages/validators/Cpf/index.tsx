@@ -1,22 +1,22 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, TextInput, Button, TouchableOpacity} from 'react-native';
-import {cpfIsValid} from 'multiform-validator';
+import React, {useState} from "react";
+import {StyleSheet, Text, View, TextInput, Button, TouchableOpacity} from "react-native";
+import {cpfIsValid} from "multiform-validator";
 
-import Clipboard from '@react-native-clipboard/clipboard';
+import Clipboard from "@react-native-clipboard/clipboard";
 
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-import {RFValue} from '../../../components/Responsive';
-import getThemeColor from '../../../configs/colors';
-import {useTheme} from '../../../components/ThemeContext';
-import {useTranslation} from 'react-i18next';
+import {RFValue} from "../../../components/Responsive";
+import getThemeColor from "../../../configs/colors";
+import {useTheme} from "../../../components/ThemeContext";
+import {useTranslation} from "react-i18next";
 
 export default function CpfValidatorPage() {
 	const {t} = useTranslation();
 
 	const {theme} = useTheme();
 
-	const [cpfInput, setCpfInput] = useState('');
+	const [cpfInput, setCpfInput] = useState("");
 	const [cpfIsValidResult, setCpfIsValidResult] = useState<boolean>();
 
 	const stylesWithTheme = styles(theme, cpfIsValidResult);
@@ -43,24 +43,24 @@ export default function CpfValidatorPage() {
 	};
 
 	const cleanToClipboard = () => {
-		setCpfInput('');
+		setCpfInput("");
 	};
 
 	return (
 		<View style={stylesWithTheme.container}>
-			<Text style={stylesWithTheme.title}>{t('Validador de CPF')}</Text>
+			<Text style={stylesWithTheme.title}>{t("Validador de CPF")}</Text>
 			<View style={stylesWithTheme.card}>
-				<Text style={stylesWithTheme.label}>{t('Digite ou cole um CPF:')}</Text>
+				<Text style={stylesWithTheme.label}>{t("Digite ou cole um CPF:")}</Text>
 				<TextInput
 					style={stylesWithTheme.input}
 					onChangeText={text => setCpfInput(text)}
 					value={cpfInput}
 					placeholder="123.456.789-09"
-					placeholderTextColor={getThemeColor(theme, 'placeHolderColor')}
+					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
 					keyboardType="numeric"
 					maxLength={15}
 				/>
-				<Button title={t('Validar CPF')} onPress={validateCpf} />
+				<Button title={t("Validar CPF")} onPress={validateCpf} />
 				<View style={stylesWithTheme.divButtonCopy}>
 					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={pasteToClipboard}>
 						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
@@ -80,7 +80,7 @@ export default function CpfValidatorPage() {
 							style={
 								cpfIsValidResult ? stylesWithTheme.validCpfText : stylesWithTheme.invalidCpfText
 							}>
-							{cpfIsValidResult ? t('CPF Válido') : t('CPF Inválido')}
+							{cpfIsValidResult ? t("CPF Válido") : t("CPF Inválido")}
 						</Text>
 					</View>
 				)}
@@ -89,26 +89,26 @@ export default function CpfValidatorPage() {
 	);
 }
 
-const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
+const styles = (theme: "dark" | "light", cpfIsValidResult?: boolean) =>
 	StyleSheet.create({
 		container: {
 			flex: 1,
-			backgroundColor: getThemeColor(theme, 'background'),
-			alignItems: 'center',
-			justifyContent: 'center',
+			backgroundColor: getThemeColor(theme, "background"),
+			alignItems: "center",
+			justifyContent: "center",
 		},
 		title: {
 			fontSize: RFValue(28), // Responsive font size
-			fontWeight: 'bold',
+			fontWeight: "bold",
 			marginBottom: RFValue(20), // Responsive margin
-			color: getThemeColor(theme, 'title'),
+			color: getThemeColor(theme, "title"),
 		},
 		card: {
-			width: '80%',
-			backgroundColor: getThemeColor(theme, 'cardBackground'),
+			width: "80%",
+			backgroundColor: getThemeColor(theme, "cardBackground"),
 			borderRadius: RFValue(10), // Responsive border radius
 			padding: RFValue(20), // Responsive padding
-			shadowColor: '#000',
+			shadowColor: "#000",
 			shadowOffset: {
 				width: 0,
 				height: 2, // Responsive shadow offset
@@ -120,39 +120,39 @@ const styles = (theme: 'dark' | 'light', cpfIsValidResult?: boolean) =>
 		label: {
 			fontSize: RFValue(20), // Responsive font size
 			marginBottom: RFValue(10), // Responsive margin
-			color: getThemeColor(theme, 'text'),
+			color: getThemeColor(theme, "text"),
 		},
 		input: {
 			height: RFValue(50), // Responsive height
 			borderWidth: 1, // Responsive border width
-			borderColor: getThemeColor(theme, 'border'),
+			borderColor: getThemeColor(theme, "border"),
 			padding: RFValue(10), // Responsive padding
 			marginBottom: RFValue(10), // Responsive margin
-			color: getThemeColor(theme, 'text'),
-			textAlign: 'center',
-			textAlignVertical: 'center',
+			color: getThemeColor(theme, "text"),
+			textAlign: "center",
+			textAlignVertical: "center",
 			fontSize: RFValue(16),
-			backgroundColor: getThemeColor(theme, 'inputBackground'),
+			backgroundColor: getThemeColor(theme, "inputBackground"),
 		},
 		divButtonCopy: {
-			flexDirection: 'row',
-			justifyContent: 'space-around',
+			flexDirection: "row",
+			justifyContent: "space-around",
 			marginVertical: RFValue(15),
 		},
 		buttonCopy: {},
 		cpfStatus: {
-			backgroundColor: cpfIsValidResult ? '#4CAF50' : '#F44336',
+			backgroundColor: cpfIsValidResult ? "#4CAF50" : "#F44336",
 			padding: RFValue(10),
 			borderRadius: 5,
-			alignItems: 'center',
-			justifyContent: 'center',
+			alignItems: "center",
+			justifyContent: "center",
 		},
 		validCpfText: {
 			fontSize: RFValue(18),
-			color: '#FFFFFF',
+			color: "#FFFFFF",
 		},
 		invalidCpfText: {
 			fontSize: RFValue(18),
-			color: '#FFFFFF',
+			color: "#FFFFFF",
 		},
 	});

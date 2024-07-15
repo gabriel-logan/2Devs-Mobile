@@ -1,23 +1,23 @@
-import {useState, Dispatch, SetStateAction} from 'react';
+import {useState, Dispatch, SetStateAction} from "react";
 
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from "react-native";
 
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
-import DataConverterPage from '../../pages/encodersAndDecoders/DataConverter';
+import DataConverterPage from "../../pages/encodersAndDecoders/DataConverter";
 
-import {t} from 'i18next';
+import {t} from "i18next";
 
-import AsciiAndHexPage from '../../pages/encodersAndDecoders/DataConverter/AsciiAndHex';
-import HexAndDecimal from '../../pages/encodersAndDecoders/DataConverter/HexAndDecimal';
+import AsciiAndHexPage from "../../pages/encodersAndDecoders/DataConverter/AsciiAndHex";
+import HexAndDecimal from "../../pages/encodersAndDecoders/DataConverter/HexAndDecimal";
 
-import {Picker} from '@react-native-picker/picker';
+import {Picker} from "@react-native-picker/picker";
 
-import {NavigationType, RoutesStringsProps} from '../../types/navigationProps';
+import {NavigationType, RoutesStringsProps} from "../../types/navigationProps";
 
-import {useNavigation} from '@react-navigation/native';
-import {useTheme} from '../../components/ThemeContext';
-import getThemeColor from '../../configs/colors';
+import {useNavigation} from "@react-navigation/native";
+import {useTheme} from "../../components/ThemeContext";
+import getThemeColor from "../../configs/colors";
 
 function DataConverterHeader({
 	selectedLanguage,
@@ -30,18 +30,18 @@ function DataConverterHeader({
 
 	const styles = StyleSheet.create({
 		container: {
-			backgroundColor: getThemeColor(theme, 'background'),
+			backgroundColor: getThemeColor(theme, "background"),
 			borderWidth: 0.4,
-			borderColor: getThemeColor(theme, 'border'),
+			borderColor: getThemeColor(theme, "border"),
 			elevation: 2,
 		},
 		picker: {
-			width: '100%',
-			color: getThemeColor(theme, 'title'),
+			width: "100%",
+			color: getThemeColor(theme, "title"),
 		},
 		pickerItem: {
-			color: getThemeColor(theme, 'title'),
-			backgroundColor: getThemeColor(theme, 'tertiaryBackground'),
+			color: getThemeColor(theme, "title"),
+			backgroundColor: getThemeColor(theme, "tertiaryBackground"),
 		},
 	});
 
@@ -56,17 +56,17 @@ function DataConverterHeader({
 					setSelectedLanguage(itemValue);
 				}}
 				mode="dropdown"
-				dropdownIconColor={getThemeColor(theme, 'text')}
+				dropdownIconColor={getThemeColor(theme, "text")}
 				style={styles.picker}>
-				<Picker.Item style={styles.pickerItem} label={t('Principal')} value="DataConverterMain" />
+				<Picker.Item style={styles.pickerItem} label={t("Principal")} value="DataConverterMain" />
 				<Picker.Item
 					style={styles.pickerItem}
-					label={t('Ascii e Hexadecimal')}
+					label={t("Ascii e Hexadecimal")}
 					value="AsciiAndHex"
 				/>
 				<Picker.Item
 					style={styles.pickerItem}
-					label={t('Hexadecimal e Decimal')}
+					label={t("Hexadecimal e Decimal")}
 					value="HexAndDecimal"
 				/>
 			</Picker>
@@ -77,7 +77,7 @@ function DataConverterHeader({
 const Stack = createNativeStackNavigator();
 
 export default function DataConverterNavigator() {
-	const [selectedLanguage, setSelectedLanguage] = useState<RoutesStringsProps>('DataConverterMain');
+	const [selectedLanguage, setSelectedLanguage] = useState<RoutesStringsProps>("DataConverterMain");
 
 	return (
 		<Stack.Navigator
@@ -89,21 +89,21 @@ export default function DataConverterNavigator() {
 						setSelectedLanguage={setSelectedLanguage}
 					/>
 				),
-				animation: 'slide_from_right',
+				animation: "slide_from_right",
 			}}>
 			<Stack.Screen
 				name="DataConverterMain"
-				options={{title: t('Principal')}}
+				options={{title: t("Principal")}}
 				component={DataConverterPage}
 			/>
 			<Stack.Screen
 				name="AsciiAndHex"
-				options={{title: t('Ascii e Hexadecimal')}}
+				options={{title: t("Ascii e Hexadecimal")}}
 				component={AsciiAndHexPage}
 			/>
 			<Stack.Screen
 				name="HexAndDecimal"
-				options={{title: t('Hexadecimal e Decimal')}}
+				options={{title: t("Hexadecimal e Decimal")}}
 				component={HexAndDecimal}
 			/>
 		</Stack.Navigator>

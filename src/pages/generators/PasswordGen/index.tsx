@@ -1,23 +1,23 @@
-import {useState, useEffect, useCallback} from 'react';
+import {useState, useEffect, useCallback} from "react";
 
-import {Text, TextInput, TouchableOpacity, View, StyleSheet} from 'react-native';
+import {Text, TextInput, TouchableOpacity, View, StyleSheet} from "react-native";
 
-import {ProgressBar} from 'react-native-paper';
+import {ProgressBar} from "react-native-paper";
 
-import {useTranslation} from 'react-i18next';
+import {useTranslation} from "react-i18next";
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Ionicons from "react-native-vector-icons/Ionicons";
 
-import CheckBox from '@react-native-community/checkbox';
-import Slider from '@react-native-community/slider';
-import Clipboard from '@react-native-clipboard/clipboard';
+import CheckBox from "@react-native-community/checkbox";
+import Slider from "@react-native-community/slider";
+import Clipboard from "@react-native-clipboard/clipboard";
 
-import {useTheme} from '../../../components/ThemeContext';
+import {useTheme} from "../../../components/ThemeContext";
 
-import getThemeColor from '../../../configs/colors';
+import getThemeColor from "../../../configs/colors";
 
-import {RFValue} from '../../../components/Responsive';
-import {getLocales} from 'react-native-localize';
+import {RFValue} from "../../../components/Responsive";
+import {getLocales} from "react-native-localize";
 
 export default function PasswordGenerator() {
 	const {t} = useTranslation();
@@ -28,7 +28,7 @@ export default function PasswordGenerator() {
 
 	const stylesWithTheme = styles(theme);
 
-	const [inputEl, setInputEl] = useState('');
+	const [inputEl, setInputEl] = useState("");
 
 	const [upperCaseCheckEl, setUpperCaseCheckEl] = useState(false);
 	const [numberCheckEl, setNumberCheckEl] = useState(false);
@@ -39,11 +39,11 @@ export default function PasswordGenerator() {
 	const [passwordLength, setPasswordLength] = useState(16);
 
 	const generatePassword = useCallback(() => {
-		let chars = 'abcdefghjkmnpqrstuvwxyz';
+		let chars = "abcdefghjkmnpqrstuvwxyz";
 
-		const upperCaseChars = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
-		const numberChars = '123456789';
-		const symbolChars = '?!@&*()[]';
+		const upperCaseChars = "ABCDEFGHJKLMNPQRSTUVWXYZ";
+		const numberChars = "123456789";
+		const symbolChars = "?!@&*()[]";
 
 		if (upperCaseCheckEl) {
 			chars += upperCaseChars;
@@ -57,7 +57,7 @@ export default function PasswordGenerator() {
 			chars += symbolChars;
 		}
 
-		let password = '';
+		let password = "";
 
 		for (let i = 0; i < passwordLength; i++) {
 			const randomNumber = Math.floor(Math.random() * chars.length);
@@ -113,23 +113,23 @@ export default function PasswordGenerator() {
 
 		switch (strength) {
 			case 0:
-				return '#ff0000'; // red
+				return "#ff0000"; // red
 			case 1:
-				return '#ff6600'; // orange
+				return "#ff6600"; // orange
 			case 2:
-				return '#ffcc00'; // yellow
+				return "#ffcc00"; // yellow
 			case 3:
-				return '#70c000'; // light green
+				return "#70c000"; // light green
 			case 4:
-				return '#33cc33'; // green
+				return "#33cc33"; // green
 			case 5:
-				return '#00ff80'; // bluegreen
+				return "#00ff80"; // bluegreen
 			case 6:
-				return '#00eeff'; // bluemeio green
+				return "#00eeff"; // bluemeio green
 			case 7:
-				return '#007bff'; // blue
+				return "#007bff"; // blue
 			default:
-				return '#ff0000'; // red
+				return "#ff0000"; // red
 		}
 	}
 
@@ -139,23 +139,23 @@ export default function PasswordGenerator() {
 
 		switch (strength) {
 			case 0:
-				return 'Péssima';
+				return "Péssima";
 			case 1:
-				return 'Fraca';
+				return "Fraca";
 			case 2:
-				return 'Moderada';
+				return "Moderada";
 			case 3:
-				return 'Boa';
+				return "Boa";
 			case 4:
-				return 'Ótima';
+				return "Ótima";
 			case 5:
-				return 'Excelente';
+				return "Excelente";
 			case 6:
-				return 'Excepcional';
+				return "Excepcional";
 			case 7:
-				return 'Estrondosa';
+				return "Estrondosa";
 			default:
-				return 'Desconhecida';
+				return "Desconhecida";
 		}
 	}
 
@@ -172,13 +172,13 @@ export default function PasswordGenerator() {
 
 		// Converter o tempo estimado para unidades mais humanas
 		const units: string[] = [
-			'segundos',
-			'minutos',
-			'horas',
-			'dias',
-			'anos',
-			'décadas',
-			'centenas de anos',
+			"segundos",
+			"minutos",
+			"horas",
+			"dias",
+			"anos",
+			"décadas",
+			"centenas de anos",
 		];
 		let index = 0;
 		while (crackTimeSeconds >= 60 && index < units.length - 1) {
@@ -198,9 +198,9 @@ export default function PasswordGenerator() {
 	return (
 		<View style={stylesWithTheme.container}>
 			<View style={stylesWithTheme.section}>
-				<Text style={stylesWithTheme.title}>{t('Gerador de senha')}</Text>
+				<Text style={stylesWithTheme.title}>{t("Gerador de senha")}</Text>
 				<Text style={stylesWithTheme.subtitle}>
-					{t('Utilize o nosso gerador para criar uma senha forte e segura.')}
+					{t("Utilize o nosso gerador para criar uma senha forte e segura.")}
 				</Text>
 			</View>
 
@@ -221,11 +221,11 @@ export default function PasswordGenerator() {
 			</View>
 
 			<View style={stylesWithTheme.section}>
-				<Text style={stylesWithTheme.title}>{t('Personalizar')}</Text>
+				<Text style={stylesWithTheme.title}>{t("Personalizar")}</Text>
 				<View style={stylesWithTheme.customizationContainer}>
 					<View style={stylesWithTheme.customizationOption}>
 						<Text style={stylesWithTheme.customizationOptionText}>
-							{t('Tamanho: ')}{' '}
+							{t("Tamanho: ")}{" "}
 							<Text style={stylesWithTheme.customizationOptionValue}>{passwordLength}</Text>
 						</Text>
 						<Slider
@@ -242,19 +242,19 @@ export default function PasswordGenerator() {
 					</View>
 					<View style={stylesWithTheme.customizationOption}>
 						<View style={stylesWithTheme.customizationCheckbox}>
-							<Text style={stylesWithTheme.customizationCheckboxText}>{t('Maiúsculas')}</Text>
+							<Text style={stylesWithTheme.customizationCheckboxText}>{t("Maiúsculas")}</Text>
 							<CheckBox
 								value={upperCaseCheckEl}
 								onValueChange={value => setUpperCaseCheckEl(value)}
 							/>
 						</View>
 						<View style={stylesWithTheme.customizationCheckbox}>
-							<Text style={stylesWithTheme.customizationCheckboxText}>{t('Números')}</Text>
+							<Text style={stylesWithTheme.customizationCheckboxText}>{t("Números")}</Text>
 							<CheckBox value={numberCheckEl} onValueChange={value => setNumberCheckEl(value)} />
 						</View>
 						<View style={stylesWithTheme.customizationCheckbox}>
 							<Text style={stylesWithTheme.customizationCheckboxText}>
-								{t('Caracteres especiais')}
+								{t("Caracteres especiais")}
 							</Text>
 							<CheckBox value={symbolCheckEl} onValueChange={value => setSymbolCheckEl(value)} />
 						</View>
@@ -264,27 +264,27 @@ export default function PasswordGenerator() {
 
 			<View style={stylesWithTheme.section}>
 				<TouchableOpacity onPress={copyToClipboard} style={stylesWithTheme.copyButton}>
-					<Text style={stylesWithTheme.copyButtonText}>{t('Copiar senha')}</Text>
+					<Text style={stylesWithTheme.copyButtonText}>{t("Copiar senha")}</Text>
 				</TouchableOpacity>
 			</View>
 			<View>
 				<View style={{backgroundColor: getPasswordStrengthColor(), padding: 10}}>
 					<Text style={stylesWithTheme.infoText}>
-						{t('Força da Senha')} {t(getPasswordStrengthDescription())}
+						{t("Força da Senha")} {t(getPasswordStrengthDescription())}
 					</Text>
 				</View>
 				<View style={{backgroundColor: getPasswordStrengthColor(), padding: 10, marginTop: 15}}>
 					<Text style={stylesWithTheme.infoText}>
-						{t('Tempo estimado para quebrar a senha')}{' '}
+						{t("Tempo estimado para quebrar a senha")}{" "}
 						{Number(estimatePasswordCrackTime().time).toLocaleString(locale, {
 							maximumFractionDigits: 2,
-						})}{' '}
+						})}{" "}
 						{t(estimatePasswordCrackTime().unit)}
 					</Text>
 				</View>
 				<View style={{marginTop: RFValue(15)}}>
 					<Text style={stylesWithTheme.infoTextCalc}>
-						{t('Os cálculos são baseados em um processador de 4 GHz')}
+						{t("Os cálculos são baseados em um processador de 4 GHz")}
 					</Text>
 				</View>
 			</View>
@@ -292,29 +292,29 @@ export default function PasswordGenerator() {
 	);
 }
 
-const styles = (theme: 'dark' | 'light') =>
+const styles = (theme: "dark" | "light") =>
 	StyleSheet.create({
 		container: {
 			flex: 1,
 			padding: RFValue(16),
-			backgroundColor: getThemeColor(theme, 'background'),
+			backgroundColor: getThemeColor(theme, "background"),
 		},
 		section: {
 			marginBottom: RFValue(16),
 		},
 		title: {
 			fontSize: RFValue(24),
-			fontWeight: 'bold',
+			fontWeight: "bold",
 			marginBottom: RFValue(8),
-			color: getThemeColor(theme, 'title'),
+			color: getThemeColor(theme, "title"),
 		},
 		subtitle: {
 			fontSize: RFValue(16),
-			color: getThemeColor(theme, 'secondaryText'),
+			color: getThemeColor(theme, "secondaryText"),
 		},
 		passwordContainer: {
-			flexDirection: 'row',
-			alignItems: 'center',
+			flexDirection: "row",
+			alignItems: "center",
 			marginBottom: RFValue(8),
 		},
 		passwordInputContainer: {
@@ -323,20 +323,20 @@ const styles = (theme: 'dark' | 'light') =>
 		},
 		passwordInput: {
 			borderWidth: 1,
-			borderColor: getThemeColor(theme, 'border'),
+			borderColor: getThemeColor(theme, "border"),
 			borderRadius: 4,
 			padding: RFValue(8),
 			fontSize: RFValue(16),
-			backgroundColor: getThemeColor(theme, 'inputBackground'),
-			color: getThemeColor(theme, 'placeHolderColor'),
+			backgroundColor: getThemeColor(theme, "inputBackground"),
+			color: getThemeColor(theme, "placeHolderColor"),
 		},
 		passwordButtonsContainer: {
-			flexDirection: 'row',
+			flexDirection: "row",
 		},
 		passwordButton: {
 			fontSize: RFValue(32),
 			margin: RFValue(8),
-			color: getThemeColor(theme, 'text'),
+			color: getThemeColor(theme, "text"),
 		},
 		customizationContainer: {
 			marginTop: RFValue(8),
@@ -347,42 +347,42 @@ const styles = (theme: 'dark' | 'light') =>
 		customizationOptionText: {
 			fontSize: RFValue(16),
 			marginBottom: RFValue(8),
-			color: getThemeColor(theme, 'text'),
+			color: getThemeColor(theme, "text"),
 		},
 		customizationOptionValue: {
-			fontWeight: 'bold',
+			fontWeight: "bold",
 		},
 		customizationCheckbox: {
-			flexDirection: 'row',
-			alignItems: 'center',
+			flexDirection: "row",
+			alignItems: "center",
 			marginBottom: 4,
 		},
 		customizationCheckboxText: {
 			marginRight: RFValue(8),
-			color: getThemeColor(theme, 'text'),
+			color: getThemeColor(theme, "text"),
 		},
 		copyButton: {
-			backgroundColor: '#b985e9',
+			backgroundColor: "#b985e9",
 			padding: RFValue(14),
 			borderRadius: 4,
-			alignItems: 'center',
+			alignItems: "center",
 		},
 		copyButtonText: {
-			color: '#fff',
-			fontWeight: 'bold',
+			color: "#fff",
+			fontWeight: "bold",
 			fontSize: RFValue(14),
 		},
 		infoText: {
-			color: 'white',
+			color: "white",
 			fontSize: RFValue(15),
-			textAlign: 'center',
-			textShadowColor: 'rgba(0, 0, 0, 0.7)', // Cor da sombra
+			textAlign: "center",
+			textShadowColor: "rgba(0, 0, 0, 0.7)", // Cor da sombra
 			textShadowOffset: {width: 0.5, height: 0.5}, // Deslocamento da sombra
 			textShadowRadius: 2, // Raio da sombra
-			fontWeight: 'bold',
+			fontWeight: "bold",
 		},
 		infoTextCalc: {
-			color: getThemeColor(theme, 'text'),
+			color: getThemeColor(theme, "text"),
 			fontSize: RFValue(15),
 		},
 	});

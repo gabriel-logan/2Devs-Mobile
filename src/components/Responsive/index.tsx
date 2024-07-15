@@ -2,10 +2,10 @@
 import {
 	widthPercentageToDP as width,
 	heightPercentageToDP as height,
-} from 'react-native-responsive-screen';
+} from "react-native-responsive-screen";
 
 // Lib para fontes responsivas, primeiro usa porcentagem, segundo usa tamanho da tela
-import {RFPercentage, RFValue as fixedRFValue} from 'react-native-responsive-fontsize';
+import {RFPercentage, RFValue as fixedRFValue} from "react-native-responsive-fontsize";
 
 /**
  * Método

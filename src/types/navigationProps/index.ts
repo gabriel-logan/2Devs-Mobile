@@ -1,4 +1,4 @@
-import {NavigationProp} from '@react-navigation/native';
+import {NavigationProp} from "@react-navigation/native";
 
 // Todas as rotas
 const RoutesProps = {
@@ -29,10 +29,10 @@ const RoutesProps = {
 export type RoutesStringsProps = keyof typeof RoutesProps;
 
 // Rotas diretas no caso não abre um submenu no drawer
-export type DirectRoutesProps = 'Main' | 'InfoPage' | 'MyNetwork';
+export type DirectRoutesProps = "Main" | "InfoPage" | "MyNetwork";
 
 // rotas as rotas tirando as rotas diretas e Initial e Drawer
-export type SubRoutesProps = Exclude<RoutesStringsProps, DirectRoutesProps | 'Initial' | 'Drawer'>;
+export type SubRoutesProps = Exclude<RoutesStringsProps, DirectRoutesProps | "Initial" | "Drawer">;
 
 // Tipagem do Navigation
 export type NavigationType = NavigationProp<typeof RoutesProps>;

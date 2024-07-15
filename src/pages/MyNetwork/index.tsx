@@ -1,23 +1,23 @@
-import React, {useState, useCallback} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import React, {useState, useCallback} from "react";
+import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
 
-import {useFocusEffect} from '@react-navigation/native';
+import {useFocusEffect} from "@react-navigation/native";
 
-import Clipboard from '@react-native-clipboard/clipboard';
+import Clipboard from "@react-native-clipboard/clipboard";
 
-import {NetworkInfo} from 'react-native-network-info';
+import {NetworkInfo} from "react-native-network-info";
 
-import axios from 'axios';
+import axios from "axios";
 
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
-import {useTranslation} from 'react-i18next';
+import {useTranslation} from "react-i18next";
 
-import {useTheme} from '../../components/ThemeContext';
+import {useTheme} from "../../components/ThemeContext";
 
-import getThemeColor from '../../configs/colors';
+import getThemeColor from "../../configs/colors";
 
-import {RFValue} from '../../components/Responsive';
+import {RFValue} from "../../components/Responsive";
 
 const MyNetwork = () => {
 	const {t} = useTranslation();
@@ -45,13 +45,13 @@ const MyNetwork = () => {
 					const subnet = await NetworkInfo.getSubnet();
 					setSubnet(subnet);
 
-					const ipExternal = (await axios.get('https://api.ipify.org/?format=json')).data;
+					const ipExternal = (await axios.get("https://api.ipify.org/?format=json")).data;
 
 					if (ipExternal) {
 						setIpAddressExternal(ipExternal.ip);
 					} else {
 						setIpAddressExternal(
-							t('Houve um problema não identificado na solicitação, tente novamente mais tarde'),
+							t("Houve um problema não identificado na solicitação, tente novamente mais tarde"),
 						);
 					}
 
@@ -78,48 +78,48 @@ const MyNetwork = () => {
 
 	return (
 		<View style={stylesWithTheme.container}>
-			<Text style={stylesWithTheme.title}>{t('Informações de Rede')}</Text>
+			<Text style={stylesWithTheme.title}>{t("Informações de Rede")}</Text>
 			<View style={stylesWithTheme.divContainer}>
 				<View style={stylesWithTheme.infoContainer}>
-					<Text style={stylesWithTheme.infoLabel}>{t('Gateway Padrão')}</Text>
+					<Text style={stylesWithTheme.infoLabel}>{t("Gateway Padrão")}</Text>
 					<View style={stylesWithTheme.row}>
-						<Text style={stylesWithTheme.infoText}>{geteway || t('Carregando...')}</Text>
+						<Text style={stylesWithTheme.infoText}>{geteway || t("Carregando...")}</Text>
 						<TouchableOpacity
-							onPress={() => copyToClipboard(geteway ? geteway : t('000.000.0.0'))}
+							onPress={() => copyToClipboard(geteway ? geteway : t("000.000.0.0"))}
 							style={stylesWithTheme.copyButton}>
 							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
 						</TouchableOpacity>
 					</View>
 				</View>
 				<View style={stylesWithTheme.infoContainer}>
-					<Text style={stylesWithTheme.infoLabel}>{t('Endereço IP local:')}</Text>
+					<Text style={stylesWithTheme.infoLabel}>{t("Endereço IP local:")}</Text>
 					<View style={stylesWithTheme.row}>
-						<Text style={stylesWithTheme.infoText}>{ipAddress || t('Carregando...')}</Text>
+						<Text style={stylesWithTheme.infoText}>{ipAddress || t("Carregando...")}</Text>
 						<TouchableOpacity
-							onPress={() => copyToClipboard(ipAddress ? ipAddress : t('000.000.000.000'))}
+							onPress={() => copyToClipboard(ipAddress ? ipAddress : t("000.000.000.000"))}
 							style={stylesWithTheme.copyButton}>
 							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
 						</TouchableOpacity>
 					</View>
 				</View>
 				<View style={stylesWithTheme.infoContainer}>
-					<Text style={stylesWithTheme.infoLabel}>{t('Máscara de Sub-rede')}</Text>
+					<Text style={stylesWithTheme.infoLabel}>{t("Máscara de Sub-rede")}</Text>
 					<View style={stylesWithTheme.row}>
-						<Text style={stylesWithTheme.infoText}>{subnet || t('Carregando...')}</Text>
+						<Text style={stylesWithTheme.infoText}>{subnet || t("Carregando...")}</Text>
 						<TouchableOpacity
-							onPress={() => copyToClipboard(subnet ? subnet : t('000.000.000.0'))}
+							onPress={() => copyToClipboard(subnet ? subnet : t("000.000.000.0"))}
 							style={stylesWithTheme.copyButton}>
 							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
 						</TouchableOpacity>
 					</View>
 				</View>
 				<View style={stylesWithTheme.infoContainer}>
-					<Text style={stylesWithTheme.infoLabel}>{t('Endereço IP da rede:')}</Text>
+					<Text style={stylesWithTheme.infoLabel}>{t("Endereço IP da rede:")}</Text>
 					<View style={stylesWithTheme.row}>
-						<Text style={stylesWithTheme.infoText}>{ipAddressExternal || t('Carregando...')}</Text>
+						<Text style={stylesWithTheme.infoText}>{ipAddressExternal || t("Carregando...")}</Text>
 						<TouchableOpacity
 							onPress={() =>
-								copyToClipboard(ipAddressExternal ? ipAddressExternal : t('000.000.000.000'))
+								copyToClipboard(ipAddressExternal ? ipAddressExternal : t("000.000.000.000"))
 							}
 							style={stylesWithTheme.copyButton}>
 							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
@@ -143,21 +143,21 @@ const MyNetwork = () => {
 	);
 };
 
-const styles = (theme: 'dark' | 'light') =>
+const styles = (theme: "dark" | "light") =>
 	StyleSheet.create({
 		container: {
 			flex: 1,
 			padding: RFValue(20),
-			backgroundColor: getThemeColor(theme, 'cardBackground'),
+			backgroundColor: getThemeColor(theme, "cardBackground"),
 		},
 		title: {
 			fontSize: RFValue(24),
-			fontWeight: 'bold',
+			fontWeight: "bold",
 			marginBottom: RFValue(20),
-			color: getThemeColor(theme, 'title'),
+			color: getThemeColor(theme, "title"),
 		},
 		divContainer: {
-			backgroundColor: getThemeColor(theme, 'background'),
+			backgroundColor: getThemeColor(theme, "background"),
 			padding: RFValue(20),
 			borderRadius: 10,
 			elevation: 5,
@@ -167,19 +167,19 @@ const styles = (theme: 'dark' | 'light') =>
 		},
 		infoLabel: {
 			fontSize: RFValue(16),
-			fontWeight: 'bold',
-			color: getThemeColor(theme, 'text'),
+			fontWeight: "bold",
+			color: getThemeColor(theme, "text"),
 		},
 		infoText: {
 			fontSize: RFValue(16),
-			color: getThemeColor(theme, 'text'),
+			color: getThemeColor(theme, "text"),
 		},
 		copyButton: {
 			padding: 5,
 		},
 		row: {
-			flexDirection: 'row',
-			alignItems: 'center',
+			flexDirection: "row",
+			alignItems: "center",
 		},
 	});
 

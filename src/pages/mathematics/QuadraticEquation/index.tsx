@@ -1,27 +1,27 @@
-import {useState, useEffect, useRef} from 'react';
-import {useTranslation} from 'react-i18next';
-import {View, Text, TextInput, TouchableOpacity, StyleSheet, Alert} from 'react-native';
+import {useState, useEffect, useRef} from "react";
+import {useTranslation} from "react-i18next";
+import {View, Text, TextInput, TouchableOpacity, StyleSheet, Alert} from "react-native";
 
-import CheckBox from '@react-native-community/checkbox';
+import CheckBox from "@react-native-community/checkbox";
 
-import {useTheme} from '../../../components/ThemeContext';
-import getThemeColor from '../../../configs/colors';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {RFValue} from '../../../components/Responsive';
+import {useTheme} from "../../../components/ThemeContext";
+import getThemeColor from "../../../configs/colors";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {RFValue} from "../../../components/Responsive";
 
 export default function QuadraticEquationPage() {
 	const {t} = useTranslation();
 	const {theme} = useTheme();
 	const stylesWithTheme = styles(theme);
 
-	const [a, setA] = useState('');
-	const [b, setB] = useState('');
-	const [c, setC] = useState('');
+	const [a, setA] = useState("");
+	const [b, setB] = useState("");
+	const [c, setC] = useState("");
 
 	const [aproxima, setAproxima] = useState(false);
 	const [deleteAfter, setDeleteAfter] = useState(false);
 
-	const [result, setResult] = useState('');
+	const [result, setResult] = useState("");
 
 	const valorARef = useRef<TextInput | null>(null);
 	const valorBRef = useRef<TextInput | null>(null);
@@ -38,11 +38,11 @@ export default function QuadraticEquationPage() {
 			const numeroC = Number(c);
 
 			if (numeroA === 0 && numeroB === 0) {
-				return setResult(t('Constante = ' + numeroC));
+				return setResult(t("Constante = " + numeroC));
 			}
 
 			if (Math.pow(numeroB, 2) - 4 * numeroA * numeroC < 0) {
-				return setResult(t('Não possui raizes reais'));
+				return setResult(t("Não possui raizes reais"));
 			}
 
 			const raiz1 =
@@ -51,40 +51,40 @@ export default function QuadraticEquationPage() {
 				(-numeroB - raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) / (2 * numeroA);
 
 			if (!Number.isNaN(raiz1) || !Number.isNaN(raiz2)) {
-				let resultMessage = '';
+				let resultMessage = "";
 
 				const aproximaRaiz1 = aproxima ? raiz1.toFixed(2) : raiz1;
 				const aproximaRaiz2 = aproxima ? raiz2.toFixed(2) : raiz2;
 
 				if (raiz1 === raiz2) {
-					resultMessage = t('Possui apenas 1 raiz real') + aproximaRaiz1;
+					resultMessage = t("Possui apenas 1 raiz real") + aproximaRaiz1;
 				} else {
 					resultMessage =
-						t('First root:') + aproximaRaiz1 + ' ' + t('Second root:') + aproximaRaiz2;
+						t("First root:") + aproximaRaiz1 + " " + t("Second root:") + aproximaRaiz2;
 				}
 
 				if (deleteAfter) {
-					setA('');
-					setB('');
-					setC('');
+					setA("");
+					setB("");
+					setC("");
 				}
 
 				return setResult(resultMessage);
 			} else {
-				Alert.alert(t('Erro'), t('Digite valores válidos para a, b e c'));
+				Alert.alert(t("Erro"), t("Digite valores válidos para a, b e c"));
 			}
 		} else {
-			Alert.alert(t('Erro'), t('Digite valores válidos para a, b e c'));
+			Alert.alert(t("Erro"), t("Digite valores válidos para a, b e c"));
 		}
 	};
 
 	useEffect(() => {
 		(async () => {
-			const valueAproximaFunc = await AsyncStorage.getItem('aproximaQuadraticEq');
+			const valueAproximaFunc = await AsyncStorage.getItem("aproximaQuadraticEq");
 			if (valueAproximaFunc) {
 				setAproxima(JSON.parse(valueAproximaFunc));
 			}
-			const apagaQuadraticAfterGen = await AsyncStorage.getItem('apagaQuadraticAfterGen');
+			const apagaQuadraticAfterGen = await AsyncStorage.getItem("apagaQuadraticAfterGen");
 			if (apagaQuadraticAfterGen) {
 				setDeleteAfter(JSON.parse(apagaQuadraticAfterGen));
 			}
@@ -94,36 +94,36 @@ export default function QuadraticEquationPage() {
 	return (
 		<View style={stylesWithTheme.container}>
 			<View style={stylesWithTheme.inputContainer}>
-				<Text style={stylesWithTheme.label}>{t('Digite o valor de A:')}</Text>
+				<Text style={stylesWithTheme.label}>{t("Digite o valor de A:")}</Text>
 				<TextInput
 					style={stylesWithTheme.input}
 					value={a}
-					placeholder={t('Termo que acompanha o x², ex: 5x²')}
-					placeholderTextColor={getThemeColor(theme, 'placeHolderColor')}
+					placeholder={t("Termo que acompanha o x², ex: 5x²")}
+					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
 					onChangeText={text => setA(text)}
 					keyboardType="numeric"
 					returnKeyType="next"
 					ref={valorARef} // Defina a referência para o primeiro campo
 					onSubmitEditing={() => valorBRef.current!.focus()}
 				/>
-				<Text style={stylesWithTheme.label}>{t('Digite o valor de B:')}</Text>
+				<Text style={stylesWithTheme.label}>{t("Digite o valor de B:")}</Text>
 				<TextInput
 					style={stylesWithTheme.input}
 					value={b}
-					placeholder={t('Termo que acompanha o x, ex: 3x')}
-					placeholderTextColor={getThemeColor(theme, 'placeHolderColor')}
+					placeholder={t("Termo que acompanha o x, ex: 3x")}
+					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
 					onChangeText={text => setB(text)}
 					keyboardType="numeric"
 					returnKeyType="next"
 					ref={valorBRef} // Defina a referência para o segundo campo
 					onSubmitEditing={() => valorCRef.current!.focus()} // Quando pressionado "Next", vá para o próximo campo
 				/>
-				<Text style={stylesWithTheme.label}>{t('Digite o valor de C:')}</Text>
+				<Text style={stylesWithTheme.label}>{t("Digite o valor de C:")}</Text>
 				<TextInput
 					style={stylesWithTheme.input}
 					value={c}
-					placeholder={t('Termo independente, ex: -4')}
-					placeholderTextColor={getThemeColor(theme, 'placeHolderColor')}
+					placeholder={t("Termo independente, ex: -4")}
+					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
 					onChangeText={text => setC(text)}
 					keyboardType="numeric"
 					returnKeyType="done"
@@ -131,31 +131,31 @@ export default function QuadraticEquationPage() {
 				/>
 			</View>
 			<View style={stylesWithTheme.checkboxContainer}>
-				<Text style={stylesWithTheme.label}>{t('Usar aproximação ?')}</Text>
+				<Text style={stylesWithTheme.label}>{t("Usar aproximação ?")}</Text>
 				<CheckBox
 					value={aproxima}
 					onValueChange={async value => {
-						await AsyncStorage.setItem('aproximaQuadraticEq', JSON.stringify(value));
+						await AsyncStorage.setItem("aproximaQuadraticEq", JSON.stringify(value));
 						setAproxima(value);
 					}}
 				/>
 			</View>
 			<View style={stylesWithTheme.checkboxContainer}>
-				<Text style={stylesWithTheme.label}>{t('Limpar campos após gerar ?')}</Text>
+				<Text style={stylesWithTheme.label}>{t("Limpar campos após gerar ?")}</Text>
 				<CheckBox
 					value={deleteAfter}
 					onValueChange={async value => {
-						await AsyncStorage.setItem('apagaQuadraticAfterGen', JSON.stringify(value));
+						await AsyncStorage.setItem("apagaQuadraticAfterGen", JSON.stringify(value));
 						setDeleteAfter(value);
 					}}
 				/>
 			</View>
 			<TouchableOpacity style={stylesWithTheme.button} onPress={calculateQuadraticEquation}>
-				<Text style={stylesWithTheme.buttonText}>{t('Calcular')}</Text>
+				<Text style={stylesWithTheme.buttonText}>{t("Calcular")}</Text>
 			</TouchableOpacity>
 			<View style={stylesWithTheme.resultContainer}>
 				<Text style={stylesWithTheme.label}>
-					{t('Resultado: ')}
+					{t("Resultado: ")}
 					{result}
 				</Text>
 			</View>
@@ -163,12 +163,12 @@ export default function QuadraticEquationPage() {
 	);
 }
 
-const styles = (theme: 'dark' | 'light') =>
+const styles = (theme: "dark" | "light") =>
 	StyleSheet.create({
 		container: {
 			flex: 1,
 			padding: RFValue(16),
-			backgroundColor: getThemeColor(theme, 'background'),
+			backgroundColor: getThemeColor(theme, "background"),
 		},
 		inputContainer: {
 			marginBottom: RFValue(16),
@@ -176,33 +176,33 @@ const styles = (theme: 'dark' | 'light') =>
 		label: {
 			fontSize: RFValue(16),
 			marginBottom: RFValue(8),
-			color: getThemeColor(theme, 'text'), // Altere a cor apropriada
+			color: getThemeColor(theme, "text"), // Altere a cor apropriada
 		},
 		input: {
 			height: RFValue(50),
-			borderColor: getThemeColor(theme, 'border'),
+			borderColor: getThemeColor(theme, "border"),
 			borderWidth: 1,
 			paddingLeft: RFValue(10),
 			borderRadius: 4,
-			color: getThemeColor(theme, 'text'), // Altere a cor apropriada
-			backgroundColor: getThemeColor(theme, 'inputBackground'),
+			color: getThemeColor(theme, "text"), // Altere a cor apropriada
+			backgroundColor: getThemeColor(theme, "inputBackground"),
 		},
 		checkboxContainer: {
-			flexDirection: 'row',
-			alignItems: 'center',
+			flexDirection: "row",
+			alignItems: "center",
 			gap: RFValue(5),
-			justifyContent: 'center',
+			justifyContent: "center",
 			height: RFValue(50),
 		},
 		button: {
-			backgroundColor: getThemeColor(theme, 'buttonBackground'), // Altere a cor apropriada
-			alignItems: 'center',
-			justifyContent: 'center',
+			backgroundColor: getThemeColor(theme, "buttonBackground"), // Altere a cor apropriada
+			alignItems: "center",
+			justifyContent: "center",
 			height: RFValue(50),
 			borderRadius: 4,
 		},
 		buttonText: {
-			color: 'white',
+			color: "white",
 			fontSize: RFValue(16),
 		},
 		resultContainer: {

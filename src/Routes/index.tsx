@@ -1,8 +1,8 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
-import PrivacyPolicesAndTerms from '../components/PrivacyPolicesAndTerms';
+import PrivacyPolicesAndTerms from "../components/PrivacyPolicesAndTerms";
 
-import DrawerNavigator from './DrawerNavigator';
+import DrawerNavigator from "./DrawerNavigator";
 
 const Stack = createNativeStackNavigator();
 
