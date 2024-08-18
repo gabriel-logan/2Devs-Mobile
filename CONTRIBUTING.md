@@ -83,12 +83,12 @@ By contributing to 2Devs-Mobile, you agree that your contributions will be licen
 #### OTHERS
 
 ´´´
-		splits {
-        abi {
-            reset()
-            enable true
-            universalApk true
-            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
-        }
-    }
+splits {
+abi {
+reset()
+enable true
+universalApk true
+include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+}
+}
 ´´´
