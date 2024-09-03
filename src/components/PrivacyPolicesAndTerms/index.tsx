@@ -53,7 +53,7 @@ export default function PrivacyPolicesAndTerms({
 					index: 0,
 					routes: [{ name: "Drawer" }],
 				});
-			} catch (error) {
+			} catch {
 				Alert.alert(
 					t("Alguma coisa errada aconteceu, contate o desenvolvedor")
 				);
@@ -101,9 +101,7 @@ export default function PrivacyPolicesAndTerms({
 				</Text>
 			</TouchableOpacity>
 			{activeSpam && (
-				<Text
-					style={{ color: "#e74c3c", marginBottom: 25, alignSelf: "center" }}
-				>
+				<Text style={styles.activeSpamText}>
 					{t("Para continuar você precisa aceitar os termos")}
 				</Text>
 			)}
@@ -184,4 +182,5 @@ const styles = StyleSheet.create({
 		textDecorationLine: "underline",
 	},
 	linkButton: {},
+	activeSpamText: { color: "#e74c3c", marginBottom: 25, alignSelf: "center" },
 });

@@ -1,7 +1,7 @@
 import Clipboard from "@react-native-clipboard/clipboard";
 import { useFocusEffect } from "@react-navigation/native";
 import axios from "axios";
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { NetworkInfo } from "react-native-network-info";
@@ -33,11 +33,11 @@ const MyNetwork = () => {
 					const ip = await NetworkInfo.getIPV4Address();
 					setIpAddress(ip);
 
-					const geteway = await NetworkInfo.getGatewayIPAddress();
-					setGeteway(geteway);
+					const getewayGetted = await NetworkInfo.getGatewayIPAddress();
+					setGeteway(getewayGetted);
 
-					const subnet = await NetworkInfo.getSubnet();
-					setSubnet(subnet);
+					const subnetGetted = await NetworkInfo.getSubnet();
+					setSubnet(subnetGetted);
 
 					const ipExternal = (
 						await axios.get("https://api.ipify.org/?format=json")
@@ -62,6 +62,7 @@ const MyNetwork = () => {
 					}
  */
 				} catch (error) {
+					// eslint-disable-next-line no-console
 					console.error(error);
 				}
 			};

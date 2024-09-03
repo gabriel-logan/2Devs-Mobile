@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { ReactNode } from "react";
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { Alert, useColorScheme } from "react-native";
 
 import type {
@@ -21,7 +21,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 	const toggleTheme = async (newTheme: Theme) => {
 		try {
 			setTheme(newTheme);
-		} catch (error) {
+		} catch {
 			Alert.alert(
 				"Something strange happened when trying to change the theme, contact the developer"
 			);
@@ -53,7 +53,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 						setTheme(themeSelected);
 					}
 				} // Nao precisa de else pois o estado inicial é light
-			} catch (error) {
+			} catch {
 				Alert.alert(
 					"Something strange happened when trying to change the theme, contact the developer"
 				);

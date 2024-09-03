@@ -160,11 +160,11 @@ export default function PasswordGenerator() {
 
 	function estimatePasswordCrackTime(): { time: string; unit: string } {
 		const charsetSize = 26 + 26 + 10 + 10; // Letras minúsculas, letras maiúsculas, números, caracteres especiais
-		const passwordLength = inputEl.length;
+		const passwordLengthCounter = inputEl.length;
 		const attemptsPerSecond = 4000000000; // 4 GHz (ajuste conforme necessário)
 
 		// Suposição de complexidade da senha (número de combinações possíveis)
-		const complexity = Math.pow(charsetSize, passwordLength);
+		const complexity = Math.pow(charsetSize, passwordLengthCounter);
 
 		// Tempo estimado em segundos
 		let crackTimeSeconds = complexity / attemptsPerSecond;
@@ -256,6 +256,7 @@ export default function PasswordGenerator() {
 							<CheckBox
 								value={upperCaseCheckEl}
 								onValueChange={(value) => setUpperCaseCheckEl(value)}
+								tintColors={{ true: "#b985e9", false: "#b985e9" }}
 							/>
 						</View>
 						<View style={stylesWithTheme.customizationCheckbox}>
@@ -265,6 +266,7 @@ export default function PasswordGenerator() {
 							<CheckBox
 								value={numberCheckEl}
 								onValueChange={(value) => setNumberCheckEl(value)}
+								tintColors={{ true: "#b985e9", false: "#b985e9" }}
 							/>
 						</View>
 						<View style={stylesWithTheme.customizationCheckbox}>
@@ -274,6 +276,7 @@ export default function PasswordGenerator() {
 							<CheckBox
 								value={symbolCheckEl}
 								onValueChange={(value) => setSymbolCheckEl(value)}
+								tintColors={{ true: "#b985e9", false: "#b985e9" }}
 							/>
 						</View>
 					</View>
@@ -292,18 +295,25 @@ export default function PasswordGenerator() {
 			</View>
 			<View>
 				<View
-					style={{ backgroundColor: getPasswordStrengthColor(), padding: 10 }}
+					style={[
+						stylesWithTheme.infoView,
+						{
+							backgroundColor: getPasswordStrengthColor(),
+						},
+					]}
 				>
 					<Text style={stylesWithTheme.infoText}>
 						{t("Força da Senha")} {t(getPasswordStrengthDescription())}
 					</Text>
 				</View>
 				<View
-					style={{
-						backgroundColor: getPasswordStrengthColor(),
-						padding: 10,
-						marginTop: 15,
-					}}
+					style={[
+						stylesWithTheme.infoView,
+						{
+							backgroundColor: getPasswordStrengthColor(),
+							marginTop: RFValue(15),
+						},
+					]}
 				>
 					<Text style={stylesWithTheme.infoText}>
 						{t("Tempo estimado para quebrar a senha")}{" "}
@@ -402,6 +412,9 @@ const styles = (theme: "dark" | "light") =>
 			color: "#fff",
 			fontWeight: "bold",
 			fontSize: RFValue(14),
+		},
+		infoView: {
+			padding: 10,
 		},
 		infoText: {
 			color: "white",

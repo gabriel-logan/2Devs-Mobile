@@ -108,7 +108,10 @@ export default function ChangeLangModal({
 						</TouchableOpacity>
 					))}
 					<TouchableOpacity
-						style={[stylesWithTheme.languageButton, { marginBottom: 35 }]}
+						style={[
+							stylesWithTheme.languageButton,
+							stylesWithTheme.marginBotton35,
+						]}
 						onPress={() => changeLanguage("klingon")}
 					>
 						<Text style={stylesWithTheme.languageText}>Klingon</Text>
@@ -144,4 +147,5 @@ const styles = (theme: "dark" | "light") =>
 			fontWeight: "bold",
 			color: getThemeColor(theme, "text"),
 		},
+		marginBotton35: { marginBottom: 35 },
 	});

@@ -56,6 +56,17 @@ const styles = (theme: Theme) =>
 		checkbox: {
 			margin: RFValue(8),
 		},
+		resultDiv: {
+			backgroundColor: "lightgray",
+			padding: 10,
+			borderRadius: 5,
+			margin: 10,
+		},
+		resultText: {
+			fontSize: RFValue(16),
+			fontWeight: "bold",
+			color: "blue",
+		},
 	});
 
 export default styles;

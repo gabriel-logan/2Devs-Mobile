@@ -108,12 +108,12 @@ export default function Base64Page() {
 				setCleanAlways(JSON.parse(base64AlwaysClean));
 			}
 
-			const considerSpace = await AsyncStorage.getItem(
+			const considerSpaceAfterGenerate = await AsyncStorage.getItem(
 				"considerSpaceAfterGenerate"
 			);
 
-			if (considerSpace) {
-				setConsiderSpace(JSON.parse(considerSpace));
+			if (considerSpaceAfterGenerate) {
+				setConsiderSpace(JSON.parse(considerSpaceAfterGenerate));
 			}
 		})();
 	}, []);
@@ -136,18 +136,18 @@ export default function Base64Page() {
 					}}
 				/>
 			</View>
-			<View style={[stylesWithTheme.section, { marginBottom: 15 }]}>
+			<View style={[stylesWithTheme.section, { marginBottom: RFValue(15) }]}>
 				<Text style={stylesWithTheme.paragraph}>
 					{t("Considerar espaço ?")}
 				</Text>
 				<CheckBox
 					style={stylesWithTheme.checkbox}
 					value={considerSpace}
-					onValueChange={async (considerSpace) => {
-						setConsiderSpace(considerSpace.valueOf());
+					onValueChange={async (considerSpaceChange) => {
+						setConsiderSpace(considerSpaceChange.valueOf());
 						await AsyncStorage.setItem(
 							"considerSpaceAfterGenerate",
-							JSON.stringify(considerSpace.valueOf())
+							JSON.stringify(considerSpaceChange.valueOf())
 						);
 					}}
 				/>

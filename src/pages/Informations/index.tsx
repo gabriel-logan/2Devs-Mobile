@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import {
 	View,
@@ -72,6 +71,12 @@ export default function GeneralInfoPage() {
 			textAlign: "center",
 			fontSize: RFValue(14),
 		},
+		marginTop10: {
+			marginTop: 10,
+		},
+		marginTop15: {
+			marginTop: 15,
+		},
 	});
 	return (
 		<ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -103,7 +108,7 @@ export default function GeneralInfoPage() {
 							{t("Ir para o repositório GitHub")}
 						</Text>
 					</TouchableOpacity>
-					<Text style={[styles.sectionText, { marginTop: 15 }]}>
+					<Text style={[styles.sectionText, styles.marginTop15]}>
 						{t("Você também pode me ajudar no buymeacoffe")}
 					</Text>
 					<TouchableOpacity
@@ -137,7 +142,7 @@ export default function GeneralInfoPage() {
 				<Text style={styles.buttonText}>{t("Termos de Uso")}</Text>
 			</TouchableOpacity>
 
-			<View style={[styles.section, { marginTop: 10 }]}>
+			<View style={[styles.section, styles.marginTop10]}>
 				<Text style={styles.sectionTitle}>{t("Contribuidores")}</Text>
 			</View>
 			<View style={styles.section}>

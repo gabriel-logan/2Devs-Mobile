@@ -67,11 +67,11 @@ export default function CnpjGeneratorPage() {
 
 	useEffect(() => {
 		(async () => {
-			const cnpjWithPeriod = await AsyncStorage.getItem(
+			const cnpjGeneratedWithPeriod = await AsyncStorage.getItem(
 				"cnpjGeneratedWithPeriod"
 			);
-			if (cnpjWithPeriod) {
-				setCnpjWithPeriod(JSON.parse(cnpjWithPeriod));
+			if (cnpjGeneratedWithPeriod) {
+				setCnpjWithPeriod(JSON.parse(cnpjGeneratedWithPeriod));
 			}
 		})();
 	}, []);

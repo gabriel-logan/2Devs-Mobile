@@ -13,6 +13,7 @@ const styles = (theme: Theme) =>
 			padding: RFValue(20),
 			backgroundColor: getThemeColor(theme, "background"), // Usando a paleta de cores para o fundo da página
 		},
+		contentContainerStyle: { flexGrow: 1, justifyContent: "center" },
 		logo: {
 			marginBottom: RFValue(30),
 		},

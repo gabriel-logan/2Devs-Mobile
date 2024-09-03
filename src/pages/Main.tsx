@@ -41,8 +41,10 @@ export default function Main({ navigation }: NavigationPropsTypes) {
 
 	const [modalChangeLang, setModalChangeLang] = useState(false);
 
-	const handleThemeChange = async (selectedTheme: typeof theme | "system") => {
-		if (selectedTheme === "system") {
+	const handleThemeChange = async (
+		newSelectedTheme: typeof theme | "system"
+	) => {
+		if (newSelectedTheme === "system") {
 			if (systemTheme) {
 				toggleTheme(systemTheme);
 			} else {
@@ -50,11 +52,11 @@ export default function Main({ navigation }: NavigationPropsTypes) {
 			}
 			// Define o tema com base no sistema (usando useColorScheme)
 		} else {
-			toggleTheme(selectedTheme);
+			toggleTheme(newSelectedTheme);
 		}
 
-		setSelectedTheme(selectedTheme);
-		await AsyncStorage.setItem("themeSelected", selectedTheme);
+		setSelectedTheme(newSelectedTheme);
+		await AsyncStorage.setItem("themeSelected", newSelectedTheme);
 	};
 
 	useEffect(() => {
@@ -73,7 +75,7 @@ export default function Main({ navigation }: NavigationPropsTypes) {
 						routes: [{ name: "Initial" }],
 					});
 				}
-			} catch (error) {
+			} catch {
 				Alert.alert(
 					t("Alguma coisa errada aconteceu, contate o desenvolvedor")
 				);
@@ -89,9 +91,7 @@ export default function Main({ navigation }: NavigationPropsTypes) {
 	}
 
 	return (
-		<ScrollView
-			contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
-		>
+		<ScrollView contentContainerStyle={stylesWithTheme.contentContainerStyle}>
 			<View style={stylesWithTheme.container}>
 				<StatusBar
 					barStyle={theme === "dark" ? "light-content" : "dark-content"}

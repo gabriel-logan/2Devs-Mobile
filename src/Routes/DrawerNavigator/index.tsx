@@ -30,7 +30,7 @@ export default function DrawerNavigator() {
 
 	return (
 		<Drawer.Navigator
-			drawerContent={() => <CustomDrawerContent />}
+			drawerContent={CustomDrawerContent}
 			screenOptions={{
 				headerStyle: { backgroundColor: getThemeColor(theme, "background") },
 				headerTitleStyle: { color: getThemeColor(theme, "title") },

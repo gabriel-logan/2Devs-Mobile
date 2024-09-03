@@ -28,9 +28,9 @@ export default function LinearEquationPage() {
 		if (!match) {
 			setResult(t("Equação inválida. Use o formato"));
 		} else {
-			const a = parseInt(match[1]);
-			const b = parseInt(match[2]);
-			const c = parseInt(match[3]);
+			const a = parseInt(match[1], 10);
+			const b = parseInt(match[2], 10);
+			const c = parseInt(match[3], 10);
 
 			if (a === 0) {
 				setResult(t("a não pode ser zero."));

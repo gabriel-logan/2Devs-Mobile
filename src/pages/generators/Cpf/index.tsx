@@ -59,11 +59,11 @@ export default function CpfGeneratorPage() {
 
 	useEffect(() => {
 		(async () => {
-			const cpfWithPeriod = await AsyncStorage.getItem(
+			const cpfGeneratedWithPeriod = await AsyncStorage.getItem(
 				"cpfGeneratedWithPeriod"
 			);
-			if (cpfWithPeriod) {
-				setCpfWithPeriod(JSON.parse(cpfWithPeriod));
+			if (cpfGeneratedWithPeriod) {
+				setCpfWithPeriod(JSON.parse(cpfGeneratedWithPeriod));
 			}
 		})();
 	}, []);

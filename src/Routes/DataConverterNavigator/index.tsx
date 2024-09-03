@@ -86,12 +86,9 @@ export default function DataConverterNavigator() {
 		<Stack.Navigator
 			screenOptions={{
 				headerShown: true,
-				header: () => (
-					<DataConverterHeader
-						selectedLanguage={selectedLanguage}
-						setSelectedLanguage={setSelectedLanguage}
-					/>
-				),
+				header: () => {
+					return DataConverterHeader({ selectedLanguage, setSelectedLanguage });
+				},
 				animation: "slide_from_right",
 			}}
 		>

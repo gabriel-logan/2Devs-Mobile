@@ -84,7 +84,8 @@ export default function Md5Page() {
 							JSON.stringify(cleanAlwaysChange.valueOf())
 						);
 					}}
-					color={cleanAlways ? "#5446bf" : undefined}
+					tintColor={cleanAlways ? "#5446bf" : undefined}
+					tintColors={{ true: "#5446bf", false: undefined }}
 				/>
 			</View>
 			<ScrollView showsVerticalScrollIndicator={false}>
@@ -132,17 +133,8 @@ export default function Md5Page() {
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 				</View>
-				<View
-					style={{
-						backgroundColor: "lightgray",
-						padding: 10,
-						borderRadius: 5,
-						margin: 10,
-					}}
-				>
-					<Text
-						style={{ fontSize: RFValue(16), fontWeight: "bold", color: "blue" }}
-					>
+				<View style={stylesWithTheme.resultDiv}>
+					<Text style={stylesWithTheme.resultText}>
 						{t("MD5 HASH:")} {md5Hash}
 					</Text>
 				</View>

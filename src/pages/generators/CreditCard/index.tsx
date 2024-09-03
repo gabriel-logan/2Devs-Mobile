@@ -69,11 +69,11 @@ export default function CreditCardGeneratorPage() {
 
 	useEffect(() => {
 		(async () => {
-			const creditCardWithPeriod = await AsyncStorage.getItem(
+			const creditCardGeneratedWithPeriod = await AsyncStorage.getItem(
 				"creditCardGeneratedWithPeriod"
 			);
-			if (creditCardWithPeriod) {
-				setCreditCardWithPeriod(JSON.parse(creditCardWithPeriod));
+			if (creditCardGeneratedWithPeriod) {
+				setCreditCardWithPeriod(JSON.parse(creditCardGeneratedWithPeriod));
 			}
 		})();
 	}, []);
