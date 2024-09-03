@@ -19,13 +19,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 	);
 
 	const toggleTheme = async (newTheme: Theme) => {
-		try {
-			setTheme(newTheme);
-		} catch {
-			Alert.alert(
-				"Something strange happened when trying to change the theme, contact the developer"
-			);
-		}
+		setTheme(newTheme);
 	};
 
 	const contextValue: ThemeContextProps = {
@@ -70,8 +64,6 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 
 export const useTheme = () => {
 	const context = useContext(ThemeContext) as ThemeContextProps;
-	if (!context) {
-		throw new Error("useTheme must be used within a ThemeProvider");
-	}
+
 	return context;
 };

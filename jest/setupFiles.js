@@ -31,3 +31,32 @@ jest.mock("@react-navigation/native", () => {
 jest.mock("@react-native-async-storage/async-storage", () =>
 	require("@react-native-async-storage/async-storage/jest/async-storage-mock")
 );
+
+jest.mock("react-i18next", () => ({
+	// this mock makes sure any components using the translate hook can use it without a warning being shown
+	useTranslation: () => {
+		return {
+			t: (str) => str,
+			i18n: {
+				changeLanguage: () => new Promise(() => {}),
+			},
+		};
+	},
+	initReactI18next: {
+		type: "3rdParty",
+		init: () => {},
+	},
+}));
+
+jest.mock("react-native-responsive-fontsize", () => ({
+	RFValue: jest.fn(),
+	RFPercentage: jest.fn(),
+	fixedRFValue: jest.fn(),
+}));
+
+jest.mock("react-native-responsive-screen", () => ({
+	widthPercentageToDP: jest.fn(),
+	heightPercentageToDP: jest.fn(),
+	width: jest.fn(),
+	height: jest.fn(),
+}));

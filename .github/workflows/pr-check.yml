@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
-      
+
       - name: Install dependencies
         run: yarn install
 
@@ -28,6 +28,6 @@ jobs:
 
       - name: Run lint
         run: yarn lint
-        
+
       - name: Run test
         run: yarn test:verbose:coverage
