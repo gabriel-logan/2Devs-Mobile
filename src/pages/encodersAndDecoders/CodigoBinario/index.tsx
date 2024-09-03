@@ -1,14 +1,29 @@
-import {useState} from "react";
-import {useTranslation} from "react-i18next";
-import {View, TextInput, Text, Button, StyleSheet, TouchableOpacity} from "react-native";
 import Clipboard from "@react-native-clipboard/clipboard";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	View,
+	TextInput,
+	Text,
+	Button,
+	StyleSheet,
+	TouchableOpacity,
+} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import {RFValue} from "../../../components/Responsive";
+
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
+import getThemeColor from "../../../configs/colors";
+import { Theme } from "../../../types/themeProps";
 
 type WhichOne = "text" | "Binario";
 
 export default function BinaryCodePage() {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
+
+	const { theme } = useTheme();
+
+	const stylesWithTheme = styles(theme);
 
 	const [inputText, setInputText] = useState("");
 	const [binaryCode, setBinaryCode] = useState("");
@@ -50,75 +65,96 @@ export default function BinaryCodePage() {
 	};
 
 	return (
-		<View style={styles.container}>
+		<View style={stylesWithTheme.container}>
 			<View>
-				<Text style={styles.label}>{t("Texto:")}</Text>
+				<Text style={stylesWithTheme.label}>{t("Texto")}</Text>
 				<TextInput
-					style={styles.input}
+					style={stylesWithTheme.input}
 					multiline
 					placeholder={t("Digite o texto aqui")}
+					placeholderTextColor={theme === "dark" ? "#ccc" : "#666"}
 					value={inputText}
 					onChangeText={setInputText}
 					maxLength={3500}
 				/>
-				<View style={styles.divButtonCopy}>
-					<TouchableOpacity style={styles.buttonCopy} onPress={() => copyToClipboard(binaryCode)}>
+				<View style={stylesWithTheme.divButtonCopy}>
+					<TouchableOpacity
+						style={stylesWithTheme.buttonCopy}
+						onPress={() => copyToClipboard(binaryCode)}
+					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.buttonCopy} onPress={() => cleanToClipboard("Binario")}>
+					<TouchableOpacity
+						style={stylesWithTheme.buttonCopy}
+						onPress={() => cleanToClipboard("Binario")}
+					>
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 				</View>
 				<Button title={t("Codificar para Binário")} onPress={encodeToBinary} />
 			</View>
 			<View>
-				<Text style={styles.label}>{t("Código Binário:")}</Text>
+				<Text style={stylesWithTheme.label}>{t("Código Binário:")}</Text>
 				<TextInput
-					style={styles.input}
+					style={stylesWithTheme.input}
 					multiline
 					placeholder={t("O código binário será exibido aqui")}
+					placeholderTextColor={theme === "dark" ? "#ccc" : "#666"}
 					value={binaryCode}
 					onChangeText={setBinaryCode}
 				/>
-				<View style={styles.divButtonCopy}>
-					<TouchableOpacity style={styles.buttonCopy} onPress={() => copyToClipboard(binaryCode)}>
+				<View style={stylesWithTheme.divButtonCopy}>
+					<TouchableOpacity
+						style={stylesWithTheme.buttonCopy}
+						onPress={() => copyToClipboard(binaryCode)}
+					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.buttonCopy} onPress={() => cleanToClipboard("Binario")}>
+					<TouchableOpacity
+						style={stylesWithTheme.buttonCopy}
+						onPress={() => cleanToClipboard("Binario")}
+					>
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 				</View>
-				<Button title={t("Decodificar para Texto")} onPress={decodeFromBinary} />
+				<Button
+					title={t("Decodificar para Texto")}
+					onPress={decodeFromBinary}
+				/>
 			</View>
 		</View>
 	);
 }
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		padding: RFValue(20),
-	},
-	label: {
-		fontSize: RFValue(18),
-		marginTop: RFValue(15),
-	},
-	input: {
-		borderWidth: 1,
-		borderColor: "#ccc",
-		borderRadius: 5,
-		padding: RFValue(10),
-		marginVertical: RFValue(10),
-		fontSize: RFValue(16),
-		height: 200,
-		textAlignVertical: "top",
-	},
-	divButtonCopy: {
-		position: "absolute",
-		right: RFValue(15),
-		bottom: 80,
-	},
-	buttonCopy: {
-		marginVertical: RFValue(10),
-	},
-});
+const styles = (theme: Theme) =>
+	StyleSheet.create({
+		container: {
+			flex: 1,
+			padding: RFValue(20),
+			backgroundColor: getThemeColor(theme, "background"),
+		},
+		label: {
+			fontSize: RFValue(18),
+			marginTop: RFValue(15),
+			color: getThemeColor(theme, "text"),
+		},
+		input: {
+			borderWidth: 1,
+			borderColor: "#ccc",
+			borderRadius: 5,
+			padding: RFValue(10),
+			marginVertical: RFValue(10),
+			fontSize: RFValue(16),
+			height: 200,
+			textAlignVertical: "top",
+			color: getThemeColor(theme, "text"),
+		},
+		divButtonCopy: {
+			position: "absolute",
+			right: RFValue(15),
+			bottom: 80,
+		},
+		buttonCopy: {
+			marginVertical: RFValue(10),
+		},
+	});

@@ -1,30 +1,29 @@
-import {useState, useEffect, useCallback} from "react";
-
-import {Text, TextInput, TouchableOpacity, View, StyleSheet} from "react-native";
-
-import {ProgressBar} from "react-native-paper";
-
-import {useTranslation} from "react-i18next";
-
-import Ionicons from "react-native-vector-icons/Ionicons";
-
+import Clipboard from "@react-native-clipboard/clipboard";
 import CheckBox from "@react-native-community/checkbox";
 import Slider from "@react-native-community/slider";
-import Clipboard from "@react-native-clipboard/clipboard";
+import { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	Text,
+	TextInput,
+	TouchableOpacity,
+	View,
+	StyleSheet,
+} from "react-native";
+import { getLocales } from "react-native-localize";
+import { ProgressBar } from "react-native-paper";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
-import {useTheme} from "../../../components/ThemeContext";
-
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
 
-import {RFValue} from "../../../components/Responsive";
-import {getLocales} from "react-native-localize";
-
 export default function PasswordGenerator() {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
 	const locale = getLocales()[0].languageCode;
 
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 
 	const stylesWithTheme = styles(theme);
 
@@ -159,7 +158,7 @@ export default function PasswordGenerator() {
 		}
 	}
 
-	function estimatePasswordCrackTime(): {time: string; unit: string} {
+	function estimatePasswordCrackTime(): { time: string; unit: string } {
 		const charsetSize = 26 + 26 + 10 + 10; // Letras minúsculas, letras maiúsculas, números, caracteres especiais
 		const passwordLength = inputEl.length;
 		const attemptsPerSecond = 4000000000; // 4 GHz (ajuste conforme necessário)
@@ -207,7 +206,11 @@ export default function PasswordGenerator() {
 			<View style={stylesWithTheme.section}>
 				<View style={stylesWithTheme.passwordContainer}>
 					<View style={stylesWithTheme.passwordInputContainer}>
-						<TextInput value={inputEl} editable={false} style={stylesWithTheme.passwordInput} />
+						<TextInput
+							value={inputEl}
+							editable={false}
+							style={stylesWithTheme.passwordInput}
+						/>
 					</View>
 					<View style={stylesWithTheme.passwordButtonsContainer}>
 						<TouchableOpacity onPress={generatePassword}>
@@ -216,7 +219,10 @@ export default function PasswordGenerator() {
 					</View>
 				</View>
 				<View>
-					<ProgressBar progress={getStrength() / 5} color={getPasswordStrengthColor()} />
+					<ProgressBar
+						progress={getStrength() / 5}
+						color={getPasswordStrengthColor()}
+					/>
 				</View>
 			</View>
 
@@ -226,11 +232,13 @@ export default function PasswordGenerator() {
 					<View style={stylesWithTheme.customizationOption}>
 						<Text style={stylesWithTheme.customizationOptionText}>
 							{t("Tamanho: ")}{" "}
-							<Text style={stylesWithTheme.customizationOptionValue}>{passwordLength}</Text>
+							<Text style={stylesWithTheme.customizationOptionValue}>
+								{passwordLength}
+							</Text>
 						</Text>
 						<Slider
 							value={passwordLength}
-							onValueChange={value => {
+							onValueChange={(value) => {
 								setPasswordLength(Math.floor(value));
 								generatePassword();
 							}}
@@ -242,38 +250,61 @@ export default function PasswordGenerator() {
 					</View>
 					<View style={stylesWithTheme.customizationOption}>
 						<View style={stylesWithTheme.customizationCheckbox}>
-							<Text style={stylesWithTheme.customizationCheckboxText}>{t("Maiúsculas")}</Text>
+							<Text style={stylesWithTheme.customizationCheckboxText}>
+								{t("Maiúsculas")}
+							</Text>
 							<CheckBox
 								value={upperCaseCheckEl}
-								onValueChange={value => setUpperCaseCheckEl(value)}
+								onValueChange={(value) => setUpperCaseCheckEl(value)}
 							/>
 						</View>
 						<View style={stylesWithTheme.customizationCheckbox}>
-							<Text style={stylesWithTheme.customizationCheckboxText}>{t("Números")}</Text>
-							<CheckBox value={numberCheckEl} onValueChange={value => setNumberCheckEl(value)} />
+							<Text style={stylesWithTheme.customizationCheckboxText}>
+								{t("Números")}
+							</Text>
+							<CheckBox
+								value={numberCheckEl}
+								onValueChange={(value) => setNumberCheckEl(value)}
+							/>
 						</View>
 						<View style={stylesWithTheme.customizationCheckbox}>
 							<Text style={stylesWithTheme.customizationCheckboxText}>
 								{t("Caracteres especiais")}
 							</Text>
-							<CheckBox value={symbolCheckEl} onValueChange={value => setSymbolCheckEl(value)} />
+							<CheckBox
+								value={symbolCheckEl}
+								onValueChange={(value) => setSymbolCheckEl(value)}
+							/>
 						</View>
 					</View>
 				</View>
 			</View>
 
 			<View style={stylesWithTheme.section}>
-				<TouchableOpacity onPress={copyToClipboard} style={stylesWithTheme.copyButton}>
-					<Text style={stylesWithTheme.copyButtonText}>{t("Copiar senha")}</Text>
+				<TouchableOpacity
+					onPress={copyToClipboard}
+					style={stylesWithTheme.copyButton}
+				>
+					<Text style={stylesWithTheme.copyButtonText}>
+						{t("Copiar senha")}
+					</Text>
 				</TouchableOpacity>
 			</View>
 			<View>
-				<View style={{backgroundColor: getPasswordStrengthColor(), padding: 10}}>
+				<View
+					style={{ backgroundColor: getPasswordStrengthColor(), padding: 10 }}
+				>
 					<Text style={stylesWithTheme.infoText}>
 						{t("Força da Senha")} {t(getPasswordStrengthDescription())}
 					</Text>
 				</View>
-				<View style={{backgroundColor: getPasswordStrengthColor(), padding: 10, marginTop: 15}}>
+				<View
+					style={{
+						backgroundColor: getPasswordStrengthColor(),
+						padding: 10,
+						marginTop: 15,
+					}}
+				>
 					<Text style={stylesWithTheme.infoText}>
 						{t("Tempo estimado para quebrar a senha")}{" "}
 						{Number(estimatePasswordCrackTime().time).toLocaleString(locale, {
@@ -282,7 +313,7 @@ export default function PasswordGenerator() {
 						{t(estimatePasswordCrackTime().unit)}
 					</Text>
 				</View>
-				<View style={{marginTop: RFValue(15)}}>
+				<View style={{ marginTop: RFValue(15) }}>
 					<Text style={stylesWithTheme.infoTextCalc}>
 						{t("Os cálculos são baseados em um processador de 4 GHz")}
 					</Text>
@@ -377,7 +408,7 @@ const styles = (theme: "dark" | "light") =>
 			fontSize: RFValue(15),
 			textAlign: "center",
 			textShadowColor: "rgba(0, 0, 0, 0.7)", // Cor da sombra
-			textShadowOffset: {width: 0.5, height: 0.5}, // Deslocamento da sombra
+			textShadowOffset: { width: 0.5, height: 0.5 }, // Deslocamento da sombra
 			textShadowRadius: 2, // Raio da sombra
 			fontWeight: "bold",
 		},

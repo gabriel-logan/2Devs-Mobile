@@ -1,35 +1,29 @@
-import React, {useState, useCallback} from "react";
-import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
-
-import {useFocusEffect} from "@react-navigation/native";
-
 import Clipboard from "@react-native-clipboard/clipboard";
-
-import {NetworkInfo} from "react-native-network-info";
-
+import { useFocusEffect } from "@react-navigation/native";
 import axios from "axios";
-
+import React, { useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { NetworkInfo } from "react-native-network-info";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
-import {useTranslation} from "react-i18next";
-
-import {useTheme} from "../../components/ThemeContext";
-
+import { RFValue } from "../../components/Responsive";
+import { useTheme } from "../../components/ThemeContext";
 import getThemeColor from "../../configs/colors";
 
-import {RFValue} from "../../components/Responsive";
-
 const MyNetwork = () => {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 
 	const stylesWithTheme = styles(theme);
 
 	const [ipAddress, setIpAddress] = useState<string | null>(null);
 	const [geteway, setGeteway] = useState<string | null>(null);
 	const [subnet, setSubnet] = useState<string | null>(null);
-	const [ipAddressExternal, setIpAddressExternal] = useState<string | null>(null);
+	const [ipAddressExternal, setIpAddressExternal] = useState<string | null>(
+		null
+	);
 	// const [airplaneMode, setAirplaneMode] = useState<boolean | null>(null);
 
 	useFocusEffect(
@@ -45,13 +39,17 @@ const MyNetwork = () => {
 					const subnet = await NetworkInfo.getSubnet();
 					setSubnet(subnet);
 
-					const ipExternal = (await axios.get("https://api.ipify.org/?format=json")).data;
+					const ipExternal = (
+						await axios.get("https://api.ipify.org/?format=json")
+					).data;
 
 					if (ipExternal) {
 						setIpAddressExternal(ipExternal.ip);
 					} else {
 						setIpAddressExternal(
-							t("Houve um problema não identificado na solicitação, tente novamente mais tarde"),
+							t(
+								"Houve um problema não identificado na solicitação, tente novamente mais tarde"
+							)
 						);
 					}
 
@@ -69,7 +67,7 @@ const MyNetwork = () => {
 			};
 
 			fetchNetworkInfo();
-		}, [t]),
+		}, [t])
 	);
 
 	const copyToClipboard = (textToCopy: string) => {
@@ -83,45 +81,71 @@ const MyNetwork = () => {
 				<View style={stylesWithTheme.infoContainer}>
 					<Text style={stylesWithTheme.infoLabel}>{t("Gateway Padrão")}</Text>
 					<View style={stylesWithTheme.row}>
-						<Text style={stylesWithTheme.infoText}>{geteway || t("Carregando...")}</Text>
-						<TouchableOpacity
-							onPress={() => copyToClipboard(geteway ? geteway : t("000.000.0.0"))}
-							style={stylesWithTheme.copyButton}>
-							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
-						</TouchableOpacity>
-					</View>
-				</View>
-				<View style={stylesWithTheme.infoContainer}>
-					<Text style={stylesWithTheme.infoLabel}>{t("Endereço IP local:")}</Text>
-					<View style={stylesWithTheme.row}>
-						<Text style={stylesWithTheme.infoText}>{ipAddress || t("Carregando...")}</Text>
-						<TouchableOpacity
-							onPress={() => copyToClipboard(ipAddress ? ipAddress : t("000.000.000.000"))}
-							style={stylesWithTheme.copyButton}>
-							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
-						</TouchableOpacity>
-					</View>
-				</View>
-				<View style={stylesWithTheme.infoContainer}>
-					<Text style={stylesWithTheme.infoLabel}>{t("Máscara de Sub-rede")}</Text>
-					<View style={stylesWithTheme.row}>
-						<Text style={stylesWithTheme.infoText}>{subnet || t("Carregando...")}</Text>
-						<TouchableOpacity
-							onPress={() => copyToClipboard(subnet ? subnet : t("000.000.000.0"))}
-							style={stylesWithTheme.copyButton}>
-							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
-						</TouchableOpacity>
-					</View>
-				</View>
-				<View style={stylesWithTheme.infoContainer}>
-					<Text style={stylesWithTheme.infoLabel}>{t("Endereço IP da rede:")}</Text>
-					<View style={stylesWithTheme.row}>
-						<Text style={stylesWithTheme.infoText}>{ipAddressExternal || t("Carregando...")}</Text>
+						<Text style={stylesWithTheme.infoText}>
+							{geteway || t("Carregando...")}
+						</Text>
 						<TouchableOpacity
 							onPress={() =>
-								copyToClipboard(ipAddressExternal ? ipAddressExternal : t("000.000.000.000"))
+								copyToClipboard(geteway ? geteway : t("000.000.0.0"))
 							}
-							style={stylesWithTheme.copyButton}>
+							style={stylesWithTheme.copyButton}
+						>
+							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
+						</TouchableOpacity>
+					</View>
+				</View>
+				<View style={stylesWithTheme.infoContainer}>
+					<Text style={stylesWithTheme.infoLabel}>
+						{t("Endereço IP local:")}
+					</Text>
+					<View style={stylesWithTheme.row}>
+						<Text style={stylesWithTheme.infoText}>
+							{ipAddress || t("Carregando...")}
+						</Text>
+						<TouchableOpacity
+							onPress={() =>
+								copyToClipboard(ipAddress ? ipAddress : t("000.000.000.000"))
+							}
+							style={stylesWithTheme.copyButton}
+						>
+							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
+						</TouchableOpacity>
+					</View>
+				</View>
+				<View style={stylesWithTheme.infoContainer}>
+					<Text style={stylesWithTheme.infoLabel}>
+						{t("Máscara de Sub-rede")}
+					</Text>
+					<View style={stylesWithTheme.row}>
+						<Text style={stylesWithTheme.infoText}>
+							{subnet || t("Carregando...")}
+						</Text>
+						<TouchableOpacity
+							onPress={() =>
+								copyToClipboard(subnet ? subnet : t("000.000.000.0"))
+							}
+							style={stylesWithTheme.copyButton}
+						>
+							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
+						</TouchableOpacity>
+					</View>
+				</View>
+				<View style={stylesWithTheme.infoContainer}>
+					<Text style={stylesWithTheme.infoLabel}>
+						{t("Endereço IP da rede:")}
+					</Text>
+					<View style={stylesWithTheme.row}>
+						<Text style={stylesWithTheme.infoText}>
+							{ipAddressExternal || t("Carregando...")}
+						</Text>
+						<TouchableOpacity
+							onPress={() =>
+								copyToClipboard(
+									ipAddressExternal ? ipAddressExternal : t("000.000.000.000")
+								)
+							}
+							style={stylesWithTheme.copyButton}
+						>
 							<FontAwesome5 name="copy" size={RFValue(20)} color="#007bff" />
 						</TouchableOpacity>
 					</View>

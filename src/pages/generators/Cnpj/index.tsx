@@ -1,23 +1,27 @@
-import {useState, useEffect} from "react";
-import {StyleSheet, Text, View, TextInput, Button, TouchableOpacity} from "react-native";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import Clipboard from "@react-native-clipboard/clipboard";
 import CheckBox from "@react-native-community/checkbox";
-
-import {cnpjIsValid} from "multiform-validator";
-
+import { cnpjIsValid } from "multiform-validator";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	StyleSheet,
+	Text,
+	View,
+	TextInput,
+	Button,
+	TouchableOpacity,
+} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-import {RFValue} from "../../../components/Responsive";
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
-import {useTheme} from "../../../components/ThemeContext";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import {useTranslation} from "react-i18next";
 
 export default function CnpjGeneratorPage() {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 
 	const stylesWithTheme = styles(theme);
 
@@ -26,10 +30,10 @@ export default function CnpjGeneratorPage() {
 
 	const formatCnpj = (Cnpj: string) => {
 		if (Cnpj && Cnpj.length === 14) {
-			return `${Cnpj.slice(0, 2)}.${Cnpj.slice(2, 5)}.${Cnpj.slice(5, 8)}/${Cnpj.slice(
-				8,
-				12,
-			)}-${Cnpj.slice(12)}`;
+			return `${Cnpj.slice(0, 2)}.${Cnpj.slice(2, 5)}.${Cnpj.slice(
+				5,
+				8
+			)}/${Cnpj.slice(8, 12)}-${Cnpj.slice(12)}`;
 		}
 		return Cnpj;
 	};
@@ -63,7 +67,9 @@ export default function CnpjGeneratorPage() {
 
 	useEffect(() => {
 		(async () => {
-			const cnpjWithPeriod = await AsyncStorage.getItem("cnpjGeneratedWithPeriod");
+			const cnpjWithPeriod = await AsyncStorage.getItem(
+				"cnpjGeneratedWithPeriod"
+			);
 			if (cnpjWithPeriod) {
 				setCnpjWithPeriod(JSON.parse(cnpjWithPeriod));
 			}
@@ -75,15 +81,17 @@ export default function CnpjGeneratorPage() {
 			<Text style={stylesWithTheme.title}>{t("Gerador de CNPJ")}</Text>
 			<View style={stylesWithTheme.card}>
 				<View style={stylesWithTheme.section}>
-					<Text style={stylesWithTheme.paragraph}>{t("Gerar com pontuação ?")}</Text>
+					<Text style={stylesWithTheme.paragraph}>
+						{t("Gerar com pontuação ?")}
+					</Text>
 					<CheckBox
 						style={stylesWithTheme.checkbox}
 						value={cnpjWithPeriod}
-						onValueChange={async cleanAlwaysChange => {
+						onValueChange={async (cleanAlwaysChange) => {
 							setCnpjWithPeriod(cleanAlwaysChange.valueOf());
 							await AsyncStorage.setItem(
 								"cnpjGeneratedWithPeriod",
-								JSON.stringify(cleanAlwaysChange.valueOf()),
+								JSON.stringify(cleanAlwaysChange.valueOf())
 							);
 						}}
 					/>
@@ -96,7 +104,11 @@ export default function CnpjGeneratorPage() {
 					placeholder={t("Clique no botão abaixo")}
 					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
 				/>
-				<Button title={t("Gerar CNPJ")} onPress={generateRandomCnpj} color="#007BFF" />
+				<Button
+					title={t("Gerar CNPJ")}
+					onPress={generateRandomCnpj}
+					color="#007BFF"
+				/>
 				<View style={stylesWithTheme.copyButtonContainer}>
 					<TouchableOpacity onPress={copyToClipboard}>
 						<FontAwesome name="copy" size={RFValue(32)} color="#007BFF" />

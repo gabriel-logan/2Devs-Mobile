@@ -1,30 +1,37 @@
-import React, {useState} from "react";
-
-import {StyleSheet, Text, View, Button, TouchableOpacity, Alert, Linking} from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import moment from "moment-timezone";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	StyleSheet,
+	Text,
+	View,
+	Button,
+	TouchableOpacity,
+	Alert,
+	Linking,
+} from "react-native";
 
 // Icons
+import { getTimeZone } from "react-native-localize";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-import {getTimeZone} from "react-native-localize";
-
 // Cria o time zone do local
-import moment from "moment-timezone";
 
 // Localstorage
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // COmponentes
-import {RFValue} from "../Responsive";
+import { NavigationPropsTypes } from "../../types/navigationProps";
 import Loading from "../Loading";
-import {useTranslation} from "react-i18next";
+import { RFValue } from "../Responsive";
 
 // types
-import {NavigationPropsTypes} from "../../types/navigationProps";
+import { privacyURL, termsURL } from "../Urls";
 
-import {privacyURL, termsURL} from "../Urls";
-
-export default function PrivacyPolicesAndTerms({navigation}: NavigationPropsTypes) {
-	const {t} = useTranslation();
+export default function PrivacyPolicesAndTerms({
+	navigation,
+}: NavigationPropsTypes) {
+	const { t } = useTranslation();
 	const [isChecked, setIsChecked] = useState(false);
 	const [activeSpam, setActiveSpam] = useState(false);
 	// Estado do Loading
@@ -47,13 +54,18 @@ export default function PrivacyPolicesAndTerms({navigation}: NavigationPropsType
 			setActiveSpam(false);
 			try {
 				await AsyncStorage.setItem("termsAccept", JSON.stringify(true));
-				await AsyncStorage.setItem("dataTermsAccept", JSON.stringify(currentTime));
+				await AsyncStorage.setItem(
+					"dataTermsAccept",
+					JSON.stringify(currentTime)
+				);
 				navigation.reset({
 					index: 0,
-					routes: [{name: "Drawer"}],
+					routes: [{ name: "Drawer" }],
 				});
 			} catch (error) {
-				Alert.alert(t("Alguma coisa errada aconteceu, contate o desenvolvedor"));
+				Alert.alert(
+					t("Alguma coisa errada aconteceu, contate o desenvolvedor")
+				);
 			} finally {
 				setIsLoading(false);
 			}
@@ -90,17 +102,25 @@ export default function PrivacyPolicesAndTerms({navigation}: NavigationPropsType
 			<TouchableOpacity
 				style={styles.checkboxContainer}
 				onPress={handleCheckboxChange}
-				activeOpacity={0.8}>
+				activeOpacity={0.8}
+			>
 				{checkboxIcon}
-				<Text style={styles.checkboxText}>{t("Eu concordo com os termos")}</Text>
+				<Text style={styles.checkboxText}>
+					{t("Eu concordo com os termos")}
+				</Text>
 			</TouchableOpacity>
 			{activeSpam && (
-				<Text style={{color: "#e74c3c", marginBottom: 25, alignSelf: "center"}}>
+				<Text
+					style={{ color: "#e74c3c", marginBottom: 25, alignSelf: "center" }}
+				>
 					{t("Para continuar você precisa aceitar os termos")}
 				</Text>
 			)}
 			<View style={styles.buttonContainer}>
-				<Button title={t("Ler termos de uso")} onPress={() => Linking.openURL(termsURL)} />
+				<Button
+					title={t("Ler termos de uso")}
+					onPress={() => Linking.openURL(termsURL)}
+				/>
 			</View>
 			<View style={styles.buttonContainer}>
 				<Button

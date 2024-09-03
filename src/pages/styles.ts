@@ -1,8 +1,8 @@
-import {StyleSheet} from "react-native";
-import {RFValue, width} from "../components/Responsive";
-import getThemeColor from "../configs/colors";
+import { StyleSheet } from "react-native";
 
-import {Theme} from "../types/themeProps";
+import { RFValue, width } from "../components/Responsive";
+import getThemeColor from "../configs/colors";
+import { Theme } from "../types/themeProps";
 
 const styles = (theme: Theme) =>
 	StyleSheet.create({

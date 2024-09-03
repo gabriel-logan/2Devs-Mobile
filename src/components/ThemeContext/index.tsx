@@ -1,24 +1,30 @@
-import React, {createContext, useContext, useState, useEffect, ReactNode} from "react";
-
-import {Alert, useColorScheme} from "react-native";
-
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, {
+	createContext,
+	useContext,
+	useState,
+	useEffect,
+	ReactNode,
+} from "react";
+import { Alert, useColorScheme } from "react-native";
 
-import {Theme, ThemeChanges, ThemeContextProps} from "../../types/themeProps";
+import { Theme, ThemeChanges, ThemeContextProps } from "../../types/themeProps";
 
 const ThemeContext = createContext<ThemeContextProps | string>("light");
 
-export default function ThemeProvider({children}: {children: ReactNode}) {
+export default function ThemeProvider({ children }: { children: ReactNode }) {
 	const systemTheme = useColorScheme() as Theme | null;
 
-	const [theme, setTheme] = useState<Theme>(systemTheme === "dark" ? "dark" : "light");
+	const [theme, setTheme] = useState<Theme>(
+		systemTheme === "dark" ? "dark" : "light"
+	);
 
 	const toggleTheme = async (newTheme: Theme) => {
 		try {
 			setTheme(newTheme);
 		} catch (error) {
 			Alert.alert(
-				"Something strange happened when trying to change the theme, contact the developer",
+				"Something strange happened when trying to change the theme, contact the developer"
 			);
 		}
 	};
@@ -31,7 +37,9 @@ export default function ThemeProvider({children}: {children: ReactNode}) {
 	useEffect(() => {
 		(async () => {
 			try {
-				const themeSelected = (await AsyncStorage.getItem("themeSelected")) as ThemeChanges | null;
+				const themeSelected = (await AsyncStorage.getItem(
+					"themeSelected"
+				)) as ThemeChanges | null;
 				// Verifico se existe algo no storage
 				if (themeSelected) {
 					// Verifico se o que tem la é igual a sytem para poder setar o tema default do dispositivo
@@ -48,13 +56,17 @@ export default function ThemeProvider({children}: {children: ReactNode}) {
 				} // Nao precisa de else pois o estado inicial é light
 			} catch (error) {
 				Alert.alert(
-					"Something strange happened when trying to change the theme, contact the developer",
+					"Something strange happened when trying to change the theme, contact the developer"
 				);
 			}
 		})();
 	}, [systemTheme]);
 
-	return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
+	return (
+		<ThemeContext.Provider value={contextValue}>
+			{children}
+		</ThemeContext.Provider>
+	);
 }
 
 export const useTheme = () => {

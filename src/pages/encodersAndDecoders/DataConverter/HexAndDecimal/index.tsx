@@ -1,27 +1,28 @@
-import {useState} from "react";
-
-import {View, TextInput, Text, StyleSheet, TouchableOpacity, ScrollView, Alert} from "react-native";
-
+import Clipboard from "@react-native-clipboard/clipboard";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	View,
+	TextInput,
+	Text,
+	StyleSheet,
+	TouchableOpacity,
+	ScrollView,
+	Alert,
+} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-import Clipboard from "@react-native-clipboard/clipboard";
-
-import {useTheme} from "../../../../components/ThemeContext";
-
+import { RFValue } from "../../../../components/Responsive";
+import { useTheme } from "../../../../components/ThemeContext";
 import getThemeColor from "../../../../configs/colors";
-
-import {RFValue} from "../../../../components/Responsive";
-
-import {useTranslation} from "react-i18next";
-
-import {Theme} from "../../../../types/themeProps";
+import { Theme } from "../../../../types/themeProps";
 
 type WhichOne = "decimal" | "hex";
 
 export default function HexAndDecimal() {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 
 	const [decimalText, setDecimalText] = useState("");
 	const [hexText, setHexText] = useState("");
@@ -86,7 +87,7 @@ export default function HexAndDecimal() {
 						style={stylesWithTheme.input}
 						placeholder={t("Cole ou digite o numero decimal aqui")}
 						placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
-						onChangeText={text => setDecimalText(text)}
+						onChangeText={(text) => setDecimalText(text)}
 						value={decimalText}
 						maxLength={15000}
 						keyboardType="numeric"
@@ -95,35 +96,41 @@ export default function HexAndDecimal() {
 					<View style={stylesWithTheme.divButtonCopy}>
 						<TouchableOpacity
 							style={stylesWithTheme.buttonCopy}
-							onPress={() => pasteToClipboard("decimal")}>
+							onPress={() => pasteToClipboard("decimal")}
+						>
 							<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
 							style={stylesWithTheme.buttonCopy}
-							onPress={() => copyToClipboard(decimalText)}>
+							onPress={() => copyToClipboard(decimalText)}
+						>
 							<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
 							style={stylesWithTheme.buttonCopy}
-							onPress={() => cutToClipboard(decimalText, "decimal")}>
+							onPress={() => cutToClipboard(decimalText, "decimal")}
+						>
 							<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
 							style={stylesWithTheme.buttonCopy}
-							onPress={() => cleanToClipboard("decimal")}>
+							onPress={() => cleanToClipboard("decimal")}
+						>
 							<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 					</View>
 				</View>
 				<TouchableOpacity style={stylesWithTheme.button} onPress={encodeToHex}>
-					<Text style={stylesWithTheme.buttonText}>{t("Codificar para Hex")}</Text>
+					<Text style={stylesWithTheme.buttonText}>
+						{t("Codificar para Hex")}
+					</Text>
 				</TouchableOpacity>
 				<View style={stylesWithTheme.inputContainer}>
 					<TextInput
 						style={stylesWithTheme.input}
 						placeholder={t("Cole ou digite o código Hex aqui")}
 						placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
-						onChangeText={text => setHexText(text)}
+						onChangeText={(text) => setHexText(text)}
 						value={hexText}
 						maxLength={15000}
 						multiline
@@ -131,28 +138,37 @@ export default function HexAndDecimal() {
 					<View style={stylesWithTheme.divButtonCopy}>
 						<TouchableOpacity
 							style={stylesWithTheme.buttonCopy}
-							onPress={() => pasteToClipboard("hex")}>
+							onPress={() => pasteToClipboard("hex")}
+						>
 							<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
 							style={stylesWithTheme.buttonCopy}
-							onPress={() => copyToClipboard(hexText)}>
+							onPress={() => copyToClipboard(hexText)}
+						>
 							<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
 							style={stylesWithTheme.buttonCopy}
-							onPress={() => cutToClipboard(hexText, "hex")}>
+							onPress={() => cutToClipboard(hexText, "hex")}
+						>
 							<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
 							style={stylesWithTheme.buttonCopy}
-							onPress={() => cleanToClipboard("hex")}>
+							onPress={() => cleanToClipboard("hex")}
+						>
 							<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 					</View>
 				</View>
-				<TouchableOpacity style={stylesWithTheme.button} onPress={decodeFromHex}>
-					<Text style={stylesWithTheme.buttonText}>{t("Decodificar para decimal")}</Text>
+				<TouchableOpacity
+					style={stylesWithTheme.button}
+					onPress={decodeFromHex}
+				>
+					<Text style={stylesWithTheme.buttonText}>
+						{t("Decodificar para decimal")}
+					</Text>
 				</TouchableOpacity>
 			</ScrollView>
 		</View>

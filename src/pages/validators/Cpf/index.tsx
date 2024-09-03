@@ -1,20 +1,25 @@
-import React, {useState} from "react";
-import {StyleSheet, Text, View, TextInput, Button, TouchableOpacity} from "react-native";
-import {cpfIsValid} from "multiform-validator";
-
 import Clipboard from "@react-native-clipboard/clipboard";
-
+import { cpfIsValid } from "multiform-validator";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	StyleSheet,
+	Text,
+	View,
+	TextInput,
+	Button,
+	TouchableOpacity,
+} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-import {RFValue} from "../../../components/Responsive";
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
-import {useTheme} from "../../../components/ThemeContext";
-import {useTranslation} from "react-i18next";
 
 export default function CpfValidatorPage() {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 
 	const [cpfInput, setCpfInput] = useState("");
 	const [cpfIsValidResult, setCpfIsValidResult] = useState<boolean>();
@@ -53,7 +58,7 @@ export default function CpfValidatorPage() {
 				<Text style={stylesWithTheme.label}>{t("Digite ou cole um CPF:")}</Text>
 				<TextInput
 					style={stylesWithTheme.input}
-					onChangeText={text => setCpfInput(text)}
+					onChangeText={(text) => setCpfInput(text)}
 					value={cpfInput}
 					placeholder="123.456.789-09"
 					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
@@ -62,15 +67,22 @@ export default function CpfValidatorPage() {
 				/>
 				<Button title={t("Validar CPF")} onPress={validateCpf} />
 				<View style={stylesWithTheme.divButtonCopy}>
-					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={pasteToClipboard}>
+					<TouchableOpacity
+						style={stylesWithTheme.buttonCopy}
+						onPress={pasteToClipboard}
+					>
 						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
 						style={stylesWithTheme.buttonCopy}
-						onPress={() => copyToClipboard(cpfInput)}>
+						onPress={() => copyToClipboard(cpfInput)}
+					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
-					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={cleanToClipboard}>
+					<TouchableOpacity
+						style={stylesWithTheme.buttonCopy}
+						onPress={cleanToClipboard}
+					>
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 				</View>
@@ -78,8 +90,11 @@ export default function CpfValidatorPage() {
 					<View style={stylesWithTheme.cpfStatus}>
 						<Text
 							style={
-								cpfIsValidResult ? stylesWithTheme.validCpfText : stylesWithTheme.invalidCpfText
-							}>
+								cpfIsValidResult
+									? stylesWithTheme.validCpfText
+									: stylesWithTheme.invalidCpfText
+							}
+						>
 							{cpfIsValidResult ? t("CPF Válido") : t("CPF Inválido")}
 						</Text>
 					</View>

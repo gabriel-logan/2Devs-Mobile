@@ -1,23 +1,19 @@
-import {useState, Dispatch, SetStateAction} from "react";
+import { Picker } from "@react-native-picker/picker";
+import { useNavigation } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { t } from "i18next";
+import { useState, Dispatch, SetStateAction } from "react";
+import { View, StyleSheet } from "react-native";
 
-import {View, StyleSheet} from "react-native";
-
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
-
+import { useTheme } from "../../components/ThemeContext";
+import getThemeColor from "../../configs/colors";
 import DataConverterPage from "../../pages/encodersAndDecoders/DataConverter";
-
-import {t} from "i18next";
-
 import AsciiAndHexPage from "../../pages/encodersAndDecoders/DataConverter/AsciiAndHex";
 import HexAndDecimal from "../../pages/encodersAndDecoders/DataConverter/HexAndDecimal";
-
-import {Picker} from "@react-native-picker/picker";
-
-import {NavigationType, RoutesStringsProps} from "../../types/navigationProps";
-
-import {useNavigation} from "@react-navigation/native";
-import {useTheme} from "../../components/ThemeContext";
-import getThemeColor from "../../configs/colors";
+import {
+	NavigationType,
+	RoutesStringsProps,
+} from "../../types/navigationProps";
 
 function DataConverterHeader({
 	selectedLanguage,
@@ -26,7 +22,7 @@ function DataConverterHeader({
 	selectedLanguage: RoutesStringsProps;
 	setSelectedLanguage: Dispatch<SetStateAction<RoutesStringsProps>>;
 }) {
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 
 	const styles = StyleSheet.create({
 		container: {
@@ -51,14 +47,19 @@ function DataConverterHeader({
 		<View style={styles.container}>
 			<Picker
 				selectedValue={selectedLanguage}
-				onValueChange={itemValue => {
+				onValueChange={(itemValue) => {
 					navigation.navigate(itemValue);
 					setSelectedLanguage(itemValue);
 				}}
 				mode="dropdown"
 				dropdownIconColor={getThemeColor(theme, "text")}
-				style={styles.picker}>
-				<Picker.Item style={styles.pickerItem} label={t("Principal")} value="DataConverterMain" />
+				style={styles.picker}
+			>
+				<Picker.Item
+					style={styles.pickerItem}
+					label={t("Principal")}
+					value="DataConverterMain"
+				/>
 				<Picker.Item
 					style={styles.pickerItem}
 					label={t("Ascii e Hexadecimal")}
@@ -77,7 +78,8 @@ function DataConverterHeader({
 const Stack = createNativeStackNavigator();
 
 export default function DataConverterNavigator() {
-	const [selectedLanguage, setSelectedLanguage] = useState<RoutesStringsProps>("DataConverterMain");
+	const [selectedLanguage, setSelectedLanguage] =
+		useState<RoutesStringsProps>("DataConverterMain");
 
 	return (
 		<Stack.Navigator
@@ -90,20 +92,21 @@ export default function DataConverterNavigator() {
 					/>
 				),
 				animation: "slide_from_right",
-			}}>
+			}}
+		>
 			<Stack.Screen
 				name="DataConverterMain"
-				options={{title: t("Principal")}}
+				options={{ title: t("Principal") }}
 				component={DataConverterPage}
 			/>
 			<Stack.Screen
 				name="AsciiAndHex"
-				options={{title: t("Ascii e Hexadecimal")}}
+				options={{ title: t("Ascii e Hexadecimal") }}
 				component={AsciiAndHexPage}
 			/>
 			<Stack.Screen
 				name="HexAndDecimal"
-				options={{title: t("Hexadecimal e Decimal")}}
+				options={{ title: t("Hexadecimal e Decimal") }}
 				component={HexAndDecimal}
 			/>
 		</Stack.Navigator>

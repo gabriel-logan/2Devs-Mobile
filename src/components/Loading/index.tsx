@@ -1,10 +1,10 @@
 import React from "react";
+import { ActivityIndicator } from "react-native";
 
-import {ActivityIndicator} from "react-native";
-import {useTheme} from "../ThemeContext";
+import { useTheme } from "../ThemeContext";
 
 export default function Loading(): JSX.Element {
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 	return (
 		<ActivityIndicator
 			style={{

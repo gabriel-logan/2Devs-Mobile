@@ -1,16 +1,23 @@
-import {useState} from "react";
-import {useTranslation} from "react-i18next";
-import {View, Text, TextInput, StyleSheet, TouchableOpacity} from "react-native";
-import {RFValue} from "../../../components/Responsive";
-import {useTheme} from "../../../components/ThemeContext";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	View,
+	Text,
+	TextInput,
+	StyleSheet,
+	TouchableOpacity,
+} from "react-native";
+
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
 
 export default function LinearEquationPage() {
 	const [equation, setEquation] = useState("");
 	const [result, setResult] = useState("");
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 	const stylesWithTheme = styles(theme);
 
 	const calculateLinearEquation = () => {
@@ -37,17 +44,22 @@ export default function LinearEquationPage() {
 	return (
 		<View style={stylesWithTheme.container}>
 			<View style={stylesWithTheme.header}>
-				<Text style={stylesWithTheme.headerText}>{t("Digite a equação linear no formato")}</Text>
+				<Text style={stylesWithTheme.headerText}>
+					{t("Digite a equação linear no formato")}
+				</Text>
 				<TextInput
 					style={stylesWithTheme.input}
 					placeholder={t("ax + b = c")}
-					onChangeText={text => setEquation(text)}
+					onChangeText={(text) => setEquation(text)}
 					value={equation}
 					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
 				/>
 			</View>
 			<View style={stylesWithTheme.buttonContainer}>
-				<TouchableOpacity style={stylesWithTheme.button} onPress={calculateLinearEquation}>
+				<TouchableOpacity
+					style={stylesWithTheme.button}
+					onPress={calculateLinearEquation}
+				>
 					<Text style={stylesWithTheme.buttonText}>{t("Calcular")}</Text>
 				</TouchableOpacity>
 			</View>

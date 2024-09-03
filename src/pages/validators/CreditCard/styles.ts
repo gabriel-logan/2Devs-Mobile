@@ -1,7 +1,8 @@
-import {StyleSheet} from "react-native";
-import {RFValue} from "../../../components/Responsive";
+import { StyleSheet } from "react-native";
+
+import { RFValue } from "../../../components/Responsive";
 import getThemeColor from "../../../configs/colors";
-import {Theme} from "../../../types/themeProps";
+import { Theme } from "../../../types/themeProps";
 
 const styles = (theme: Theme, creditCardIsValidResult?: boolean) =>
 	StyleSheet.create({

@@ -1,17 +1,23 @@
-import {useState, useEffect, useRef} from "react";
-import {useTranslation} from "react-i18next";
-import {View, Text, TextInput, TouchableOpacity, StyleSheet, Alert} from "react-native";
-
-import CheckBox from "@react-native-community/checkbox";
-
-import {useTheme} from "../../../components/ThemeContext";
-import getThemeColor from "../../../configs/colors";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {RFValue} from "../../../components/Responsive";
+import CheckBox from "@react-native-community/checkbox";
+import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	View,
+	Text,
+	TextInput,
+	TouchableOpacity,
+	StyleSheet,
+	Alert,
+} from "react-native";
+
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
+import getThemeColor from "../../../configs/colors";
 
 export default function QuadraticEquationPage() {
-	const {t} = useTranslation();
-	const {theme} = useTheme();
+	const { t } = useTranslation();
+	const { theme } = useTheme();
 	const stylesWithTheme = styles(theme);
 
 	const [a, setA] = useState("");
@@ -46,9 +52,13 @@ export default function QuadraticEquationPage() {
 			}
 
 			const raiz1 =
-				(-numeroB + raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) / (2 * numeroA);
+				(-numeroB +
+					raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) /
+				(2 * numeroA);
 			const raiz2 =
-				(-numeroB - raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) / (2 * numeroA);
+				(-numeroB -
+					raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) /
+				(2 * numeroA);
 
 			if (!Number.isNaN(raiz1) || !Number.isNaN(raiz2)) {
 				let resultMessage = "";
@@ -60,7 +70,11 @@ export default function QuadraticEquationPage() {
 					resultMessage = t("Possui apenas 1 raiz real") + aproximaRaiz1;
 				} else {
 					resultMessage =
-						t("First root:") + aproximaRaiz1 + " " + t("Second root:") + aproximaRaiz2;
+						t("First root:") +
+						aproximaRaiz1 +
+						" " +
+						t("Second root:") +
+						aproximaRaiz2;
 				}
 
 				if (deleteAfter) {
@@ -80,11 +94,15 @@ export default function QuadraticEquationPage() {
 
 	useEffect(() => {
 		(async () => {
-			const valueAproximaFunc = await AsyncStorage.getItem("aproximaQuadraticEq");
+			const valueAproximaFunc = await AsyncStorage.getItem(
+				"aproximaQuadraticEq"
+			);
 			if (valueAproximaFunc) {
 				setAproxima(JSON.parse(valueAproximaFunc));
 			}
-			const apagaQuadraticAfterGen = await AsyncStorage.getItem("apagaQuadraticAfterGen");
+			const apagaQuadraticAfterGen = await AsyncStorage.getItem(
+				"apagaQuadraticAfterGen"
+			);
 			if (apagaQuadraticAfterGen) {
 				setDeleteAfter(JSON.parse(apagaQuadraticAfterGen));
 			}
@@ -100,7 +118,7 @@ export default function QuadraticEquationPage() {
 					value={a}
 					placeholder={t("Termo que acompanha o x², ex: 5x²")}
 					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
-					onChangeText={text => setA(text)}
+					onChangeText={(text) => setA(text)}
 					keyboardType="numeric"
 					returnKeyType="next"
 					ref={valorARef} // Defina a referência para o primeiro campo
@@ -112,7 +130,7 @@ export default function QuadraticEquationPage() {
 					value={b}
 					placeholder={t("Termo que acompanha o x, ex: 3x")}
 					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
-					onChangeText={text => setB(text)}
+					onChangeText={(text) => setB(text)}
 					keyboardType="numeric"
 					returnKeyType="next"
 					ref={valorBRef} // Defina a referência para o segundo campo
@@ -124,7 +142,7 @@ export default function QuadraticEquationPage() {
 					value={c}
 					placeholder={t("Termo independente, ex: -4")}
 					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
-					onChangeText={text => setC(text)}
+					onChangeText={(text) => setC(text)}
 					keyboardType="numeric"
 					returnKeyType="done"
 					ref={valorCRef} // Defina a referência para o terceiro campo
@@ -134,23 +152,34 @@ export default function QuadraticEquationPage() {
 				<Text style={stylesWithTheme.label}>{t("Usar aproximação ?")}</Text>
 				<CheckBox
 					value={aproxima}
-					onValueChange={async value => {
-						await AsyncStorage.setItem("aproximaQuadraticEq", JSON.stringify(value));
+					onValueChange={async (value) => {
+						await AsyncStorage.setItem(
+							"aproximaQuadraticEq",
+							JSON.stringify(value)
+						);
 						setAproxima(value);
 					}}
 				/>
 			</View>
 			<View style={stylesWithTheme.checkboxContainer}>
-				<Text style={stylesWithTheme.label}>{t("Limpar campos após gerar ?")}</Text>
+				<Text style={stylesWithTheme.label}>
+					{t("Limpar campos após gerar ?")}
+				</Text>
 				<CheckBox
 					value={deleteAfter}
-					onValueChange={async value => {
-						await AsyncStorage.setItem("apagaQuadraticAfterGen", JSON.stringify(value));
+					onValueChange={async (value) => {
+						await AsyncStorage.setItem(
+							"apagaQuadraticAfterGen",
+							JSON.stringify(value)
+						);
 						setDeleteAfter(value);
 					}}
 				/>
 			</View>
-			<TouchableOpacity style={stylesWithTheme.button} onPress={calculateQuadraticEquation}>
+			<TouchableOpacity
+				style={stylesWithTheme.button}
+				onPress={calculateQuadraticEquation}
+			>
 				<Text style={stylesWithTheme.buttonText}>{t("Calcular")}</Text>
 			</TouchableOpacity>
 			<View style={stylesWithTheme.resultContainer}>

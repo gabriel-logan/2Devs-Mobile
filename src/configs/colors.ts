@@ -43,7 +43,7 @@ export type ColorPalette = typeof colors;
 
 export const getThemeColor = (
 	theme: keyof ColorPalette,
-	key: keyof ColorPalette[keyof ColorPalette],
+	key: keyof ColorPalette[keyof ColorPalette]
 ): string => {
 	const themeColors = colors[theme];
 	return themeColors ? themeColors[key] : "#fff";

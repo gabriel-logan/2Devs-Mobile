@@ -1,22 +1,26 @@
-import {useState, useEffect} from "react";
-import {StyleSheet, Text, View, TextInput, Button, TouchableOpacity} from "react-native";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import Clipboard from "@react-native-clipboard/clipboard";
 import CheckBox from "@react-native-community/checkbox";
-
-import {isCreditCardValid} from "multiform-validator";
-
+import { isCreditCardValid } from "multiform-validator";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	StyleSheet,
+	Text,
+	View,
+	TextInput,
+	Button,
+	TouchableOpacity,
+} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-import {RFValue} from "../../../components/Responsive";
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
-import {useTheme} from "../../../components/ThemeContext";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import {useTranslation} from "react-i18next";
 
 export default function CreditCardGeneratorPage() {
-	const {t} = useTranslation();
-	const {theme} = useTheme();
+	const { t } = useTranslation();
+	const { theme } = useTheme();
 
 	const stylesWithTheme = styles(theme);
 
@@ -28,7 +32,10 @@ export default function CreditCardGeneratorPage() {
 		const cleanedCreditCard = creditCard.replace(/[-\s]/g, "");
 
 		// Use expressões regulares para dividir o número do cartão em grupos de 4 dígitos
-		const formattedCreditCard = cleanedCreditCard.replace(/\d{4}(?=\d)/g, "$& ");
+		const formattedCreditCard = cleanedCreditCard.replace(
+			/\d{4}(?=\d)/g,
+			"$& "
+		);
 
 		return formattedCreditCard;
 	};
@@ -62,7 +69,9 @@ export default function CreditCardGeneratorPage() {
 
 	useEffect(() => {
 		(async () => {
-			const creditCardWithPeriod = await AsyncStorage.getItem("creditCardGeneratedWithPeriod");
+			const creditCardWithPeriod = await AsyncStorage.getItem(
+				"creditCardGeneratedWithPeriod"
+			);
 			if (creditCardWithPeriod) {
 				setCreditCardWithPeriod(JSON.parse(creditCardWithPeriod));
 			}
@@ -71,23 +80,29 @@ export default function CreditCardGeneratorPage() {
 
 	return (
 		<View style={stylesWithTheme.container}>
-			<Text style={stylesWithTheme.title}>{t("Gerador de Cartão de crédito")}</Text>
+			<Text style={stylesWithTheme.title}>
+				{t("Gerador de Cartão de crédito")}
+			</Text>
 			<View style={stylesWithTheme.card}>
 				<View style={stylesWithTheme.section}>
-					<Text style={stylesWithTheme.paragraph}>{t("Gerar com espaços ?")}</Text>
+					<Text style={stylesWithTheme.paragraph}>
+						{t("Gerar com espaços ?")}
+					</Text>
 					<CheckBox
 						style={stylesWithTheme.checkbox}
 						value={creditCardWithPeriod}
-						onValueChange={async cleanAlwaysChange => {
+						onValueChange={async (cleanAlwaysChange) => {
 							setCreditCardWithPeriod(cleanAlwaysChange.valueOf());
 							await AsyncStorage.setItem(
 								"creditCardGeneratedWithPeriod",
-								JSON.stringify(cleanAlwaysChange.valueOf()),
+								JSON.stringify(cleanAlwaysChange.valueOf())
 							);
 						}}
 					/>
 				</View>
-				<Text style={stylesWithTheme.label}>{t("Cartão de crédito Gerado:")}</Text>
+				<Text style={stylesWithTheme.label}>
+					{t("Cartão de crédito Gerado:")}
+				</Text>
 				<TextInput
 					style={stylesWithTheme.input}
 					value={generatedCreditCard}

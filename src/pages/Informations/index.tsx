@@ -1,19 +1,28 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import {
+	View,
+	Text,
+	StyleSheet,
+	TouchableOpacity,
+	ScrollView,
+	Linking,
+} from "react-native";
 
-import {View, Text, StyleSheet, TouchableOpacity, ScrollView, Linking} from "react-native";
-
-import {useTranslation} from "react-i18next";
-import {useTheme} from "../../components/ThemeContext";
+import { RFValue } from "../../components/Responsive";
+import { useTheme } from "../../components/ThemeContext";
+import {
+	buyMeACoffeeURL,
+	privacyURL,
+	repoGithubURL,
+	termsURL,
+} from "../../components/Urls";
 import getThemeColor from "../../configs/colors";
 
-import {RFValue} from "../../components/Responsive";
-
-import {buyMeACoffeeURL, privacyURL, repoGithubURL, termsURL} from "../../components/Urls";
-
 export default function GeneralInfoPage() {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 
 	const styles = StyleSheet.create({
 		container: {
@@ -27,7 +36,7 @@ export default function GeneralInfoPage() {
 			padding: RFValue(15),
 			borderRadius: 10,
 			shadowColor: "#000",
-			shadowOffset: {width: 0, height: 2},
+			shadowOffset: { width: 0, height: 2 },
 			shadowOpacity: 0.2,
 			shadowRadius: 2,
 		},
@@ -70,27 +79,37 @@ export default function GeneralInfoPage() {
 				<Text style={styles.sectionTitle}>{t("Informações Gerais")}</Text>
 			</View>
 			<View style={styles.section}>
-				<Text style={styles.sectionText}>{t("Bem-vindo à nossa aplicação de exemplo")}</Text>
+				<Text style={styles.sectionText}>
+					{t("Bem-vindo à nossa aplicação de exemplo")}
+				</Text>
 			</View>
 			<View style={styles.section}>
-				<Text style={styles.sectionText}>{t("Se você precisar de uma validação específica")}</Text>
+				<Text style={styles.sectionText}>
+					{t("Se você precisar de uma validação específica")}
+				</Text>
 				<Text style={styles.sectionText}>
 					{t("Se ocorreu algum erro, entre em contato abaixo")}
 				</Text>
 				<View>
-					<Text style={styles.sectionText}>{t("Se quiser contribuir, pode fazer um commit")}</Text>
+					<Text style={styles.sectionText}>
+						{t("Se quiser contribuir, pode fazer um commit")}
+					</Text>
 					<Text style={styles.sectionText}>{t("Este codigo opensorce")}</Text>
 					<TouchableOpacity
 						style={styles.githubButton}
-						onPress={() => Linking.openURL(repoGithubURL)}>
-						<Text style={styles.githubButtonText}>{t("Ir para o repositório GitHub")}</Text>
+						onPress={() => Linking.openURL(repoGithubURL)}
+					>
+						<Text style={styles.githubButtonText}>
+							{t("Ir para o repositório GitHub")}
+						</Text>
 					</TouchableOpacity>
-					<Text style={[styles.sectionText, {marginTop: 15}]}>
+					<Text style={[styles.sectionText, { marginTop: 15 }]}>
 						{t("Você também pode me ajudar no buymeacoffe")}
 					</Text>
 					<TouchableOpacity
 						style={styles.githubButton}
-						onPress={() => Linking.openURL(buyMeACoffeeURL)}>
+						onPress={() => Linking.openURL(buyMeACoffeeURL)}
+					>
 						<Text style={styles.githubButtonText}>{t("Buy me a coffee")}</Text>
 					</TouchableOpacity>
 				</View>
@@ -99,18 +118,26 @@ export default function GeneralInfoPage() {
 				<Text style={styles.sectionTitle}>{t("Contatos")}</Text>
 			</View>
 			<View style={styles.section}>
-				<Text style={styles.sectionText}>{t("E-mail: contato@exemplo.com")}</Text>
+				<Text style={styles.sectionText}>
+					{t("E-mail: contato@exemplo.com")}
+				</Text>
 			</View>
 
-			<TouchableOpacity style={styles.linkButton} onPress={() => Linking.openURL(privacyURL)}>
+			<TouchableOpacity
+				style={styles.linkButton}
+				onPress={() => Linking.openURL(privacyURL)}
+			>
 				<Text style={styles.buttonText}>{t("Políticas de Privacidade")}</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={styles.linkButton} onPress={() => Linking.openURL(termsURL)}>
+			<TouchableOpacity
+				style={styles.linkButton}
+				onPress={() => Linking.openURL(termsURL)}
+			>
 				<Text style={styles.buttonText}>{t("Termos de Uso")}</Text>
 			</TouchableOpacity>
 
-			<View style={[styles.section, {marginTop: 10}]}>
+			<View style={[styles.section, { marginTop: 10 }]}>
 				<Text style={styles.sectionTitle}>{t("Contribuidores")}</Text>
 			</View>
 			<View style={styles.section}>

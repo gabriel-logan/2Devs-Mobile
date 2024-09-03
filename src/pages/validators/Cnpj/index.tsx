@@ -1,19 +1,24 @@
-import React, {useState} from "react";
-import {StyleSheet, Text, View, TextInput, Button, TouchableOpacity} from "react-native";
-import {cnpjIsValid} from "multiform-validator";
-
 import Clipboard from "@react-native-clipboard/clipboard";
-
+import { cnpjIsValid } from "multiform-validator";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	StyleSheet,
+	Text,
+	View,
+	TextInput,
+	Button,
+	TouchableOpacity,
+} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-import {RFValue} from "../../../components/Responsive";
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
-import {useTheme} from "../../../components/ThemeContext";
-import {useTranslation} from "react-i18next";
 
 export default function CnpjValidatorPage() {
-	const {t} = useTranslation();
-	const {theme} = useTheme();
+	const { t } = useTranslation();
+	const { theme } = useTheme();
 
 	const [cnpjInput, setCnpjInput] = useState("");
 	const [cnpjIsValidResult, setCnpjIsValidResult] = useState<boolean>();
@@ -49,10 +54,12 @@ export default function CnpjValidatorPage() {
 		<View style={stylesWithTheme.container}>
 			<Text style={stylesWithTheme.title}>{t("Validador de CNPJ")}</Text>
 			<View style={stylesWithTheme.card}>
-				<Text style={stylesWithTheme.label}>{t("Digite ou cole um CNPJ:")}</Text>
+				<Text style={stylesWithTheme.label}>
+					{t("Digite ou cole um CNPJ:")}
+				</Text>
 				<TextInput
 					style={stylesWithTheme.input}
-					onChangeText={text => setCnpjInput(text)}
+					onChangeText={(text) => setCnpjInput(text)}
 					value={cnpjInput}
 					placeholder="48.955.245/0001-01"
 					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
@@ -61,15 +68,22 @@ export default function CnpjValidatorPage() {
 				/>
 				<Button title={t("Validar CNPJ")} onPress={validateCnpj} />
 				<View style={stylesWithTheme.divButtonCopy}>
-					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={pasteToClipboard}>
+					<TouchableOpacity
+						style={stylesWithTheme.buttonCopy}
+						onPress={pasteToClipboard}
+					>
 						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
 						style={stylesWithTheme.buttonCopy}
-						onPress={() => copyToClipboard(cnpjInput)}>
+						onPress={() => copyToClipboard(cnpjInput)}
+					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
-					<TouchableOpacity style={stylesWithTheme.buttonCopy} onPress={cleanToClipboard}>
+					<TouchableOpacity
+						style={stylesWithTheme.buttonCopy}
+						onPress={cleanToClipboard}
+					>
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 				</View>
@@ -77,8 +91,11 @@ export default function CnpjValidatorPage() {
 					<View style={stylesWithTheme.cnpjStatus}>
 						<Text
 							style={
-								cnpjIsValidResult ? stylesWithTheme.validCnpjText : stylesWithTheme.invalidCnpjText
-							}>
+								cnpjIsValidResult
+									? stylesWithTheme.validCnpjText
+									: stylesWithTheme.invalidCnpjText
+							}
+						>
 							{cnpjIsValidResult ? t("CNPJ Válido") : t("CNPJ Inválido")}
 						</Text>
 					</View>

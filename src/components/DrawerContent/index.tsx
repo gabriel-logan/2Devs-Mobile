@@ -1,26 +1,25 @@
-import {useState} from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	View,
+	Text,
+	TouchableOpacity,
+	LayoutAnimation,
+	ScrollView,
+} from "react-native";
 
-import {View, Text, TouchableOpacity, LayoutAnimation, ScrollView} from "react-native";
-
-import {useTheme} from "../ThemeContext";
-
-import {useTranslation} from "react-i18next";
-
-import {useNavigation} from "@react-navigation/native";
-
-import {NavigationType} from "../../types/navigationProps";
-
+import { useTheme } from "../ThemeContext";
 import drawerMenu from "./drawerMenu";
-
 import styles from "./styles";
-
-import {RFValue} from "../Responsive";
+import { NavigationType } from "../../types/navigationProps";
 import LogoComponent from "../LogoComponent";
+import { RFValue } from "../Responsive";
 
 const CustomDrawerContent = () => {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 
 	const stylesWithTheme = styles(theme);
 
@@ -36,19 +35,23 @@ const CustomDrawerContent = () => {
 				height={RFValue((128 + 50) / 2)}
 			/>
 
-			<ScrollView style={stylesWithTheme.menuScrollView} showsVerticalScrollIndicator={false}>
+			<ScrollView
+				style={stylesWithTheme.menuScrollView}
+				showsVerticalScrollIndicator={false}
+			>
 				{drawerMenu.map((item, index) => (
 					<View key={index} style={stylesWithTheme.menuItem}>
 						<TouchableOpacity
 							onPress={() => {
 								LayoutAnimation.configureNext(
-									LayoutAnimation.create(200, "easeInEaseOut", "opacity"),
+									LayoutAnimation.create(200, "easeInEaseOut", "opacity")
 								);
 								if (!item.menuList) {
 									navigation.navigate(item.route);
 								}
 								setMenuIndex(menuIndex === index ? -1 : index);
-							}}>
+							}}
+						>
 							<View style={stylesWithTheme.item}>
 								<Text style={stylesWithTheme.menuTitle}>{t(item.title)}</Text>
 							</View>
@@ -57,9 +60,12 @@ const CustomDrawerContent = () => {
 									{item.menuList?.map((subItem, subIndex) => (
 										<TouchableOpacity
 											key={subIndex}
-											onPress={() => navigation.navigate(subItem.route)}>
+											onPress={() => navigation.navigate(subItem.route)}
+										>
 											<View style={stylesWithTheme.subMenu}>
-												<Text style={stylesWithTheme.subMenuTitle}>{t(subItem.title)}</Text>
+												<Text style={stylesWithTheme.subMenuTitle}>
+													{t(subItem.title)}
+												</Text>
 											</View>
 										</TouchableOpacity>
 									))}

@@ -1,13 +1,21 @@
-import {useState} from "react";
-import {useTranslation} from "react-i18next";
-import {Text, TextInput, View, TouchableOpacity, StyleSheet, Alert} from "react-native";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	Text,
+	TextInput,
+	View,
+	TouchableOpacity,
+	StyleSheet,
+	Alert,
+} from "react-native";
+
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
-import {useTheme} from "../../../components/ThemeContext";
-import {RFValue} from "../../../components/Responsive";
 
 export default function MmcMdcPage() {
-	const {t} = useTranslation();
-	const {theme} = useTheme();
+	const { t } = useTranslation();
+	const { theme } = useTheme();
 	const stylesWithTheme = styles(theme);
 
 	const [input, setInput] = useState("");
@@ -17,9 +25,14 @@ export default function MmcMdcPage() {
 
 	const handleCalculate = () => {
 		if (input.trim()) {
-			const values = input.split(",").map(value => parseInt(value.trim(), 10));
+			const values = input
+				.split(",")
+				.map((value) => parseInt(value.trim(), 10));
 			if (values.some(isNaN)) {
-				Alert.alert(t("Erro"), t("Digite valores numéricos separados por vírgulas"));
+				Alert.alert(
+					t("Erro"),
+					t("Digite valores numéricos separados por vírgulas")
+				);
 			} else {
 				const calculatedMmc = calculateMmc(values);
 				const calculatedMdc = calculateMdc(values);
@@ -28,18 +41,22 @@ export default function MmcMdcPage() {
 				setArrayOfValues(values);
 			}
 		} else {
-			Alert.alert(t("Erro"), t("Digite valores válidos, separados por vírgulas"));
+			Alert.alert(
+				t("Erro"),
+				t("Digite valores válidos, separados por vírgulas")
+			);
 		}
 	};
 
 	// Função para calcular o MMC de uma array de números
-	const calculateMmc = (numbers: Array<number>) => {
+	const calculateMmc = (numbers: number[]) => {
 		if (numbers.length === 0) {
 			return null;
 		}
 		let result = numbers[0];
 		for (let i = 1; i < numbers.length; i++) {
-			result = (result * numbers[i]) / calculateMdcTwoNumbers(result, numbers[i]);
+			result =
+				(result * numbers[i]) / calculateMdcTwoNumbers(result, numbers[i]);
 		}
 		return result;
 	};
@@ -55,7 +72,7 @@ export default function MmcMdcPage() {
 	};
 
 	// Função para calcular o MDC de uma array de números
-	const calculateMdc = (numbers: Array<number>) => {
+	const calculateMdc = (numbers: number[]) => {
 		if (numbers.length === 0) {
 			return null;
 		}
@@ -69,17 +86,22 @@ export default function MmcMdcPage() {
 	return (
 		<View style={stylesWithTheme.container}>
 			<View style={stylesWithTheme.inputContainer}>
-				<Text style={stylesWithTheme.label}>{t("Digite os números a calcular")}</Text>
+				<Text style={stylesWithTheme.label}>
+					{t("Digite os números a calcular")}
+				</Text>
 				<TextInput
 					style={stylesWithTheme.input}
 					value={input}
-					onChangeText={value => setInput(value)}
+					onChangeText={(value) => setInput(value)}
 					keyboardType="phone-pad"
 					placeholder={t("Ex. 4, 8, 12")}
 					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
 				/>
 			</View>
-			<TouchableOpacity style={stylesWithTheme.button} onPress={handleCalculate}>
+			<TouchableOpacity
+				style={stylesWithTheme.button}
+				onPress={handleCalculate}
+			>
 				<Text style={stylesWithTheme.buttonText}>{t("Calcular")}</Text>
 			</TouchableOpacity>
 			<View style={stylesWithTheme.resultContainer}>

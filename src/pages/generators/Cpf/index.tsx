@@ -1,22 +1,26 @@
-import {useState, useEffect} from "react";
-import {StyleSheet, Text, View, TextInput, Button, TouchableOpacity} from "react-native";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import Clipboard from "@react-native-clipboard/clipboard";
 import CheckBox from "@react-native-community/checkbox";
-
-import {cpfIsValid} from "multiform-validator";
-
+import { cpfIsValid } from "multiform-validator";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	StyleSheet,
+	Text,
+	View,
+	TextInput,
+	Button,
+	TouchableOpacity,
+} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-import {RFValue} from "../../../components/Responsive";
+import { RFValue } from "../../../components/Responsive";
+import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
-import {useTheme} from "../../../components/ThemeContext";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import {useTranslation} from "react-i18next";
 
 export default function CpfGeneratorPage() {
-	const {t} = useTranslation();
-	const {theme} = useTheme();
+	const { t } = useTranslation();
+	const { theme } = useTheme();
 
 	const stylesWithTheme = styles(theme);
 
@@ -25,7 +29,10 @@ export default function CpfGeneratorPage() {
 
 	const formatCpf = (cpf: string) => {
 		if (cpf && cpf.length === 11) {
-			return `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(6, 9)}-${cpf.slice(9)}`;
+			return `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(
+				6,
+				9
+			)}-${cpf.slice(9)}`;
 		}
 		return cpf;
 	};
@@ -52,7 +59,9 @@ export default function CpfGeneratorPage() {
 
 	useEffect(() => {
 		(async () => {
-			const cpfWithPeriod = await AsyncStorage.getItem("cpfGeneratedWithPeriod");
+			const cpfWithPeriod = await AsyncStorage.getItem(
+				"cpfGeneratedWithPeriod"
+			);
 			if (cpfWithPeriod) {
 				setCpfWithPeriod(JSON.parse(cpfWithPeriod));
 			}
@@ -64,15 +73,17 @@ export default function CpfGeneratorPage() {
 			<Text style={stylesWithTheme.title}>{t("Gerador de CPF")}</Text>
 			<View style={stylesWithTheme.card}>
 				<View style={stylesWithTheme.section}>
-					<Text style={stylesWithTheme.paragraph}>{t("Gerar com pontuação ?")}</Text>
+					<Text style={stylesWithTheme.paragraph}>
+						{t("Gerar com pontuação ?")}
+					</Text>
 					<CheckBox
 						style={stylesWithTheme.checkbox}
 						value={cpfWithPeriod}
-						onValueChange={async cleanAlwaysChange => {
+						onValueChange={async (cleanAlwaysChange) => {
 							setCpfWithPeriod(cleanAlwaysChange.valueOf());
 							await AsyncStorage.setItem(
 								"cpfGeneratedWithPeriod",
-								JSON.stringify(cleanAlwaysChange.valueOf()),
+								JSON.stringify(cleanAlwaysChange.valueOf())
 							);
 						}}
 					/>
@@ -86,7 +97,11 @@ export default function CpfGeneratorPage() {
 					placeholder={t("Clique no botão abaixo")}
 					placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
 				/>
-				<Button title={t("Gerar CPF")} onPress={generateRandomCpf} color="#007BFF" />
+				<Button
+					title={t("Gerar CPF")}
+					onPress={generateRandomCpf}
+					color="#007BFF"
+				/>
 				<View style={stylesWithTheme.copyButtonContainer}>
 					<TouchableOpacity onPress={copyToClipboard}>
 						<FontAwesome name="copy" size={RFValue(32)} color="#007BFF" />

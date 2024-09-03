@@ -1,16 +1,17 @@
-import {Dispatch, SetStateAction} from "react";
-
-import {Modal, ScrollView, StyleSheet, Text, TouchableOpacity} from "react-native";
-
-import {useTranslation} from "react-i18next";
-
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Dispatch, SetStateAction } from "react";
+import { useTranslation } from "react-i18next";
+import {
+	Modal,
+	ScrollView,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+} from "react-native";
 
-import {useTheme} from "../components/ThemeContext";
-
+import { RFValue } from "../components/Responsive";
+import { useTheme } from "../components/ThemeContext";
 import getThemeColor from "../configs/colors";
-
-import {RFValue} from "../components/Responsive";
 
 interface ChangeLangModalProps {
 	modalChangeLang: boolean;
@@ -21,9 +22,9 @@ export default function ChangeLangModal({
 	modalChangeLang,
 	setModalChangeLang,
 }: ChangeLangModalProps) {
-	const {theme} = useTheme();
+	const { theme } = useTheme();
 	const stylesWithTheme = styles(theme);
-	const {i18n} = useTranslation();
+	const { i18n } = useTranslation();
 	const changeLanguage = async (lang: string) => {
 		await AsyncStorage.setItem("selectedLanguage", lang);
 		i18n.changeLanguage(lang);
@@ -82,26 +83,35 @@ export default function ChangeLangModal({
 	const languages: string[] = Object.keys(languageMappings);
 
 	return (
-		<Modal visible={modalChangeLang} onRequestClose={() => setModalChangeLang(false)} transparent>
+		<Modal
+			visible={modalChangeLang}
+			onRequestClose={() => setModalChangeLang(false)}
+			transparent
+		>
 			<TouchableOpacity
 				style={stylesWithTheme.modalContainer}
-				onPress={() => setModalChangeLang(false)}>
+				onPress={() => setModalChangeLang(false)}
+			>
 				<ScrollView style={stylesWithTheme.scrollContainer}>
-					{languages.map(languageCode => (
+					{languages.map((languageCode) => (
 						<TouchableOpacity
 							style={stylesWithTheme.languageButton}
 							onPress={() => {
 								changeLanguage(languageCode);
 								setModalChangeLang(false);
 							}}
-							key={languageCode}>
-							<Text style={stylesWithTheme.languageText}>{languageMappings[languageCode]}</Text>
+							key={languageCode}
+						>
+							<Text style={stylesWithTheme.languageText}>
+								{languageMappings[languageCode]}
+							</Text>
 						</TouchableOpacity>
 					))}
 					<TouchableOpacity
-						style={[stylesWithTheme.languageButton, {marginBottom: 35}]}
-						onPress={() => changeLanguage("klingon")}>
-						<Text style={stylesWithTheme.languageText}>{"Klingon"}</Text>
+						style={[stylesWithTheme.languageButton, { marginBottom: 35 }]}
+						onPress={() => changeLanguage("klingon")}
+					>
+						<Text style={stylesWithTheme.languageText}>Klingon</Text>
 					</TouchableOpacity>
 				</ScrollView>
 			</TouchableOpacity>
