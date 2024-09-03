@@ -9,6 +9,7 @@ export default function Loading(): JSX.Element {
 
 	return (
 		<ActivityIndicator
+			testID="loading-indicator"
 			style={[styles.indicator, { backgroundColor }]}
 			size={64}
 			color="#74b9ff"
