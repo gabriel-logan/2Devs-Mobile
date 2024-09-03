@@ -1,5 +1,4 @@
-import React from "react";
-import { StyleProp, ViewStyle } from "react-native";
+import type { StyleProp, ViewStyle } from "react-native";
 
 import Marca from "../../../assets/marca.svg";
 import MarcaLight from "../../../assets/marcalight.svg";

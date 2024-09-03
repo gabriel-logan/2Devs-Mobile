@@ -14,7 +14,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { RFValue } from "../../../components/Responsive";
 import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
-import { Theme } from "../../../types/themeProps";
+import type { Theme } from "../../../types/themeProps";
 
 type WhichOne = "text" | "Binario";
 

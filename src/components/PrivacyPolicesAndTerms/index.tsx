@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import moment from "moment-timezone";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
 	StyleSheet,
@@ -11,21 +11,12 @@ import {
 	Alert,
 	Linking,
 } from "react-native";
-
-// Icons
 import { getTimeZone } from "react-native-localize";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-// Cria o time zone do local
-
-// Localstorage
-
-// COmponentes
-import { NavigationPropsTypes } from "../../types/navigationProps";
+import type { NavigationPropsTypes } from "../../types/navigationProps";
 import Loading from "../Loading";
 import { RFValue } from "../Responsive";
-
-// types
 import { privacyURL, termsURL } from "../Urls";
 
 export default function PrivacyPolicesAndTerms({

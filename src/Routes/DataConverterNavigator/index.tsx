@@ -2,7 +2,8 @@ import { Picker } from "@react-native-picker/picker";
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { t } from "i18next";
-import { useState, Dispatch, SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
 import { View, StyleSheet } from "react-native";
 
 import { useTheme } from "../../components/ThemeContext";
@@ -10,7 +11,7 @@ import getThemeColor from "../../configs/colors";
 import DataConverterPage from "../../pages/encodersAndDecoders/DataConverter";
 import AsciiAndHexPage from "../../pages/encodersAndDecoders/DataConverter/AsciiAndHex";
 import HexAndDecimal from "../../pages/encodersAndDecoders/DataConverter/HexAndDecimal";
-import {
+import type {
 	NavigationType,
 	RoutesStringsProps,
 } from "../../types/navigationProps";

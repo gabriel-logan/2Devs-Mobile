@@ -1,4 +1,7 @@
-import { DirectRoutesProps, SubRoutesProps } from "../../types/navigationProps";
+import type {
+	DirectRoutesProps,
+	SubRoutesProps,
+} from "../../types/navigationProps";
 
 const drawerMenu: (
 	| {

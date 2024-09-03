@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 import { RFValue } from "../../../components/Responsive";
 import getThemeColor from "../../../configs/colors";
-import { Theme } from "../../../types/themeProps";
+import type { Theme } from "../../../types/themeProps";
 
 const styles = (theme: Theme) =>
 	StyleSheet.create({

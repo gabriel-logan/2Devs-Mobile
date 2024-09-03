@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 
 import { useTheme } from "../../../components/ThemeContext";
 import getThemeColor from "../../../configs/colors";
-import { Theme } from "../../../types/themeProps";
+import type { Theme } from "../../../types/themeProps";
 
 export default function DataConverterPage() {
 	const { theme } = useTheme();

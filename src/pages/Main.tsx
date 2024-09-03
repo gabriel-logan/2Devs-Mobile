@@ -20,7 +20,7 @@ import LogoComponent from "../components/LogoComponent";
 import { RFValue } from "../components/Responsive";
 import { useTheme } from "../components/ThemeContext";
 import getThemeColor from "../configs/colors";
-import { NavigationPropsTypes } from "../types/navigationProps";
+import type { NavigationPropsTypes } from "../types/navigationProps";
 
 export default function Main({ navigation }: NavigationPropsTypes) {
 	const { t } = useTranslation();

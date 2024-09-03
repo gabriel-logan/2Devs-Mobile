@@ -12,7 +12,7 @@ import {
 import { useTheme } from "../ThemeContext";
 import drawerMenu from "./drawerMenu";
 import styles from "./styles";
-import { NavigationType } from "../../types/navigationProps";
+import type { NavigationType } from "../../types/navigationProps";
 import LogoComponent from "../LogoComponent";
 import { RFValue } from "../Responsive";
 
