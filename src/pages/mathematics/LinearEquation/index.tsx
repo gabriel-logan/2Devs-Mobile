@@ -21,9 +21,10 @@ export default function LinearEquationPage() {
 	const stylesWithTheme = styles(theme);
 
 	const calculateLinearEquation = () => {
-		// Verifique se a entrada é válida
+		const cleanSpaces = equation.trim().replace(/\s+/g, "");
+
 		const regex = /^(-?\d+)\s?x\s?([+-]?\d+)\s?=\s?(-?\d+)$/;
-		const match = equation.match(regex);
+		const match = cleanSpaces.match(regex);
 
 		if (!match) {
 			setResult(t("Equação inválida. Use o formato"));

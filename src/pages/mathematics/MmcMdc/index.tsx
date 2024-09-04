@@ -50,9 +50,6 @@ export default function MmcMdcPage() {
 
 	// Função para calcular o MMC de uma array de números
 	const calculateMmc = (numbers: number[]) => {
-		if (numbers.length === 0) {
-			return null;
-		}
 		let result = numbers[0];
 		for (let i = 1; i < numbers.length; i++) {
 			result =
@@ -73,9 +70,6 @@ export default function MmcMdcPage() {
 
 	// Função para calcular o MDC de uma array de números
 	const calculateMdc = (numbers: number[]) => {
-		if (numbers.length === 0) {
-			return null;
-		}
 		let result = numbers[0];
 		for (let i = 1; i < numbers.length; i++) {
 			result = calculateMdcTwoNumbers(result, numbers[i]);

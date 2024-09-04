@@ -151,6 +151,7 @@ export default function QuadraticEquationPage() {
 			<View style={stylesWithTheme.checkboxContainer}>
 				<Text style={stylesWithTheme.label}>{t("Usar aproximação ?")}</Text>
 				<CheckBox
+					testID="checkbox-aproximate"
 					value={aproxima}
 					onValueChange={async (value) => {
 						await AsyncStorage.setItem(
@@ -166,6 +167,7 @@ export default function QuadraticEquationPage() {
 					{t("Limpar campos após gerar ?")}
 				</Text>
 				<CheckBox
+					testID="checkbox-deleteAfter"
 					value={deleteAfter}
 					onValueChange={async (value) => {
 						await AsyncStorage.setItem(
