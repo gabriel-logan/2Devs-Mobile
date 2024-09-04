@@ -102,24 +102,28 @@ export default function AsciiAndHexPage() {
 					/>
 					<View style={stylesWithTheme.divButtonCopy}>
 						<TouchableOpacity
+							testID="encode-buttonPaste"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => pasteToClipboard("text")}
 						>
 							<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="encode-buttonCopy"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => copyToClipboard(asciiText)}
 						>
 							<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="encode-buttonCut"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cutToClipboard(asciiText, "text")}
 						>
 							<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="encode-buttonClean"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cleanToClipboard("text")}
 						>
@@ -127,7 +131,11 @@ export default function AsciiAndHexPage() {
 						</TouchableOpacity>
 					</View>
 				</View>
-				<TouchableOpacity style={stylesWithTheme.button} onPress={encodeToHex}>
+				<TouchableOpacity
+					testID="encode-buttonDispatch"
+					style={stylesWithTheme.button}
+					onPress={encodeToHex}
+				>
 					<Text style={stylesWithTheme.buttonText}>
 						{t("Codificar para Hex")}
 					</Text>
@@ -144,24 +152,28 @@ export default function AsciiAndHexPage() {
 					/>
 					<View style={stylesWithTheme.divButtonCopy}>
 						<TouchableOpacity
+							testID="decode-buttonPaste"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => pasteToClipboard("hex")}
 						>
 							<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="decode-buttonCopy"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => copyToClipboard(hexText)}
 						>
 							<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="decode-buttonCut"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cutToClipboard(hexText, "hex")}
 						>
 							<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="decode-buttonClean"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cleanToClipboard("hex")}
 						>
@@ -170,6 +182,7 @@ export default function AsciiAndHexPage() {
 					</View>
 				</View>
 				<TouchableOpacity
+					testID="decode-buttonDispatch"
 					style={stylesWithTheme.button}
 					onPress={decodeFromHex}
 				>

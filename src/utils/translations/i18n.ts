@@ -57,9 +57,15 @@ import zhHant from "./zh-Hant/zh-Hant.json"; // Chinês Tradicional
 // (tip move them in a JSON file and import them,
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 
-const languageWithoutHyphen = getLocales()[0].languageTag.replace("-", "");
+const locales = getLocales();
 
-const { languageCode } = getLocales()[0];
+if (!Array.isArray(locales) || locales.length === 0) {
+	throw new Error("No locales found");
+}
+
+const languageWithoutHyphen = locales[0].languageTag.replace("-", "");
+
+const { languageCode } = locales[0];
 
 const resources = {
 	af,

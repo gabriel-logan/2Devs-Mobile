@@ -109,24 +109,28 @@ export default function Md5Page() {
 				</TouchableOpacity>
 				<View style={stylesWithTheme.divButtonCopy}>
 					<TouchableOpacity
+						testID="buttonPaste"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => pasteToClipboard()}
 					>
 						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="buttonCopy"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => copyToClipboard()}
 					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="buttonCut"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => cutToClipboard()}
 					>
 						<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="buttonClean"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => cleanToClipboard()}
 					>

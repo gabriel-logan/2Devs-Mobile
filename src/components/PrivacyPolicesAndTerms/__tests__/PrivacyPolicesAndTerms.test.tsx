@@ -18,8 +18,6 @@ const mockNavigation = {
 	isFocused: jest.fn(),
 } as unknown as NavigationType;
 
-jest.mock("react-native-vector-icons/MaterialCommunityIcons", () => "Icon");
-
 describe("PrivacyPolicesAndTerms", () => {
 	it("should render correctly", () => {
 		render(<PrivacyPolicesAndTerms navigation={mockNavigation} />);

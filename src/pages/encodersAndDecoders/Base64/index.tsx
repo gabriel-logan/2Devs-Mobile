@@ -125,6 +125,7 @@ export default function Base64Page() {
 					{t("Apagar apos gerar ?")}
 				</Text>
 				<CheckBox
+					testID="checkbox-cleanAfterGenerate"
 					style={stylesWithTheme.checkbox}
 					value={cleanAlways}
 					onValueChange={async (cleanAlwaysChange) => {
@@ -141,6 +142,7 @@ export default function Base64Page() {
 					{t("Considerar espaço ?")}
 				</Text>
 				<CheckBox
+					testID="checkbox-considerSpace"
 					style={stylesWithTheme.checkbox}
 					value={considerSpace}
 					onValueChange={async (considerSpaceChange) => {
@@ -155,6 +157,7 @@ export default function Base64Page() {
 			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={stylesWithTheme.inputContainer}>
 					<TextInput
+						testID="inputText"
 						style={stylesWithTheme.input}
 						placeholder={t("Cole ou digite o texto aqui")}
 						placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
@@ -164,24 +167,28 @@ export default function Base64Page() {
 					/>
 					<View style={stylesWithTheme.divButtonCopy}>
 						<TouchableOpacity
+							testID="encode-buttonPaste"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => pasteToClipboard("text")}
 						>
 							<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="encode-buttonCopy"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => copyToClipboard(inputText)}
 						>
 							<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="encode-buttonCut"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cutToClipboard(inputText, "text")}
 						>
 							<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="encode-buttonClean"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cleanToClipboard("text")}
 						>
@@ -190,6 +197,7 @@ export default function Base64Page() {
 					</View>
 				</View>
 				<TouchableOpacity
+					testID="encode-buttonDispatch"
 					style={stylesWithTheme.button}
 					onPress={encodeToBase64}
 				>
@@ -199,6 +207,7 @@ export default function Base64Page() {
 				</TouchableOpacity>
 				<View style={stylesWithTheme.inputContainer}>
 					<TextInput
+						testID="inputBase64"
 						style={stylesWithTheme.input}
 						placeholder={t("Cole ou digite o código Base64 aqui")}
 						placeholderTextColor={getThemeColor(theme, "placeHolderColor")}
@@ -208,24 +217,28 @@ export default function Base64Page() {
 					/>
 					<View style={stylesWithTheme.divButtonCopy}>
 						<TouchableOpacity
+							testID="decode-buttonPaste"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => pasteToClipboard("base64")}
 						>
 							<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="decode-buttonCopy"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => copyToClipboard(base64Text)}
 						>
 							<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="decode-buttonCut"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cutToClipboard(base64Text, "base64")}
 						>
 							<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="decode-buttonClean"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cleanToClipboard("base64")}
 						>
@@ -234,6 +247,7 @@ export default function Base64Page() {
 					</View>
 				</View>
 				<TouchableOpacity
+					testID="decode-buttonDispatch"
 					style={stylesWithTheme.button}
 					onPress={decodeFromBase64}
 				>

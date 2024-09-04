@@ -95,24 +95,28 @@ export default function BinAndDecimal() {
 					/>
 					<View style={stylesWithTheme.divButtonCopy}>
 						<TouchableOpacity
+							testID="encode-buttonPaste"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => pasteToClipboard("decimal")}
 						>
 							<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="encode-buttonCopy"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => copyToClipboard(decimalText)}
 						>
 							<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="encode-buttonCut"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cutToClipboard(decimalText, "decimal")}
 						>
 							<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="encode-buttonClean"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cleanToClipboard("decimal")}
 						>
@@ -121,6 +125,7 @@ export default function BinAndDecimal() {
 					</View>
 				</View>
 				<TouchableOpacity
+					testID="encode-buttonDispatch"
 					style={stylesWithTheme.button}
 					onPress={encodeToBinary}
 				>
@@ -140,24 +145,28 @@ export default function BinAndDecimal() {
 					/>
 					<View style={stylesWithTheme.divButtonCopy}>
 						<TouchableOpacity
+							testID="decode-buttonPaste"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => pasteToClipboard("binary")}
 						>
 							<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="decode-buttonCopy"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => copyToClipboard(binaryText)}
 						>
 							<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="decode-buttonCut"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cutToClipboard(binaryText, "binary")}
 						>
 							<FontAwesome name="cut" size={RFValue(26)} color="#007AFF" />
 						</TouchableOpacity>
 						<TouchableOpacity
+							testID="decode-buttonClean"
 							style={stylesWithTheme.buttonCopy}
 							onPress={() => cleanToClipboard("binary")}
 						>
@@ -166,6 +175,7 @@ export default function BinAndDecimal() {
 					</View>
 				</View>
 				<TouchableOpacity
+					testID="decode-buttonDispatch"
 					style={stylesWithTheme.button}
 					onPress={decodeFromBinary}
 				>

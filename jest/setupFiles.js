@@ -1,6 +1,8 @@
 // include this line for mocking react-native-gesture-handler
 import "react-native-gesture-handler/jestSetup";
 
+import mockClipboard from "@react-native-clipboard/clipboard/jest/clipboard-mock.js";
+
 // include this section and the NativeAnimatedHelper section for mocking react-native-reanimated
 jest.mock("react-native-reanimated", () => {
 	const Reanimated = require("react-native-reanimated/mock");
@@ -60,3 +62,18 @@ jest.mock("react-native-responsive-screen", () => ({
 	width: jest.fn().mockImplementation(() => 10),
 	height: jest.fn().mockImplementation(() => 10),
 }));
+
+jest.mock("@react-native-clipboard/clipboard", () => mockClipboard);
+
+jest.mock("react-native-base64", () => ({
+	decode: jest.fn(),
+	encode: jest.fn(),
+}));
+
+jest.mock("react-native-vector-icons/MaterialCommunityIcons", () => "Icon");
+jest.mock("react-native-vector-icons/FontAwesome5", () => "Icon");
+jest.mock("react-native-vector-icons/FontAwesome", () => "Icon");
+jest.mock("react-native-vector-icons/MaterialIcons", () => "Icon");
+jest.mock("react-native-vector-icons/Feather", () => "Icon");
+jest.mock("react-native-vector-icons/AntDesign", () => "Icon");
+jest.mock("react-native-vector-icons/Entypo", () => "Icon");

@@ -79,14 +79,16 @@ export default function BinaryCodePage() {
 				/>
 				<View style={stylesWithTheme.divButtonCopy}>
 					<TouchableOpacity
+						testID="encode-buttonCopy"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => copyToClipboard(binaryCode)}
 					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="encode-buttonClean"
 						style={stylesWithTheme.buttonCopy}
-						onPress={() => cleanToClipboard("Binario")}
+						onPress={() => cleanToClipboard("text")}
 					>
 						<FontAwesome name="trash-o" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
@@ -105,12 +107,14 @@ export default function BinaryCodePage() {
 				/>
 				<View style={stylesWithTheme.divButtonCopy}>
 					<TouchableOpacity
+						testID="decode-buttonCopy"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => copyToClipboard(binaryCode)}
 					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="decode-buttonClean"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => cleanToClipboard("Binario")}
 					>
