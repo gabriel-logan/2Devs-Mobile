@@ -84,17 +84,20 @@ export default function ChangeLangModal({
 
 	return (
 		<Modal
+			testID="modal-change-lang"
 			visible={modalChangeLang}
 			onRequestClose={() => setModalChangeLang(false)}
 			transparent
 		>
 			<TouchableOpacity
+				testID="modal-background"
 				style={stylesWithTheme.modalContainer}
 				onPress={() => setModalChangeLang(false)}
 			>
 				<ScrollView style={stylesWithTheme.scrollContainer}>
 					{languages.map((languageCode) => (
 						<TouchableOpacity
+							testID={`language-button-${languageCode}`}
 							style={stylesWithTheme.languageButton}
 							onPress={() => {
 								changeLanguage(languageCode);
@@ -108,6 +111,7 @@ export default function ChangeLangModal({
 						</TouchableOpacity>
 					))}
 					<TouchableOpacity
+						testID="language-button-klingon"
 						style={[
 							stylesWithTheme.languageButton,
 							stylesWithTheme.marginBotton35,

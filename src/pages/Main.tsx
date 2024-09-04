@@ -45,11 +45,7 @@ export default function Main({ navigation }: NavigationPropsTypes) {
 		newSelectedTheme: typeof theme | "system"
 	) => {
 		if (newSelectedTheme === "system") {
-			if (systemTheme) {
-				toggleTheme(systemTheme);
-			} else {
-				toggleTheme("light");
-			}
+			toggleTheme(systemTheme);
 			// Define o tema com base no sistema (usando useColorScheme)
 		} else {
 			toggleTheme(newSelectedTheme);
@@ -61,13 +57,14 @@ export default function Main({ navigation }: NavigationPropsTypes) {
 
 	useEffect(() => {
 		(async () => {
-			const getThemeCoice = (await AsyncStorage.getItem("themeSelected")) as
-				| typeof theme
-				| null;
-			if (getThemeCoice) {
-				setSelectedTheme(getThemeCoice);
-			}
 			try {
+				const getThemeCoice = (await AsyncStorage.getItem("themeSelected")) as
+					| typeof theme
+					| null;
+				if (getThemeCoice) {
+					setSelectedTheme(getThemeCoice);
+				}
+
 				const termsAccept = await AsyncStorage.getItem("termsAccept");
 				if (!termsAccept || !JSON.parse(termsAccept)) {
 					navigation.reset({
@@ -133,7 +130,7 @@ export default function Main({ navigation }: NavigationPropsTypes) {
 					modalChangeLang={modalChangeLang}
 					setModalChangeLang={setModalChangeLang}
 				/>
-				<View style={stylesWithTheme.themeContainer}>
+				<View testID="theme-switch" style={stylesWithTheme.themeContainer}>
 					<Text style={stylesWithTheme.themeTitle}>{t("Escolha o Tema:")}</Text>
 					<View style={stylesWithTheme.themeOption}>
 						<Text style={stylesWithTheme.themeText}>{t("Tema claro")}</Text>
