@@ -2,6 +2,7 @@
 import "react-native-gesture-handler/jestSetup";
 
 import mockClipboard from "@react-native-clipboard/clipboard/jest/clipboard-mock.js";
+import mockBackHandler from "react-native/Libraries/Utilities/__mocks__/BackHandler.js";
 
 // include this section and the NativeAnimatedHelper section for mocking react-native-reanimated
 jest.mock("react-native-reanimated", () => {
@@ -49,6 +50,17 @@ jest.mock("react-i18next", () => ({
 		init: () => {},
 	},
 }));
+
+jest.mock("i18next", () => ({
+	changeLanguage: jest.fn(),
+	use: jest.fn().mockReturnThis(), // Add this line to mock the use method
+	init: jest.fn().mockReturnThis(), // Add this line to mock the init method
+}));
+
+jest.mock(
+	"react-native/Libraries/Utilities/BackHandler",
+	() => mockBackHandler
+);
 
 jest.mock("react-native-responsive-fontsize", () => ({
 	RFValue: jest.fn().mockImplementation(() => 10),

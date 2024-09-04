@@ -121,7 +121,7 @@ const resources = {
 
 const lngChecked = Object.keys(resources).includes(languageWithoutHyphen)
 	? languageWithoutHyphen
-	: Object.keys(resources).includes(languageCode)
+	: languageCode !== null && Object.keys(resources).includes(languageCode)
 	? languageCode
 	: "en";
 
