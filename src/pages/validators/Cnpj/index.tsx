@@ -69,18 +69,21 @@ export default function CnpjValidatorPage() {
 				<Button title={t("Validar CNPJ")} onPress={validateCnpj} />
 				<View style={stylesWithTheme.divButtonCopy}>
 					<TouchableOpacity
+						testID="buttonPaste"
 						style={stylesWithTheme.buttonCopy}
 						onPress={pasteToClipboard}
 					>
 						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="buttonCopy"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => copyToClipboard(cnpjInput)}
 					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="buttonClean"
 						style={stylesWithTheme.buttonCopy}
 						onPress={cleanToClipboard}
 					>
@@ -88,7 +91,7 @@ export default function CnpjValidatorPage() {
 					</TouchableOpacity>
 				</View>
 				{cnpjIsValidResult !== undefined && (
-					<View style={stylesWithTheme.cnpjStatus}>
+					<View testID="resultView" style={stylesWithTheme.cnpjStatus}>
 						<Text
 							style={
 								cnpjIsValidResult

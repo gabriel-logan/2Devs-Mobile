@@ -70,10 +70,25 @@ jest.mock("react-native-base64", () => ({
 	encode: jest.fn(),
 }));
 
-jest.mock("react-native-vector-icons/MaterialCommunityIcons", () => "Icon");
-jest.mock("react-native-vector-icons/FontAwesome5", () => "Icon");
-jest.mock("react-native-vector-icons/FontAwesome", () => "Icon");
-jest.mock("react-native-vector-icons/MaterialIcons", () => "Icon");
-jest.mock("react-native-vector-icons/Feather", () => "Icon");
-jest.mock("react-native-vector-icons/AntDesign", () => "Icon");
-jest.mock("react-native-vector-icons/Entypo", () => "Icon");
+jest.mock(
+	"react-native-vector-icons/MaterialCommunityIcons",
+	() => "MaterialCommunityIcons Icon"
+);
+jest.mock("react-native-vector-icons/FontAwesome5", () => "FontAwesome5 Icon");
+jest.mock("react-native-vector-icons/FontAwesome", () => "FontAwesome Icon");
+jest.mock(
+	"react-native-vector-icons/MaterialIcons",
+	() => "MaterialIcons Icon"
+);
+jest.mock("react-native-vector-icons/Feather", () => "Feather Icon");
+jest.mock("react-native-vector-icons/AntDesign", () => "AntDesign Icon");
+jest.mock("react-native-vector-icons/Entypo", () => "Entypo Icon");
+jest.mock("react-native-vector-icons/Ionicons", () => "Ionicons Icon");
+
+jest.mock("react-native-network-info", () => ({
+	NetworkInfo: {
+		getIPV4Address: jest.fn().mockResolvedValue("192.168.100.4"),
+		getGatewayIPAddress: jest.fn().mockResolvedValue("192.168.100.1"),
+		getSubnet: jest.fn().mockResolvedValue("255.25.255.0"),
+	},
+}));

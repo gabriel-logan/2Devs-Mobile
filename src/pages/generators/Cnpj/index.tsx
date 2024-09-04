@@ -29,20 +29,19 @@ export default function CnpjGeneratorPage() {
 	const [cnpjWithPeriod, setCnpjWithPeriod] = useState(false);
 
 	const formatCnpj = (Cnpj: string) => {
-		if (Cnpj && Cnpj.length === 14) {
-			return `${Cnpj.slice(0, 2)}.${Cnpj.slice(2, 5)}.${Cnpj.slice(
-				5,
-				8
-			)}/${Cnpj.slice(8, 12)}-${Cnpj.slice(12)}`;
-		}
-		return Cnpj;
+		return `${Cnpj.slice(0, 2)}.${Cnpj.slice(2, 5)}.${Cnpj.slice(
+			5,
+			8
+		)}/${Cnpj.slice(8, 12)}-${Cnpj.slice(12)}`;
 	};
 
 	const generateRandomCnpj = () => {
 		let randomCnpj: string;
+
 		do {
 			randomCnpj = generateRandomDigits();
 		} while (!cnpjIsValid(randomCnpj).isValid);
+
 		if (cnpjWithPeriod) {
 			setGeneratedCnpj(formatCnpj(randomCnpj));
 		} else {
@@ -110,7 +109,7 @@ export default function CnpjGeneratorPage() {
 					color="#007BFF"
 				/>
 				<View style={stylesWithTheme.copyButtonContainer}>
-					<TouchableOpacity onPress={copyToClipboard}>
+					<TouchableOpacity testID="buttonCopy" onPress={copyToClipboard}>
 						<FontAwesome name="copy" size={RFValue(32)} color="#007BFF" />
 					</TouchableOpacity>
 				</View>

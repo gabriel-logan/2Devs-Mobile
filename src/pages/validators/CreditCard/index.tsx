@@ -78,18 +78,21 @@ export default function CreditCardValidatorPage() {
 				/>
 				<View style={stylesWithTheme.divButtonCopy}>
 					<TouchableOpacity
+						testID="buttonPaste"
 						style={stylesWithTheme.buttonCopy}
 						onPress={pasteToClipboard}
 					>
 						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="buttonCopy"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => copyToClipboard(creditCardInput)}
 					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="buttonClean"
 						style={stylesWithTheme.buttonCopy}
 						onPress={cleanToClipboard}
 					>
@@ -97,7 +100,7 @@ export default function CreditCardValidatorPage() {
 					</TouchableOpacity>
 				</View>
 				{creditCardIsValidResult !== undefined && (
-					<View style={stylesWithTheme.creditCardStatus}>
+					<View testID="resultView" style={stylesWithTheme.creditCardStatus}>
 						<Text
 							style={
 								creditCardIsValidResult

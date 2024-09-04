@@ -52,15 +52,6 @@ const MyNetwork = () => {
 							)
 						);
 					}
-
-					/**
- * 					if (Platform.OS === 'android') {
-						const airplane = false;
-						setAirplaneMode(airplane);
-					} else {
-						setAirplaneMode(null);
-					}
- */
 				} catch (error) {
 					// eslint-disable-next-line no-console
 					console.error(error);
@@ -86,6 +77,7 @@ const MyNetwork = () => {
 							{geteway || t("Carregando...")}
 						</Text>
 						<TouchableOpacity
+							aria-label="buttonCopy"
 							onPress={() =>
 								copyToClipboard(geteway ? geteway : t("000.000.0.0"))
 							}
@@ -104,6 +96,7 @@ const MyNetwork = () => {
 							{ipAddress || t("Carregando...")}
 						</Text>
 						<TouchableOpacity
+							aria-label="buttonCopy"
 							onPress={() =>
 								copyToClipboard(ipAddress ? ipAddress : t("000.000.000.000"))
 							}
@@ -122,6 +115,7 @@ const MyNetwork = () => {
 							{subnet || t("Carregando...")}
 						</Text>
 						<TouchableOpacity
+							aria-label="buttonCopy"
 							onPress={() =>
 								copyToClipboard(subnet ? subnet : t("000.000.000.0"))
 							}
@@ -140,6 +134,7 @@ const MyNetwork = () => {
 							{ipAddressExternal || t("Carregando...")}
 						</Text>
 						<TouchableOpacity
+							aria-label="buttonCopy"
 							onPress={() =>
 								copyToClipboard(
 									ipAddressExternal ? ipAddressExternal : t("000.000.000.000")

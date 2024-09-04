@@ -28,13 +28,10 @@ export default function CpfGeneratorPage() {
 	const [cpfWithPeriod, setCpfWithPeriod] = useState(false);
 
 	const formatCpf = (cpf: string) => {
-		if (cpf && cpf.length === 11) {
-			return `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(
-				6,
-				9
-			)}-${cpf.slice(9)}`;
-		}
-		return cpf;
+		return `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(
+			6,
+			9
+		)}-${cpf.slice(9)}`;
 	};
 
 	const generateRandomCpf = () => {
@@ -103,7 +100,7 @@ export default function CpfGeneratorPage() {
 					color="#007BFF"
 				/>
 				<View style={stylesWithTheme.copyButtonContainer}>
-					<TouchableOpacity onPress={copyToClipboard}>
+					<TouchableOpacity testID="buttonCopy" onPress={copyToClipboard}>
 						<FontAwesome name="copy" size={RFValue(32)} color="#007BFF" />
 					</TouchableOpacity>
 				</View>

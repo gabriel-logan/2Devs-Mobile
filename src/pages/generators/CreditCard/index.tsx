@@ -116,7 +116,7 @@ export default function CreditCardGeneratorPage() {
 					color="#007BFF"
 				/>
 				<View style={stylesWithTheme.copyButtonContainer}>
-					<TouchableOpacity onPress={copyToClipboard}>
+					<TouchableOpacity testID="buttonCopy" onPress={copyToClipboard}>
 						<FontAwesome name="copy" size={RFValue(32)} color="#007BFF" />
 					</TouchableOpacity>
 				</View>

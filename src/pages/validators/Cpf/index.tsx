@@ -68,18 +68,21 @@ export default function CpfValidatorPage() {
 				<Button title={t("Validar CPF")} onPress={validateCpf} />
 				<View style={stylesWithTheme.divButtonCopy}>
 					<TouchableOpacity
+						testID="buttonPaste"
 						style={stylesWithTheme.buttonCopy}
 						onPress={pasteToClipboard}
 					>
 						<FontAwesome name="paste" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="buttonCopy"
 						style={stylesWithTheme.buttonCopy}
 						onPress={() => copyToClipboard(cpfInput)}
 					>
 						<FontAwesome name="copy" size={RFValue(26)} color="#007AFF" />
 					</TouchableOpacity>
 					<TouchableOpacity
+						testID="buttonClean"
 						style={stylesWithTheme.buttonCopy}
 						onPress={cleanToClipboard}
 					>
@@ -87,7 +90,7 @@ export default function CpfValidatorPage() {
 					</TouchableOpacity>
 				</View>
 				{cpfIsValidResult !== undefined && (
-					<View style={stylesWithTheme.cpfStatus}>
+					<View testID="resultView" style={stylesWithTheme.cpfStatus}>
 						<Text
 							style={
 								cpfIsValidResult
