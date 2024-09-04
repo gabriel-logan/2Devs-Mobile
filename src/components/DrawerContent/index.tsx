@@ -42,6 +42,7 @@ const CustomDrawerContent = () => {
 				{drawerMenu.map((item, index) => (
 					<View key={index} style={stylesWithTheme.menuItem}>
 						<TouchableOpacity
+							testID="drawerItem"
 							onPress={() => {
 								LayoutAnimation.configureNext(
 									LayoutAnimation.create(200, "easeInEaseOut", "opacity")
@@ -59,6 +60,7 @@ const CustomDrawerContent = () => {
 								<>
 									{item.menuList?.map((subItem, subIndex) => (
 										<TouchableOpacity
+											testID="drawerItemSub"
 											key={subIndex}
 											onPress={() => navigation.navigate(subItem.route)}
 										>

@@ -49,14 +49,14 @@ jest.mock("react-i18next", () => ({
 }));
 
 jest.mock("react-native-responsive-fontsize", () => ({
-	RFValue: jest.fn(),
-	RFPercentage: jest.fn(),
-	fixedRFValue: jest.fn(),
+	RFValue: jest.fn().mockImplementation(() => 10),
+	RFPercentage: jest.fn().mockImplementation(() => 10),
+	fixedRFValue: jest.fn().mockImplementation(() => 10),
 }));
 
 jest.mock("react-native-responsive-screen", () => ({
-	widthPercentageToDP: jest.fn(),
-	heightPercentageToDP: jest.fn(),
-	width: jest.fn(),
-	height: jest.fn(),
+	widthPercentageToDP: jest.fn().mockImplementation(() => 10),
+	heightPercentageToDP: jest.fn().mockImplementation(() => 10),
+	width: jest.fn().mockImplementation(() => 10),
+	height: jest.fn().mockImplementation(() => 10),
 }));

@@ -94,6 +94,7 @@ export default function PrivacyPolicesAndTerms({
 				style={styles.checkboxContainer}
 				onPress={handleCheckboxChange}
 				activeOpacity={0.8}
+				testID="checkbox"
 			>
 				{checkboxIcon}
 				<Text style={styles.checkboxText}>
