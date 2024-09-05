@@ -1,6 +1,11 @@
 import { fireEvent, render, screen } from "@testing-library/react-native";
 
 import BinaryCodePage from "..";
+import { useTheme } from "../../../../components/ThemeContext";
+
+jest.mock("../../../../components/ThemeContext", () => ({
+	useTheme: jest.fn().mockReturnValue({ theme: "light" }),
+}));
 
 describe("BinaryCode", () => {
 	it("should render correctly", () => {
@@ -8,6 +13,22 @@ describe("BinaryCode", () => {
 		const text = screen.getByText(/Codificar para Binário/);
 
 		expect(text).toBeTruthy();
+	});
+
+	describe("text inputs", () => {
+		it("should render palceholder textColor dark if theme is dark", () => {
+			(useTheme as jest.Mock).mockReturnValue({ theme: "dark" });
+
+			render(<BinaryCodePage />);
+
+			const textInput1 = screen.getByPlaceholderText("Digite o texto aqui");
+			const textInput2 = screen.getByPlaceholderText(
+				"O código binário será exibido aqui"
+			);
+
+			expect(textInput1.props.placeholderTextColor).toBe("#ccc");
+			expect(textInput2.props.placeholderTextColor).toBe("#ccc");
+		});
 	});
 
 	describe("buttons", () => {

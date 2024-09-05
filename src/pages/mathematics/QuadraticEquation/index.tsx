@@ -38,58 +38,57 @@ export default function QuadraticEquationPage() {
 	};
 
 	const calculateQuadraticEquation = () => {
-		if (a && b && c) {
-			const numeroA = Number(a);
-			const numeroB = Number(b);
-			const numeroC = Number(c);
+		const numeroA = Number(a);
+		const numeroB = Number(b);
+		const numeroC = Number(c);
 
-			if (numeroA === 0 && numeroB === 0) {
-				return setResult(t("Constante = " + numeroC));
-			}
-
-			if (Math.pow(numeroB, 2) - 4 * numeroA * numeroC < 0) {
-				return setResult(t("Não possui raizes reais"));
-			}
-
-			const raiz1 =
-				(-numeroB +
-					raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) /
-				(2 * numeroA);
-			const raiz2 =
-				(-numeroB -
-					raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) /
-				(2 * numeroA);
-
-			if (!Number.isNaN(raiz1) || !Number.isNaN(raiz2)) {
-				let resultMessage = "";
-
-				const aproximaRaiz1 = aproxima ? raiz1.toFixed(2) : raiz1;
-				const aproximaRaiz2 = aproxima ? raiz2.toFixed(2) : raiz2;
-
-				if (raiz1 === raiz2) {
-					resultMessage = t("Possui apenas 1 raiz real") + aproximaRaiz1;
-				} else {
-					resultMessage =
-						t("First root:") +
-						aproximaRaiz1 +
-						" " +
-						t("Second root:") +
-						aproximaRaiz2;
-				}
-
-				if (deleteAfter) {
-					setA("");
-					setB("");
-					setC("");
-				}
-
-				return setResult(resultMessage);
-			} else {
-				Alert.alert(t("Erro"), t("Digite valores válidos para a, b e c"));
-			}
-		} else {
+		if (
+			Number.isNaN(numeroA) ||
+			Number.isNaN(numeroB) ||
+			Number.isNaN(numeroC)
+		) {
 			Alert.alert(t("Erro"), t("Digite valores válidos para a, b e c"));
+			return;
 		}
+
+		if (numeroA === 0 && numeroB === 0) {
+			return setResult(t("Constante = " + numeroC));
+		}
+
+		if (Math.pow(numeroB, 2) - 4 * numeroA * numeroC < 0) {
+			return setResult(t("Não possui raizes reais"));
+		}
+
+		const raiz1 =
+			(-numeroB + raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) /
+			(2 * numeroA);
+		const raiz2 =
+			(-numeroB - raizQuadrada(Math.pow(numeroB, 2) - 4 * numeroA * numeroC)) /
+			(2 * numeroA);
+
+		let resultMessage = "";
+
+		const aproximaRaiz1 = aproxima ? raiz1.toFixed(2) : raiz1;
+		const aproximaRaiz2 = aproxima ? raiz2.toFixed(2) : raiz2;
+
+		if (raiz1 === raiz2) {
+			resultMessage = t("Possui apenas 1 raiz real") + aproximaRaiz1;
+		} else {
+			resultMessage =
+				t("First root:") +
+				aproximaRaiz1 +
+				" " +
+				t("Second root:") +
+				aproximaRaiz2;
+		}
+
+		if (deleteAfter) {
+			setA("");
+			setB("");
+			setC("");
+		}
+
+		return setResult(resultMessage);
 	};
 
 	useEffect(() => {

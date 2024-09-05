@@ -1,9 +1,9 @@
 import { Picker } from "@react-native-picker/picker";
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { t } from "i18next";
 import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { View, StyleSheet } from "react-native";
 
 import { useTheme } from "../../components/ThemeContext";
@@ -23,6 +23,8 @@ function DataConverterHeader({
 	selectedLanguage: RoutesStringsProps;
 	setSelectedLanguage: Dispatch<SetStateAction<RoutesStringsProps>>;
 }) {
+	const { t } = useTranslation();
+
 	const { theme } = useTheme();
 
 	const styles = StyleSheet.create({
@@ -47,6 +49,7 @@ function DataConverterHeader({
 	return (
 		<View style={styles.container}>
 			<Picker
+				testID="picker"
 				selectedValue={selectedLanguage}
 				onValueChange={(itemValue) => {
 					navigation.navigate(itemValue);
@@ -79,6 +82,8 @@ function DataConverterHeader({
 const Stack = createNativeStackNavigator();
 
 export default function DataConverterNavigator() {
+	const { t } = useTranslation();
+
 	const [selectedLanguage, setSelectedLanguage] =
 		useState<RoutesStringsProps>("DataConverterMain");
 

@@ -1,5 +1,11 @@
 import Clipboard from "@react-native-clipboard/clipboard";
-import { fireEvent, render, screen } from "@testing-library/react-native";
+import {
+	fireEvent,
+	render,
+	screen,
+	waitFor,
+} from "@testing-library/react-native";
+import { Alert } from "react-native";
 
 import BinAndDecimal from "../BinAndDecimal";
 
@@ -98,6 +104,33 @@ describe("DataConverter", () => {
 				expect(decimalInput.props.value).toBe("989ACC"); // NOT CORRECT
 			});
 
+			it("should Alert.alert if decimalTextNumber is not a number", async () => {
+				jest.spyOn(Alert, "alert");
+
+				render(<BinAndDecimal />);
+
+				const binaryInput = screen.getByPlaceholderText(
+					"Cole ou digite o numero decimal aqui"
+				);
+
+				fireEvent.changeText(binaryInput, "teste");
+
+				expect(binaryInput.props.value).toBe("teste");
+
+				const button = screen.getByTestId("encode-buttonDispatch");
+
+				fireEvent.press(button);
+
+				expect(binaryInput.props.value).toBe("teste");
+
+				await waitFor(() => {
+					expect(Alert.alert).toHaveBeenCalledWith(
+						"Erro",
+						"Digite apenas numeros"
+					);
+				});
+			});
+
 			it("should not encode the binary to decimal", async () => {
 				render(<BinAndDecimal />);
 
@@ -121,7 +154,7 @@ describe("DataConverter", () => {
 			});
 		});
 
-		describe("HexToText", () => {
+		describe("decimalToBinary", () => {
 			it("should copy the decimal code to the clipboard", async () => {
 				render(<BinAndDecimal />);
 
@@ -196,6 +229,33 @@ describe("DataConverter", () => {
 				);
 
 				expect(binaryInput.props.value).toBe("70"); // NOT CORRECT
+			});
+
+			it("should Alert.alert if !/^[0-9A-Fa-f]+$/.test(cleanedBinary) match", async () => {
+				jest.spyOn(Alert, "alert");
+
+				render(<BinAndDecimal />);
+
+				const decimalInput = screen.getByPlaceholderText(
+					"Cole ou digite o código binario aqui"
+				);
+
+				fireEvent.changeText(decimalInput, "teste");
+
+				expect(decimalInput.props.value).toBe("teste");
+
+				const button = screen.getByText("Decodificar para decimal");
+
+				fireEvent.press(button);
+
+				expect(decimalInput.props.value).toBe("teste");
+
+				await waitFor(() => {
+					expect(Alert.alert).toHaveBeenCalledWith(
+						"Erro",
+						"O valor de entrada não é valido"
+					);
+				});
 			});
 
 			it("should not decode the decimal to binary", async () => {
